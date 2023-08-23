@@ -1,16 +1,19 @@
+//navbar 
+//basic structure
+//
+
 import './App.css';
+import Testimonial from './components/Testimonial.jsx';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Hello lets start our miplace
-        </p>
-        <h1 className="text-3xl font-bold underline">
+        <h1 className="text-3xl font-bold underline"> 
          Hello world!
-    </h1>
-        
+        </h1>
+
+        <Testimonial/>
       </header>
     </div>
   );
