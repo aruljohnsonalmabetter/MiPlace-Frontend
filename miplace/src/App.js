@@ -6,10 +6,9 @@ function App() {
     <div className="App">
       <HeaderComponent/>
       <header className="App-header">
-        <h1 className="text-2xl font-bold underline text-orange-600	">
-          Tailwind Setup Done
-        </h1>
+        <h1 className="text-2xl  text-orange-600	">
         <p>Hello lets start our miplace</p>
+        </h1>
       </header>
       <FooterComponent/>
     </div>
