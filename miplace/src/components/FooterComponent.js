@@ -8,10 +8,10 @@ export const FooterComponent = () => {
                     <p className='text-xl font-bold	 inline-block	'>About <br/> MiPlace</p>
                     <p className='inline-block	'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/> Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.</p>
                     <ul className=' flex justify-between text-md w-2/5'>
-                        <a href='http://localhost:3000/'>insta</a>
-                        <a href='http://localhost:3000/'>insta</a>
-                        <a href='http://localhost:3000/'>insta</a>
-                        <a href='http://localhost:3000/'>insta</a>
+                        <a href='http://localhost:3000/'>icon</a>
+                        <a href='http://localhost:3000/'>icon</a>
+                        <a href='http://localhost:3000/'>icon</a>
+                        <a href='http://localhost:3000/'>icon</a>
                     </ul>
                 </div>
                 <div className=' p-5 text-start left-0 space-y-4	'>
