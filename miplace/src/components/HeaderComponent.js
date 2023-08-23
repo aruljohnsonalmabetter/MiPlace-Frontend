@@ -1,7 +1,7 @@
 import React from 'react'
 export const HeaderComponent = () => {
     return (
-        <div className='navbar flex justify-center items-center h-20 top-0 sticky bg-white'>
+        <div className='z-10 navbar flex justify-center items-center h-20 top-0 sticky bg-white'>
             <div className=' flex justify-between items-center  w-11/12 h-full	'>
                 <div className="logo  font-bold text-xl		">
                     <h2>MiPlace</h2>
