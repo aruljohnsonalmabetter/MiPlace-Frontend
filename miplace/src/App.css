@@ -32,7 +32,19 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* Navbar */
+.navbar .btn {
+  background-color: #1E91B6;
+  color: #fff;
+  transition: all 250ms ease-in;
+}
+.navbar .btn:hover {
+  background-color: #196680;
 }
