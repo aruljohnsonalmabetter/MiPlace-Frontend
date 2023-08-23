@@ -7,6 +7,9 @@ function App() {
         <p>
           Hello lets start our miplace
         </p>
+        <h1 className="text-3xl font-bold underline">
+         Hello world!
+    </h1>
         
       </header>
     </div>
