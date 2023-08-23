@@ -13,5 +13,31 @@
 }
 
 
+<<<<<<< HEAD
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 
+/* Navbar */
+.navbar .btn {
+  background-color: #1E91B6;
+  color: #fff;
+  transition: all 250ms ease-in;
+}
+.navbar .btn:hover {
+  background-color: #196680;
+}
+.footer{
+  background-color: #FAFAFB;
+}
+=======
+
+
+>>>>>>> a3c45845122f0a5c035080bd34051c8feb9f0ec9
