@@ -30,9 +30,18 @@
   color: #fff;
   transition: all 250ms ease-in;
 }
+
 .navbar .btn:hover {
   background-color: #196680;
 }
-.footer{
+
+.footer {
   background-color: #FAFAFB;
+}
+
+
+/*  */
+.mostSearchedPlaces img {
+  height: 100px;
+  width: 115px;
 }

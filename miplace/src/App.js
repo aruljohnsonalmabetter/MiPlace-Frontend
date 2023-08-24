@@ -7,19 +7,17 @@ import { HeaderComponent } from "./components/HeaderComponent";
 
 import './App.css';
 import Testimonial from './components/Testimonial.jsx';
+import { MostSearchedLocations } from "./components/MostSearchedLocations";
 
 function App() {
   return (
     <div className="App">
       <HeaderComponent/>
-      <header className="App-header">
-       Body
-        <h1 className="text-3xl font-bold underline"> 
-         Hello world!
-        </h1>
-
+      {/* <header className="App-header"> */}
+      <h1>Header</h1>
+      <MostSearchedLocations/>
         <Testimonial/>
-      </header>
+      {/* </header> */}
       <FooterComponent/>
     </div>
   );
