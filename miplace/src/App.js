@@ -1,13 +1,26 @@
 import "./App.css";
+import { FooterComponent } from "./components/FooterComponent";
+import { HeaderComponent } from "./components/HeaderComponent";
+//navbar 
+//basic structure
+//
+
+import './App.css';
+import Testimonial from './components/Testimonial.jsx';
+
 function App() {
   return (
     <div className="App">
+      <HeaderComponent/>
       <header className="App-header">
-        <h1 className="text-2xl font-bold underline text-orange-600	">
-          Tailwind Setup Done
+       Body
+        <h1 className="text-3xl font-bold underline"> 
+         Hello world!
         </h1>
-        <p>Hello lets start our miplace</p>
+
+        <Testimonial/>
       </header>
+      <FooterComponent/>
     </div>
   );
 }
