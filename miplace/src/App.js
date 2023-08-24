@@ -1,6 +1,7 @@
 import "./App.css";
 import { FooterComponent } from "./components/FooterComponent";
 import { HeaderComponent } from "./components/HeaderComponent";
+import {Popularplace} from "./components/Popularplace";
 //navbar 
 //basic structure
 //
@@ -10,17 +11,22 @@ import Testimonial from './components/Testimonial.jsx';
 
 function App() {
   return (
+
     <div className="App">
       <HeaderComponent/>
       <header className="App-header">
-       Body
+       
         <h1 className="text-3xl font-bold underline"> 
          Hello world!
         </h1>
-
-        <Testimonial/>
       </header>
+      
+      <Popularplace/>
+      <Testimonial/>
+      
       <FooterComponent/>
+      
+
     </div>
   );
 }
