@@ -43,5 +43,11 @@
 /*  */
 .mostSearchedPlaces img {
   height: 100px;
-  width: 115px;
+  width: 135px;
+}
+
+
+/*Place Search Label Transition*/
+input:focus ~.input-text{
+  @apply  transform -translate-y-9 -translate-x-4 scale-90;
 }
