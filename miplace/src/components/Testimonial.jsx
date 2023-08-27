@@ -11,7 +11,7 @@ export default function Testimonial(){
    <h3 class="text-sky-500 font-semibold">TESTIMONIALS</h3>
    <h1 class="font-popins text-6xl font-semibold">Don’t just take our words</h1>
 
-    <div class="flex mt-10 space-x-5 ">
+    <div class="flex mt-10 space-x-10 ">
 
             <div class="flex mx-auto  ">
                 
