@@ -14,17 +14,17 @@ const Overview = () => {
                     </div>
                     {/* Four boxes */}
                     <div className="flex gap-5 mt-4">
-                        <div className="w-160px h-300px bg-blue-500 flex justify-center items-center rounded">
-                            <span className="text-white text-sm">Overall Rating</span>
+                    <div className="w-160px h-300px bg-blue-500 border border-gray-300 flex justify-center items-center rounded">
+                        <span className="text-gray-100 text-sm">Near Airport</span>
+                    </div>
+                    <div className="w-160px h-300px bg-blue-500 border border-gray-300 flex justify-center items-center rounded">
+                            <span className="text-gray-100 text-sm">Near Park</span>
                         </div>
-                        <div className="w-160px h-300px border border-gray-300 flex justify-center items-center rounded">
-                            <span className="text-gray-600 text-sm">Near Park</span>
+                    <div className="w-160px h-300px bg-blue-500 border border-gray-300 flex justify-center items-center rounded">
+                            <span className="text-gray-100 text-sm">Near Nightlife</span>
                         </div>
-                        <div className="w-160px h-300px border border-gray-300 flex justify-center items-center rounded">
-                            <span className="text-gray-600 text-sm">Near Nightlife</span>
-                        </div>
-                        <div className="w-160px h-300px border border-gray-300 flex justify-center items-center rounded">
-                            <span className="text-gray-600 text-sm">Near Hotel</span>
+                    <div className="w-160px h-300px bg-blue-500 border border-gray-300 flex justify-center items-center rounded">
+                            <span className="text-gray-100 text-sm">Near Hotel</span>
                         </div>
                     </div>
                 </div>
