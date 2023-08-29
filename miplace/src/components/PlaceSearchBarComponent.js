@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 export const PlaceSearchBarComponent = () => {
+  const [city, setCity] = useState();
+  const [roomsGuests, setRoomsGuests] = useState();
   const [days, setDays] = useState(0);
   const [firstDay, setFirstDay] = useState("");
   const [secondDay, setSecondDay] = useState("");
@@ -41,11 +43,22 @@ export const PlaceSearchBarComponent = () => {
             <input
               className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5  rounded-md w-96 transition duration-200"
               type="text"
-              // placeholder="Enter a location"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              placeholder=" "
             />
-            <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text">
+            <span className="top-0 absolute left-0  mx-3  transition duration-200 input-text">
               Enter City or Location
             </span>
+            {/* <span
+              className={
+                city!==""
+                  ? `-top-8 absolute left-0  mx-3  transition duration-200 input-text`
+                  : `top-0 absolute left-0  mx-3  transition duration-200 input-text`
+              }
+            >
+              Enter City or Location
+            </span> */}
           </label>
         </div>
 
@@ -111,6 +124,8 @@ export const PlaceSearchBarComponent = () => {
             <input
               className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5 w-64  rounded-md  transition duration-200"
               type="text"
+              placeholder=" "
+
               // placeholder="Enter a location"
             />
             <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text">

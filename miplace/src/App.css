@@ -48,6 +48,23 @@
 
 
 /*Place Search Label Transition*/
-input:focus ~.input-text{
+
+/* If input is not empty */
+input:not(:placeholder-shown) ~.input-text {
+  /* You need to add a placeholder to your fields. For example: <input "placeholder=" "/> */
   @apply  transform -translate-y-9 -translate-x-4 scale-90;
+ 
 }
+input:focus ~.input-text {
+  /* You need to add a placeholder to your fields. For example: <input "placeholder=" "/> */
+  @apply  transform -translate-y-9 -translate-x-4 scale-90;
+ 
+}
+/* input:placeholder-shown ~.input-text{
+  @apply  transform -translate-y-9 -translate-x-4 scale-90;
+} */
+
+/* If input is empty */
+/* input:placeholder-shown {
+  border-color: red;
+} */
