@@ -1,34 +1,20 @@
 import "./App.css";
-import { FooterComponent } from "./components/FooterComponent";
-import { HeaderComponent } from "./components/HeaderComponent";
-import {Popularplace} from "./components/Popularplace"
-
-
-import "./App.css";
-import Testimonial from "./components/Testimonial.jsx";
-
-import HomeCard from "./components/HomeCard";
-
-import { MostSearchedLocations } from "./components/MostSearchedLocations";
-// import { PlaceSearchBarComponent } from "./components/PlaceSearchBarComponent";
-
+import React from 'react';
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import HomePage from './pages/Home';
+import HotelInfo from './pages/HotelInfo'
 function App() {
   return (
-    <div className="App">
-      <HeaderComponent />
-      <HomeCard />
+      <BrowserRouter>
+        <Routes>
 
-      
-
-      
-      <MostSearchedLocations/>
-      <p className=" text-start text-2xl font-bold">Popular Places</p>
-      <Popularplace/>
-        <Testimonial/>
-  
-
-      <FooterComponent/>
-    </div>
+        <Route index element={<HomePage />} />
+        <Route path="/home" element={<HomePage/>}/>
+        <Route path="/hotelinfo" element={<HotelInfo />} />
+        </Routes>
+      </BrowserRouter>
+     
+    
   );
 }
 
