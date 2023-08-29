@@ -22,6 +22,7 @@ function App() {
 
       
       <MostSearchedLocations/>
+      <p className=" text-start text-2xl font-bold">Popular Places</p>
       <Popularplace/>
         <Testimonial/>
   
