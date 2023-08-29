@@ -37,7 +37,7 @@ export const PlaceSearchBarComponent = () => {
 
   return (
     <div className=" flex justify-center items-center  w-full  h-24">
-      <div className="bg-white flex justify-between items-center w-10/12 h-full rounded-lg p-8   ">
+      <div className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   ">
         <div>
           <label className="relative">
             <input
