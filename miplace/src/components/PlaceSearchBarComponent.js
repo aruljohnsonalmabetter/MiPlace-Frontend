@@ -36,8 +36,8 @@ export const PlaceSearchBarComponent = () => {
   //   setDays(nights);
 
   return (
-    <div className=" flex justify-center items-center  w-full  h-24">
-      <div className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   ">
+    <div className=" flex justify-center items-center  w-full h-24 ">
+      <div className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black ">
         <div>
           <label className="relative">
             <input
@@ -109,7 +109,7 @@ export const PlaceSearchBarComponent = () => {
         </div> */}
 
         <div className=" ">
-          <p className="rounded-3xl	 px-3 py-1 border-2 border-solid border-none border-opacity-40	 text-lg text-white bg-black bg-opacity-80">
+          <p className="rounded-3xl	 px-3 py-1 border-2 border-solid border-none border-opacity-40	text-lg text-white bg-black bg-opacity-80">
             {firstDay && secondDay
               ? getNumberOfNightsBetweenDates(firstDay, secondDay)
               : 0}{" "}

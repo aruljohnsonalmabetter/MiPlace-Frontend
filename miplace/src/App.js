@@ -20,6 +20,8 @@
 //       </BrowserRouter>
 
 //     </>
+
+import "./App.css";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/Home";
@@ -29,6 +31,7 @@ import FooterComponent from "./components/FooterComponent";
 import Login from "./components/LoginFormComponent";
 import OTP from "./pages/OTP";
 import SearchResults from "./pages/SearchResults";
+import ErrorScreen from "./pages/ErrorScreen";
 function App() {
   return (
     <BrowserRouter>
@@ -41,6 +44,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/otp" element={<OTP />} />
+        <Route path="*" element={<ErrorScreen />} />
       </Routes>
       <FooterComponent />
     </BrowserRouter>
