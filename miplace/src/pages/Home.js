@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Popularplace } from "../components/Popularplace";
 
 import Testimonial from "../components/Testimonial.jsx";
