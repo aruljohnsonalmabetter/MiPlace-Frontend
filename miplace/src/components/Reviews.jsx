@@ -1,7 +1,9 @@
 import React from 'react';
-import Rating from './Rating'; 
+import Rating from './Rating';
 import user1Image from '../images/girl.jpg'
 import user2Image from '../images/girl2.png';
+import { Link } from 'react-router-dom';
+import { WriteReview } from './WriteReview';
 
 
 const reviews = [
@@ -44,8 +46,8 @@ const reviews = [
         },
         rating: 3.5,
         reviewText: 'Excellent quality and fast delivery. Highly recommended!',
-    },  
-  
+    },
+
 ];
 
 const ReviewsComponent = () => {
@@ -54,9 +56,11 @@ const ReviewsComponent = () => {
             <div className="w-1407px h-740px p-0 space-y-4 overflow-y-scroll">
                 <div className="flex items-center justify-between mb-4">
                     <h1 className="text-2xl font-bold">Reviews</h1>
-                    <button className="bg-blue-500 text-white py-2 px-4 rounded">
-                        Get Your Review
-                    </button>
+                    <Link to="/writeReview">
+                        <button className="bg-blue-500 text-white py-2 px-4 rounded">
+                            Give Your Review
+                        </button>
+                    </Link>
                 </div>
                 {reviews.map((review, index) => (
                     <div key={index} className="flex items-center space-x-4">
