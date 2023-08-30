@@ -6,6 +6,7 @@ import HotelInfo from './pages/HotelInfo'
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import Login from './components/LoginFormComponent';
+import OTP from './pages/OTP'
 function App() {
   return (
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/hotelinfo" element={<HotelInfo />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/otp" element={<OTP />} />
       </Routes>
      <FooterComponent/>
     </BrowserRouter>
