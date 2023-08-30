@@ -32,6 +32,7 @@ import Login from "./components/LoginFormComponent";
 import OTP from "./pages/OTP";
 import SearchResults from "./pages/SearchResults";
 import ErrorScreen from "./pages/ErrorScreen";
+import { WriteReview } from "./components/WriteReview";
 function App() {
   return (
     <BrowserRouter>
@@ -44,6 +45,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/otp" element={<OTP />} />
+        <Route path="/writeReview" element={<WriteReview />} />
         <Route path="*" element={<ErrorScreen />} />
       </Routes>
       <FooterComponent />
