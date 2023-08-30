@@ -1,6 +1,5 @@
 import React from 'react'
-import { FooterComponent } from "../components/FooterComponent";
-import { HeaderComponent } from "../components/HeaderComponent";
+
 import { Popularplace } from "../components/Popularplace";
 
 
@@ -13,7 +12,7 @@ import { MostSearchedLocations } from '../components/MostSearchedLocations';
 function Home() {
   return (
     <div>
-      <HeaderComponent />
+      
       <HomeCard />
       
       <MostSearchedLocations/>
@@ -21,7 +20,7 @@ function Home() {
         <Testimonial/>
   
 
-      <FooterComponent/> </div>
+      </div>
   )
 }
 
