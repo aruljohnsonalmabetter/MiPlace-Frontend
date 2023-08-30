@@ -1,7 +1,6 @@
-
 import React from 'react'
-
-
+import image from '../images/BG (1).webp'
+import image1 from '../images/BG-1 (1).webp'
 export default function Testimonial(){
   return (
     <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -11,12 +10,14 @@ export default function Testimonial(){
    <h3 class="text-sky-500 font-semibold">TESTIMONIALS</h3>
    <h1 class="font-popins text-6xl font-semibold">Don’t just take our words</h1>
 
-    <div class="flex mt-10 space-x-10 ">
+    <div class="flex mt-10 space-x-20 ">
 
             <div class="flex mx-auto  ">
                 
                        <div class="flex space-x-4">
-                       <img class="mx-auto h-20 w-20  " src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
+                       <img class="mx-auto h-30 w-30  " 
+                       src={image}
+                       alt=""/>
                        
                        
                        <div class=" text-left  items-center justify-center space-x-3 text-base">
@@ -31,7 +32,9 @@ export default function Testimonial(){
             </div>
         <div class="">
                 <div class="flex space-x-4">
-                       <img class="mx-auto h-20 w-20" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
+                <img class="mx-auto h-30 w-30  " 
+                       src={image1}
+                       alt=""/>       
                        <div class=" text-left items-center justify-center  text-base">
                            <div class="font-semibold text-gray-900">Judith Black</div>
                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">

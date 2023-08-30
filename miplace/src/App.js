@@ -23,6 +23,8 @@
 
 import "./App.css";
 import React from "react";
+
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/Home";
 import HotelInfo from "./pages/HotelInfo";
@@ -33,6 +35,11 @@ import OTP from "./pages/OTP";
 import SearchResults from "./pages/SearchResults";
 import ErrorScreen from "./pages/ErrorScreen";
 import { WriteReview } from "./components/WriteReview";
+import BookingInfoandBill from './pages/BookingInfoandBill'
+import MyBookings from './pages/MyBookings'
+import EmailUsContactUs from './pages/EmailUsContactUs'
+import CustomerSupport from './pages/CustomerSupport'
+
 function App() {
   return (
     <BrowserRouter>
@@ -45,6 +52,11 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/otp" element={<OTP />} />
+        <Route path="/bookingInfoandBill" element={<BookingInfoandBill/>} />
+        <Route path="/mybookings" element={<MyBookings />} />
+        <Route path="/emailuscontactus" element={<EmailUsContactUs />} />
+        <Route path="/customersupport" element={<CustomerSupport />} />
+
         <Route path="/writeReview" element={<WriteReview />} />
         <Route path="*" element={<ErrorScreen />} />
       </Routes>
