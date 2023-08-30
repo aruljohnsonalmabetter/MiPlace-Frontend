@@ -1,20 +1,26 @@
 import "./App.css";
 import React from 'react';
-import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home';
 import HotelInfo from './pages/HotelInfo'
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
+import Login from './components/LoginFormComponent';
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
 
+    <BrowserRouter>
+      <HeaderComponent/>
+      <Routes>
         <Route index element={<HomePage />} />
-        <Route path="/home" element={<HomePage/>}/>
+        <Route path="/home" element={<HomePage />} />
         <Route path="/hotelinfo" element={<HotelInfo />} />
-        </Routes>
-      </BrowserRouter>
-     
-    
+        <Route path="/login" element={<Login />} />
+      </Routes>
+     <FooterComponent/>
+    </BrowserRouter>
+
+
   );
 }
 

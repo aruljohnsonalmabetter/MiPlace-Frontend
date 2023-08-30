@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const FooterComponent = () => {
+ const FooterComponent = () => {
     return (
         <div className='p-3 footer flex justify-center items-center top-0 sticky bg-white'>
             <div className=' flex justify-between items-center  w-11/12 h-full	'>
@@ -33,10 +33,8 @@ export const FooterComponent = () => {
                     </ul>
                 </div>
 
-
-
-
             </div>
         </div>
     )
 }
+export default FooterComponent;
