@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import image from '../images/reception.webp';
+import { Link } from 'react-router-dom';
 
 const LoginFormComponent = () => {
         const [name, setName] = useState("");
@@ -42,7 +43,9 @@ const LoginFormComponent = () => {
                         <option value="+86">+86 (China)</option>
                     </select>
                     <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md w-1/3">
-                        Login
+                        <Link to="/otp" >
+                           Get OTP
+                        </Link>
                     </button>
                 </div>
             </div>

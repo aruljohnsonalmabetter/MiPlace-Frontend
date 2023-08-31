@@ -1,6 +1,8 @@
 
 import React, { useState } from "react";
 import image from '../images/reception.webp';
+import { Link } from 'react-router-dom';
+
 function OTP() {
   const [OTPass, setOTPass] = useState("");
 
@@ -23,8 +25,11 @@ function OTP() {
       />
       
       <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md w-1/3">
-        Get OTP
-      </button>
+        Verify
+        </button>
+        <Link to="/login" className='px-6 py-3 text-black no-underline hover:underline'>
+          Get otp again? Resend.
+        </Link>
     </div>
     </div>
   )
