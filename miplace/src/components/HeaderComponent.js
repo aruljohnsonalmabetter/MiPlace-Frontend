@@ -12,11 +12,20 @@ const HeaderComponent = () => {
         </div>
         <div className="w-2/5 text-lg">
           <ul className="flex justify-between items-center">
-            <li>About Us</li>
-            <li>Contact Us</li>
+            {/* Use Link to navigate to the login page */}
+            <Link to="/login" className="">
+            About Us
+          </Link>
+            <li>
+
+            
+              <Link to="/emailuscontactus" className="">
+                Contact Us </Link>
+            </li>
+            
             <li>
               {/* Use Link to navigate to the login page */}
-              <Link to="/login" className="btn px-6 py-3 rounded-md">
+              <Link to="/login" className="">
                 Login
               </Link>
             </li>
