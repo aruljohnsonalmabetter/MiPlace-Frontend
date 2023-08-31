@@ -13,22 +13,6 @@ const HeaderComponent = () => {
             <h2 >MiPlace</h2>
           </Link>
         </div>
-<<<<<<< HEAD
-        <div className="w-2/5 text-lg">
-          <ul className="flex justify-between items-center">
-            {/* Use Link to navigate to the login page */}
-            <Link to="/login" className="">
-            About Us
-          </Link>
-            <li>
-
-            
-              <Link to="/emailuscontactus" className="">
-                Contact Us </Link>
-            </li>
-            
-            <li>
-=======
 
         <div
           onClick={() => setOpen(!open)}
@@ -48,7 +32,6 @@ const HeaderComponent = () => {
             <li className="md:ml-8 text-xl md:my-0 my-7">About Us</li>
             <li className="md:ml-8 text-xl md:my-0 my-7">Contact Us</li>
             <li className="md:ml-8 text-xl md:my-0 my-7">
->>>>>>> 06ea8a622dec6b3bc09e5ebcd56ece5589f2c7bd
               {/* Use Link to navigate to the login page */}
               <Link to="/login" className="">
                 Login
