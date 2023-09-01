@@ -40,6 +40,8 @@ const HeaderComponent = () => {
               </Link>
             </li>
             <li className="md:ml-8 text-xl md:my-0 my-7">
+              {/* Use Link to navigate to the login page */}
+
               <Link to="/login" className="">
                 Login
               </Link>
