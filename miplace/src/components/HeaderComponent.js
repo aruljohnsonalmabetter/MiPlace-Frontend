@@ -10,7 +10,7 @@ const HeaderComponent = () => {
       <div className="flex justify-between items-center w-11/12 h-full">
         <div className=" logo font-bold text-xl">
           <Link to="/">
-            <h2 >MiPlace</h2>
+            <h2>MiPlace</h2>
           </Link>
         </div>
 
@@ -29,16 +29,24 @@ const HeaderComponent = () => {
             } `}
           >
             {/* <ul className="flex justify-between items-center"> */}
-            <li className="md:ml-8 text-xl md:my-0 my-7">About Us</li>
-            <li className="md:ml-8 text-xl md:my-0 my-7">Contact Us</li>
+            <li className="md:ml-8 text-xl md:my-0 my-7">
+              <Link to="/aboutUs" className="">
+                About Us{" "}
+              </Link>
+            </li>
+            <li className="md:ml-8 text-xl md:my-0 my-7">
+              <Link to="/emailuscontactus" className="">
+                Contact Us
+              </Link>
+            </li>
             <li className="md:ml-8 text-xl md:my-0 my-7">
               {/* Use Link to navigate to the login page */}
+
               <Link to="/login" className="">
                 Login
               </Link>
             </li>
             <li className="md:ml-8 text-xl md:my-0 my-7">
-              {/* Use Link to navigate to the sign-up page */}
               <Link to="/signup" className="btn px-6 py-3 rounded-md">
                 Sign Up
               </Link>
