@@ -10,7 +10,7 @@ export default function Testimonial(){
    <h3 class="text-sky-500 font-semibold">TESTIMONIALS</h3>
    <h1 class="font-popins text-6xl font-semibold">Don’t just take our words</h1>
 
-    <div class="flex mt-10 space-x-20 ">
+    <div class="flex mt-10 justify-between ">
 
             <div class="flex mx-auto  ">
                 
