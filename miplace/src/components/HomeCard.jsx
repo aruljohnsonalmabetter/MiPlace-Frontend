@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImage from '../images/Homecard.webp';
+import backgroundImage from '../images/scene.webp';
 import { PlaceSearchBarComponent } from './PlaceSearchBarComponent';
 
 const HomeCard = () => {
