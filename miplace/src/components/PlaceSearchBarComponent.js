@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./styles.css";
 
 export const PlaceSearchBarComponent = () => {
   const [city, setCity] = useState();
@@ -36,8 +37,8 @@ export const PlaceSearchBarComponent = () => {
   //   setDays(nights);
 
   return (
-    <div className=" flex justify-center items-center  w-full h-24 ">
-      <div className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black ">
+    <div id ="largecontainer" className=" flex justify-center items-center  w-full h-24 ">
+      <div id = "container" className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black ">
         <div>
           <label className="relative">
             <input
@@ -61,7 +62,6 @@ export const PlaceSearchBarComponent = () => {
             </span> */}
           </label>
         </div>
-
         <div>
           <label className="relative">
             <input
