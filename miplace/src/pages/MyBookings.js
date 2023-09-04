@@ -1,16 +1,18 @@
 import React from 'react'
-
+import Button from '../components/Button'
 function MyBookings() {
   return (
     <div>
-        <div class="flex mx-[3.125rem] gap-[35rem] space-x-4 mx-auto border-solid border-2 border-indigo-600">
+        <div class="flex justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600">
             <div>
                 <h1>Lemon Tree Premier Pune</h1>
                 <h3>City Center, 15 & 15A, Connaught Rd, Modi Colony, Pune, Maharashtra 411001</h3>
             </div>
             <div>
                 <h1>₹ 2349/night</h1>
-                <button>Download</button>
+                <Button
+                 text="Download"
+                />
             </div>
         </div>
         <div class="flex mx-[3.125rem] border-double border-4 border-indigo-600 ">

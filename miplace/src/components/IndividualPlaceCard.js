@@ -5,6 +5,7 @@ import { BiSolidLocationPlus } from "react-icons/bi";
 import { FcLike } from "react-icons/fc";
 import { BsFillCupFill } from "react-icons/bs";
 import Rating from "./Rating";
+import { Link } from 'react-router-dom';
 
 export const IndividualPlaceCard = () => {
   return (
@@ -67,9 +68,11 @@ export const IndividualPlaceCard = () => {
             <div className="border-2 border-black p-2  rounded-md m-2">
               <FcLike className="text-2xl hover:scale-75   cursor-pointer transition ease-in-out delay-250" />
             </div>
+            <Link to="/hotelinfo" >
             <button className="bg-blue-800 w-full p-3 bordeer-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold  ">
               View Place
             </button>
+            </Link>
           </div>
         </div>
       </div>
