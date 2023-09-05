@@ -3,7 +3,10 @@ import { FilterTabComponent } from "../components/FilterTabComponent";
 import { PlaceCard } from "../components/PlaceCard";
 import { PlaceSearchBarComponent } from "../components/PlaceSearchBarComponent";
 
+// import { useSelector } from "react-redux/es/hooks/useSelector";
+
 function SearchResults() {
+  // const hotels = useSelector((state) => state.hotelFeature.hotels);
   return (
     <div className="h-full p-6 ">
       <div className="">

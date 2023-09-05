@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  fetchHotelsFailure,
+  fetchHotelsStart,
+  fetchHotelsSuccess,
+} from "../redux-features/hotelSlice";
 
 export const PlaceSearchBarComponent = () => {
   const [city, setCity] = useState();
   const [roomsGuests, setRoomsGuests] = useState();
-  const [days, setDays] = useState(0);
   const [firstDay, setFirstDay] = useState("");
   const [secondDay, setSecondDay] = useState("");
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function getNumberOfNightsBetweenDates(start_date, end_date) {
     if (start_date && end_date) {
@@ -34,11 +45,60 @@ export const PlaceSearchBarComponent = () => {
     }
     return 0;
   }
-  //   setDays(nights);
+
+  const handleSearch = async () => {
+    if (
+      city === "" ||
+      firstDay === "" ||
+      secondDay === "" ||
+      roomsGuests === ""
+    )
+      return alert("Please enter all the details");
+
+    //----------
+    dispatch(fetchHotelsStart());
+
+    navigate("/searchResults");
+    console.log("Entered Hotel Data : ");
+    console.log(city);
+    console.log(firstDay);
+    console.log(secondDay);
+    console.log(roomsGuests);
+
+    const options = {
+      method: "GET",
+      url: "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation",
+      params: {
+        cityName: city,
+        countryName: "India",
+      },
+      headers: {
+        "X-RapidAPI-Key": "5ec9036550msh61d2fa84395ad4ep1a400ejsn7b162fc14eba",
+        "X-RapidAPI-Host": "best-booking-com-hotel.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await axios.request(options);
+      dispatch(fetchHotelsSuccess(response.data));
+
+      console.log(response.data);
+      // console.log(typeof(response.data));
+    } catch (error) {
+      // dispatch(fetchHotelsFailure(error));
+      console.error(error);
+    }
+  };
 
   return (
-    <div id ="largecontainer" className=" flex justify-center items-center  w-full h-24 ">
-      <div id = "container" className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black ">
+    <div
+      id="largecontainer"
+      className=" flex justify-center items-center  w-full h-24  flex-col"
+    >
+      <div
+        id="container"
+        className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black "
+      >
         <div>
           <label className="relative">
             <input
@@ -48,7 +108,7 @@ export const PlaceSearchBarComponent = () => {
               onChange={(e) => setCity(e.target.value)}
               placeholder=" "
             />
-            <span className="top-0 absolute left-0  mx-3  transition duration-200 input-text">
+            <span className="top-0 absolute left-0  mx-3  transition duration-200 input-text text-bold">
               Enter City or Location
             </span>
             {/* <span
@@ -125,15 +185,30 @@ export const PlaceSearchBarComponent = () => {
               className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5 w-64  rounded-md  transition duration-200"
               type="text"
               placeholder=" "
-
+              value={roomsGuests}
+              onChange={(e) => setRoomsGuests(e.target.value)}
               // placeholder="Enter a location"
             />
-            <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text">
+            <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text text-bold">
               Rooms and Guests
             </span>
           </label>
         </div>
       </div>
+      {/* <Link
+        to="/searchResults"
+        className="bg-[#196680] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md hover:bg-sky-600 transition-all duration-500 ease-in"
+      >
+        <button className="w-full" onClick={handleSearch}>
+          Search
+        </button>
+      </Link> */}
+      <button
+        className="bg-[#196680] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md hover:bg-sky-600 transition-all duration-500 ease-in"
+        onClick={handleSearch}
+      >
+        Search
+      </button>
     </div>
   );
 };
