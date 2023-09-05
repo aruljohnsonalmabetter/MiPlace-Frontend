@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function BookingInfoandBill() {
   return (
    
-    <div class="flex border-solid border-2 border-indigo-600  gap-[2.5rem]">
+    <div class="flex px-[7rem] border-solid border-2 border-indigo-600  gap-[2.5rem]">
    
       <div class="  mt-[2.5rem]  w-[49.375rem] h-[64.25rem]  ">
        
