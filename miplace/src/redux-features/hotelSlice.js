@@ -1,4 +1,3 @@
-// hotelSlice.js
 
 import { createSlice } from '@reduxjs/toolkit';
 

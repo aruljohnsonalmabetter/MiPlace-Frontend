@@ -1,4 +1,3 @@
-// bookingSlice.js
 
 import { createSlice } from '@reduxjs/toolkit';
 
