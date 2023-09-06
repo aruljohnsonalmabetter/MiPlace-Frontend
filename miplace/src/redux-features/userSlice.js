@@ -4,6 +4,7 @@ const initialState = {
   userName: "",
   phoneNumber: "",
   address: "",
+  // favHotel: {},
   favHotel: [],
   bookedHotel: {},
 };
@@ -18,7 +19,9 @@ const userSlice = createSlice({
       state.address = action.payload.address;
     },
     addFavHotel: (state, action) => {
+      // state.favHotel = action.payload;
       state.favHotel.push(action.payload);
+      console.log(state.favHotel);
     },
     bookHotel: (state, action) => {
       state.bookedHotel = action.payload;
@@ -27,4 +30,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const { addUser, addFavHotel ,bookHotel} = userSlice.actions;
+export const { addUser, addFavHotel, bookHotel } = userSlice.actions;

@@ -5,6 +5,8 @@ import { FcLike } from "react-icons/fc";
 import { BsFillCupFill } from "react-icons/bs";
 import Rating from "./Rating";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavHotel } from "../redux-features/userSlice";
 
 export const IndividualPlaceCard = ({
   address,
@@ -16,7 +18,19 @@ export const IndividualPlaceCard = ({
   review_score_word,
   url,
   price_breakdown,
+  Hotel_obj,
 }) => {
+  let dispatch = useDispatch();
+  let favHotel = useSelector((state) => state.userFeature.favHotel);
+  // useEffect(() => {
+  //   console.log(favHotel)
+  // }, [favHotel]);
+  const handleAddtoFav = () => {
+    dispatch(addFavHotel(Hotel_obj));
+    console.log(favHotel)
+    console.log(Hotel_obj);
+  };
+
   return (
     <div className=" w-full  rounded-lg my-3">
       {/* Divide into two parts */}
@@ -78,9 +92,12 @@ export const IndividualPlaceCard = ({
           </div>
 
           <div className=" flex justify-evenly items-center w-full">
-            <div className="border-2 border-black p-2  rounded-md m-2">
-              <FcLike className="text-2xl hover:scale-75   cursor-pointer transition ease-in-out delay-250" />
-            </div>
+            <button
+              className="border-2 border-black p-2  rounded-md m-2"
+              onClick={handleAddtoFav}
+            >
+              <FcLike className="text-2xl hover:scale-75    transition ease-in-out delay-250" />
+            </button>
             <Link to="/hotelinfo " className="w-full bg-blue-800 rounded-md">
               <button className=" w-full p-3 border-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold ">
                 View Place

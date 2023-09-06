@@ -8,17 +8,23 @@ export const PlaceCard = () => {
   const error = useSelector((state) => state.hotelFeature.error);
 
   const [allHotels, setAllHotels] = useState([]);
+  const [lowToHighHotels, setlowToHighHotels] = useState([]);
+  const [highToLowHotels, sethighToLowHotels] = useState([]);
   // const [hotelName, setHotelName] = useState(null);
   // const [rating, setRating] = useState("");
   // const [link, setLink] = useState("");
   useEffect(() => {
     setAllHotels(hotels);
+    // let hotel1 = hotels;
+    // let hotel2 = hotels;
     // setHotelName(hotels.name);
     // setRating(hotels.rating);
     // setLink(hotels.link);
-    console.log(hotels);
-    console.log(loading);
-    console.log(error);
+    // sethighToLowHotels(hotel1.sort(()=> (a, b) => a - b));
+    // sethighToLowHotels(hotel2.sort((a, b) => b - a));
+    // console.log(hotels);
+    // console.log(loading);
+    // console.log(error);
   }, [hotels, loading, error]);
 
   return (
@@ -44,6 +50,7 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  Hotel_obj={hotel}
                   address={hotel.address}
                   city={hotel.city_trans}
                   district={hotel.district}
