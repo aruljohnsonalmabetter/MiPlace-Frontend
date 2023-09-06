@@ -1,13 +1,12 @@
 import React from "react";
 import place from "../images/Mars-Orbit-Mission.jpg";
-// import { BiSolidLocationPlus } from 'react-icons/fa';
 import { BiSolidLocationPlus } from "react-icons/bi";
 import { FcLike } from "react-icons/fc";
 import { BsFillCupFill } from "react-icons/bs";
 import Rating from "./Rating";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-export const IndividualPlaceCard = () => {
+export const IndividualPlaceCard = ({ hotelName, rating, link }) => {
   return (
     <div className=" w-full  rounded-lg my-3">
       {/* Divide into two parts */}
@@ -27,9 +26,10 @@ export const IndividualPlaceCard = () => {
             <div className=" m-2 w-9/12  ">
               <p className="text-3xl text-bold ">
                 {/* {HotelName} */}
-                Lemon Tree Premier Pune
+                {/* Lemon Tree Premier Pune */}
+                {hotelName?hotelName:<div>loading..</div>} 
               </p>
-              <p className="text-sm">
+              <div className="text-sm">
                 {/* {HotelAddress} */}
                 <BiSolidLocationPlus className="inline text-lg" /> City Center,
                 15 & 15A, Connaught Rd, Modi Colony, Pune, Maharashtra 411001{" "}
@@ -47,13 +47,13 @@ export const IndividualPlaceCard = () => {
                 </div>
                 <div className="flex  items-center my-4">
                   <p className="border-2 mr-4 inline border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300 text-bold  	">
-                    4.2
+                    {rating}
                   </p>
                   <p className="text-lg">
                     <p className="text-bold  inline"> Very Good</p> 371 reviews
                   </p>
                 </div>
-              </p>
+              </div>
             </div>
 
             {/* Price Part */}
@@ -68,10 +68,10 @@ export const IndividualPlaceCard = () => {
             <div className="border-2 border-black p-2  rounded-md m-2">
               <FcLike className="text-2xl hover:scale-75   cursor-pointer transition ease-in-out delay-250" />
             </div>
-            <Link to="/hotelinfo" >
-            <button className="bg-blue-800 w-full p-3 bordeer-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold  ">
-              View Place
-            </button>
+            <Link to="/hotelinfo " className="w-full bg-blue-800 rounded-md">
+              <button className=" w-full p-3 border-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold ">
+                View Place
+              </button>
             </Link>
           </div>
         </div>
