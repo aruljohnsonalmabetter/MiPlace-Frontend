@@ -1,3 +1,21 @@
+<!-- Rudransh -->
+will take only the first result array of every city search
+properties/get-facilities -> A call to this end point to load the amenities and for free amenities check for kind="free_or_paid"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
