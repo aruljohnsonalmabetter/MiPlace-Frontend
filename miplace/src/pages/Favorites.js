@@ -22,9 +22,9 @@ export const Favorites = () => {
           </div>
         </div>
         <div className="">
-          <FavoritesPlaceCardComponent/>
+          {/* <FavoritesPlaceCardComponent/> */}
           {/* {favHotel == undefined ? <div>Bad</div> : <div>Good</div>} */}
-          {/* {favHotel!=undefined && favHotel.length === 0 ? (
+          {favHotel.length === 0 ? (
             <div className="text-3xl w-full  rounded-lg my-3  flex justify-center items-center p-4 text-bold">
               Add Hotels to the fav list🛎️🏩....
             </div>
@@ -47,7 +47,7 @@ export const Favorites = () => {
                 </div>
               );
             })
-          )} */}
+          )}
         </div>
       </div>
     </div>

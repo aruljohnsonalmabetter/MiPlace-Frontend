@@ -20,7 +20,19 @@ const userSlice = createSlice({
     },
     addFavHotel: (state, action) => {
       // state.favHotel = action.payload;
-      state.favHotel.push(action.payload);
+      let exists = true;
+      state.favHotel.map(function(hotel) {
+        if (exists === true && hotel.hotel_id === action.payload.hotel_id) {
+          exists = false;
+          // break;
+        }
+      });
+      // state.favHotel.map((hotel)=>{
+      //   if(hotel.hotel_id == action.payload.hotel_id)){
+      //     exists=false;
+      //   }
+      // });
+      exists && state.favHotel.push(action.payload);
       console.log(state.favHotel);
     },
     bookHotel: (state, action) => {
