@@ -17,11 +17,11 @@ function SearchResults() {
           <div className=" flex justify-between items-start w-11/12">
             {/* <div className=" flex justify-between items-center "> */}
             <FilterTabComponent />
-            <div className=" flex justify-center items-center flex-col">
+            <div className=" flex justify-center items-center flex-col w-full">
               <PlaceCard />
-              <button className="bg-black text-white rounded-md w-full p-3 transition ease-in-out delay-250  hover:bg-gray-800 duration-300 text-bold  ">
+              {/* <button className="bg-black text-white rounded-md w-full p-3 transition ease-in-out delay-250  hover:bg-gray-800 duration-300 text-bold  ">
                 Show more results
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

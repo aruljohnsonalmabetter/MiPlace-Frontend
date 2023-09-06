@@ -6,7 +6,18 @@ import { FcLike } from "react-icons/fc";
 import { BsFillCupFill } from "react-icons/bs";
 import Rating from "./Rating";
 
-export const FavoritesPlaceCardComponent = () => {
+export const FavoritesPlaceCardComponent = ({
+  address,
+  city,
+  district,
+  hotel_name,
+  main_photo_url,
+  review_score,
+  review_score_word,
+  url,
+  price_breakdown,
+  Hotel_obj,
+}) => {
   return (
     <div className=" w-full  rounded-lg my-3 ">
       {/* Divide into two parts */}
@@ -14,7 +25,7 @@ export const FavoritesPlaceCardComponent = () => {
         {/* IMG */}
         <div>
           <img
-            src={place}
+            src={main_photo_url}
             alt="asd"
             className="overflow-none h-[310px] w-[340px] object-cover	rounded-md"
           />
@@ -26,12 +37,12 @@ export const FavoritesPlaceCardComponent = () => {
             <div className=" m-2 w-9/12  ">
               <p className="text-3xl text-bold ">
                 {/* {HotelName} */}
-                Lemon Tree Premier Pune
+                {hotel_name}
               </p>
               <p className="text-sm">
                 {/* {HotelAddress} */}
-                <BiSolidLocationPlus className="inline text-lg" /> City Center,
-                15 & 15A, Connaught Rd, Modi Colony, Pune, Maharashtra 411001{" "}
+                <BiSolidLocationPlus className="inline text-lg" />                 {address},{district} ,{city}
+
                 <div className="flex justify-between items-center text-bold">
                   <div className="flex justify-between items-center">
                     <div className="flex justify-center items-center ">
@@ -46,10 +57,11 @@ export const FavoritesPlaceCardComponent = () => {
                 </div>
                 <div className="flex  items-center my-4">
                   <p className="border-2 mr-4 inline border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300 text-bold  	">
-                    4.2
+                  {review_score}
+
                   </p>
                   <p className="">
-                    <p className="text-bold  inline "> Very Good</p> 
+                    <p className="text-bold  inline ">{review_score_word}</p>
                     <p className=" inline"> 371 reviews</p>
                   </p>
                 </div>
@@ -59,7 +71,7 @@ export const FavoritesPlaceCardComponent = () => {
             {/* Price Part */}
             <div className="m-2  p-2 text-right ">
               <p> starting from</p>
-              <p className="text-lg text-bold text-red-500 ">₹ 2349/night</p>
+              <p className="text-lg text-bold text-red-500 ">₹ {price_breakdown}/night</p>
               <p className="">excl. tax</p>
             </div>
           </div>

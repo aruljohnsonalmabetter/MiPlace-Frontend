@@ -12,16 +12,16 @@ export const PlaceSearchBarRating = () => {
             0+
           </button>
           <button className="border-2 text-bold border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300	">
-            1+
-          </button>
-          <button className="border-2 text-bold border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300	">
             2+
           </button>
           <button className="border-2 text-bold border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300	">
-            3+
+            4+
           </button>
           <button className="border-2 text-bold border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300	">
-            4+
+            6+
+          </button>
+          <button className="border-2 text-bold border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300	">
+            8+
           </button>
         </div>
       </div>

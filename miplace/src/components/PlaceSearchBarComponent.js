@@ -11,8 +11,8 @@ import {
 } from "../redux-features/hotelSlice";
 
 export const PlaceSearchBarComponent = () => {
-  const [city, setCity] = useState();
-  const [roomsGuests, setRoomsGuests] = useState();
+  const [city, setCity] = useState("");
+  const [roomsGuests, setRoomsGuests] = useState("");
   const [firstDay, setFirstDay] = useState("");
   const [secondDay, setSecondDay] = useState("");
 
@@ -65,27 +65,82 @@ export const PlaceSearchBarComponent = () => {
     console.log(secondDay);
     console.log(roomsGuests);
 
-    const options = {
+    // const options = {
+    //   method: "GET",
+    //   url: "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation",
+    //   params: {
+    //     cityName: city,
+    //     countryName: "India",
+    //   },
+    //   headers: {
+    //     "X-RapidAPI-Key": "5ec9036550msh61d2fa84395ad4ep1a400ejsn7b162fc14eba",
+    //     "X-RapidAPI-Host": "best-booking-com-hotel.p.rapidapi.com",
+    //   },
+    // };
+
+    // try {
+    //   const response = await axios.request(options);
+    //   dispatch(fetchHotelsSuccess(response.data));
+
+    //   console.log(response.data);
+    //   // console.log(typeof(response.data));
+    // } catch (error) {
+    //   dispatch(fetchHotelsFailure(error));
+    //   console.error(error);
+    // }
+
+    // https://rapidapi.com/apidojo/api/booking
+
+    const options1 = {
       method: "GET",
-      url: "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation",
+      url: "https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete",
       params: {
-        cityName: city,
-        countryName: "India",
+        text: city,
+        languagecode: "en-us",
       },
       headers: {
-        "X-RapidAPI-Key": "5ec9036550msh61d2fa84395ad4ep1a400ejsn7b162fc14eba",
-        "X-RapidAPI-Host": "best-booking-com-hotel.p.rapidapi.com",
+        "X-RapidAPI-Key": "61cb1a08f0mshd64d9d9a395d1dbp1298acjsnecd88864da94",
+        "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
       },
     };
 
     try {
-      const response = await axios.request(options);
-      dispatch(fetchHotelsSuccess(response.data));
+      const response = await axios.request(options1);
+      const dest_id = await response.data[0].dest_id;
 
-      console.log(response.data);
-      // console.log(typeof(response.data));
+      const options2 = {
+        method: "GET",
+        url: "https://apidojo-booking-v1.p.rapidapi.com/properties/list",
+        params: {
+          offset: "0",
+          arrival_date: firstDay,
+          departure_date: secondDay,
+          guest_qty: "1",
+          dest_ids: dest_id,
+          room_qty: "1",
+          search_type: "city",
+          children_qty: "2",
+          children_age: "5,7",
+          search_id: "none",
+          price_filter_currencycode: "USD",
+          order_by: "popularity",
+          languagecode: "en-us",
+          travel_purpose: "leisure",
+        },
+        headers: {
+          "X-RapidAPI-Key":
+            "61cb1a08f0mshd64d9d9a395d1dbp1298acjsnecd88864da94",
+          "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
+        },
+      };
+      const response2 = await axios.request(options2);
+
+      dispatch(fetchHotelsSuccess(response2.data.result));
+      // console.log(response);
+      // console.log(dest_id);
+      // console.log(response2.data.result);
     } catch (error) {
-      // dispatch(fetchHotelsFailure(error));
+      dispatch(fetchHotelsFailure(error));
       console.error(error);
     }
   };
