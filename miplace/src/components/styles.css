@@ -1,3 +1,8 @@
+ /* *{
+    margin :0;
+    padding :0;
+    box-sizing: border-box;
+ } */
  #largecontainer{
     @media screen and (max-width: 1200px) {
             height: 20%;
@@ -5,7 +10,7 @@
         }
  }
  
- #container{
+#container{
 @media screen and (max-width: 1200px) {
    flex-direction :column;
    /* height : 70%; */
@@ -19,3 +24,26 @@
         gap: 4px;
     }
 }
+#txt{
+@media screen and (max-width: 1200px) {
+        padding-bottom: 50px ;
+    }
+@media screen and (max-width: 663px) {
+            padding-bottom: 30px;
+            font-size:larger;
+            font-weight:bold;
+        }
+}
+#box{
+    @media screen and (max-width: 663px) {
+            flex-direction: column;
+            gap:4px;
+        }
+}
+#testimonial{
+    @media screen and (max-width: 1038px) {
+            flex-direction: column;
+            gap:6px;
+        }
+}
+ 

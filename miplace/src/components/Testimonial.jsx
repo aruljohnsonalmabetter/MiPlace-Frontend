@@ -8,13 +8,13 @@ export default function Testimonial(){
   <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
   <div class="mx-auto max-w-2xl lg:max-w-4xl">
    <h3 class="text-sky-500 font-semibold">TESTIMONIALS</h3>
-   <h1 class="font-popins text-6xl font-semibold">Don’t just take our words</h1>
+              <h1 class="font-popins text-6xl font-semibold md:text-3xl">Don’t just take our words</h1>
 
-    <div class="flex mt-10 justify-between ">
+    <div id ="testimonial"class="flex mt-10 justify-between">
 
-            <div class="flex mx-auto  ">
+            <div class="flex mx-auto">
                 
-                       <div class="flex space-x-4">
+                       <div class="flex space-x-4 ">
                        <img class="mx-auto h-30 w-30  " 
                        src={image}
                        alt=""/>
