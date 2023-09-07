@@ -8,7 +8,7 @@ import Image4 from '../images/Rectangle 6 (2).webp'
 function Imagegrid() {
   return (
     <>
-    <div class="flex">
+    <div className="flex justify-center px-1.5">
     <div>
         <img
             src={Image}
