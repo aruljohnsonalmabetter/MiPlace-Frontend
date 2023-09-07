@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { setEnteredHotelDetails } from "../redux-features/enteredHotelDetailsSlice";
 import {
   fetchHotelsFailure,
   fetchHotelsStart,
@@ -19,7 +20,10 @@ export const PlaceSearchBarComponent = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  function getNumberOfNightsBetweenDates(start_date, end_date) {
+  const noOfDays = function getNumberOfNightsBetweenDates(
+    start_date,
+    end_date
+  ) {
     if (start_date && end_date) {
       if (start_date > end_date) {
         console.log(Date());
@@ -44,7 +48,7 @@ export const PlaceSearchBarComponent = () => {
       return nights_between;
     }
     return 0;
-  }
+  };
 
   const handleSearch = async () => {
     if (
@@ -57,6 +61,14 @@ export const PlaceSearchBarComponent = () => {
 
     //----------
     dispatch(fetchHotelsStart());
+    dispatch(
+      setEnteredHotelDetails({
+        city,
+        firstDay,
+        secondDay,
+        roomsGuests,
+      })
+    );
 
     navigate("/searchResults");
     console.log("Entered Hotel Data : ");
@@ -64,6 +76,7 @@ export const PlaceSearchBarComponent = () => {
     console.log(firstDay);
     console.log(secondDay);
     console.log(roomsGuests);
+    // console.log(noOfDays);
 
     // const options = {
     //   method: "GET",
@@ -225,10 +238,7 @@ export const PlaceSearchBarComponent = () => {
 
         <div className=" ">
           <p className="rounded-3xl	 px-3 py-1 border-2 border-solid border-none border-opacity-40	text-lg text-white bg-black bg-opacity-80">
-            {firstDay && secondDay
-              ? getNumberOfNightsBetweenDates(firstDay, secondDay)
-              : 0}{" "}
-            Nights
+            {firstDay && secondDay ? noOfDays(firstDay, secondDay) : 0} Nights
             {/* {firstDay && secondDay ? set(firstDay, secondDay) : 0} Nights */}
             {/* {days} Nights */}
           </p>
