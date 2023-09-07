@@ -34,4 +34,16 @@
             font-weight:bold;
         }
 }
+#box{
+    @media screen and (max-width: 663px) {
+            flex-direction: column;
+            gap:4px;
+        }
+}
+#testimonial{
+    @media screen and (max-width: 1038px) {
+            flex-direction: column;
+            gap:6px;
+        }
+}
  
