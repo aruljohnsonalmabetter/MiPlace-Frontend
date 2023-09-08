@@ -3,7 +3,7 @@ import img from "../images/Delhi.webp";
 import img1 from "../images/ahmedabad.webp"
 import img2 from "../images/Pune.webp";
 import img3 from "../images/jaipur.webp"
-import img4 from "../images/Hotelimages/img1.webp"
+import img4 from "../images/Hotelimages/Hotel1.webp"
 import "./styles.css";
 export const MostSearchedLocations = () => {
   const placesObj = [
