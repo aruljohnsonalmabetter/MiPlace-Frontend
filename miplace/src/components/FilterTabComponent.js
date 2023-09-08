@@ -31,7 +31,7 @@ export const FilterTabComponent = () => {
             />
           </div> */}
             {/* <AccordionPrice title="Accordion #1" /> */}
-            <PriceFilter2  />
+            <PriceFilter2 />
             <hr />
             <PlaceSearchBarRating />
             <hr />
