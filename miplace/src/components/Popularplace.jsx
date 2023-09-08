@@ -1,5 +1,6 @@
 import React from 'react'
 import image from '../images/Rectangle-3webp.webp'
+import "./styles.css";
 
 export const Popularplace = () => {
     return (
@@ -7,7 +8,7 @@ export const Popularplace = () => {
       <div className='mt-[2.246875rem]'>
        <h1 className='mx-[4.8rem]   text-2xl font-bold'> Popular Place</h1>
         
-        <div class="flex justify-center items-center ">
+        <div id = "popularsearch"class="flex justify-center items-center ">
 
 
         
