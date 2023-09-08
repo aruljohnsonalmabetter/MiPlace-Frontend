@@ -17,7 +17,7 @@ const HotelBookingComponent = ({ hotelName, price, url, city, address, firstDay,
           <h2 ><span className='text-bold'>{hotelName}</span>, {address}</h2>
         </div>
 
-        <div class="flex mx-[1.5rem] mb-[1.5rem] border-solid border-2 border-indigo-600 w-[46.375rem] h-[3.0625rem] gap-[2rem] justify-between">
+        <div class="flex mx-[1.5rem] mb-[1.5rem]  w-[46.375rem] h-[3.0625rem] gap-[2rem] justify-between">
           <div>{firstDay}</div>
           <div>to</div>
           <div>{secondDay}</div>

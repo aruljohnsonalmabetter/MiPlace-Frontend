@@ -6,7 +6,7 @@ const Loginbookinginfo = () => {
         const [phoneNumber, setPhoneNumber] = useState("");
 
         return (
-            <div className="bg-white border-solid border-2 border-indigo-600  w-[49.375rem] h-[28.4375rem]   rounded-lg shadow-md flex   gap-4  ">
+            <div className="bg-white   w-[49.375rem] h-[28.4375rem]   rounded-lg shadow-md flex   gap-4  ">
                 
                 <div className="mx-[1.5rem] my-[1.5rem] flex-1 flex  flex-col gap-[1rem]">
                     <h1 className="text-3xl font-semibold">Login or Sign up to book</h1>
