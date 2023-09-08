@@ -1,14 +1,28 @@
 import React, { useState } from "react";
 import "../styles/PriceFilter.css";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setLowToHigh, sethHighToLow } from "../redux-features/filterSlice";
 
 export const PriceFilter2 = () => {
   const [rangeVal, setRangeVal] = useState(700);
+  let lowToHigh = useSelector((state) => state.filterFeature.lowToHigh);
 
   // the height of the box
 
   // This function is called when the first range slider changes
   const changeRangeVal = (event) => {
     setRangeVal(event.target.value);
+  };
+
+  const dispatch = useDispatch();
+  const handlesetLowToHigh = () => {
+    dispatch(setLowToHigh());
+    console.log(lowToHigh);
+  };
+  const handlesetHighToLow = () => {
+    dispatch(sethHighToLow());
+    console.log(lowToHigh);
   };
   //   console.log(rangeVal);
   return (
@@ -17,6 +31,20 @@ export const PriceFilter2 = () => {
       {/* <div flex justify-center items-center flex-col> */}
       <p className="  p-1  text-bold">Prices</p>
       <div className="flex  items-center flex-col">
+        <button
+          className="border-2 text-bold border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300	m-2"
+          onClick={handlesetLowToHigh}
+        >
+          Sort Low to high
+        </button>
+        <button
+          className="border-2 text-bold border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300	m-2"
+          onClick={handlesetHighToLow}
+        >
+          Sort High to Low
+        </button>
+      </div>
+      {/* <div className="flex  items-center flex-col">
         <div className="">
           <label className="mx-2">Rs 500</label>
           <input
@@ -31,7 +59,7 @@ export const PriceFilter2 = () => {
         <label className="mx-2">Rs 20000</label>
         </div>
         <p className="rounded-md border-2 border-black p-1">Upto Price : {rangeVal}</p>
-      </div>
+      </div> */}
     </div>
   );
 };
