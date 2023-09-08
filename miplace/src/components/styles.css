@@ -46,4 +46,18 @@
             gap:6px;
         }
 }
+
+ @media screen and (max-width: 509px) {
+        #nighthead {
+            padding-right:15rem;
+           font-size:small;
+        }
+        #nighticon{
+            flex-direction: column;
+        }
+        #nighticon button{
+            padding: right 1.5rem;
+        }
+
+    }
  
