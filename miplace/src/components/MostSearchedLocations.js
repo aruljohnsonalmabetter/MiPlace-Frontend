@@ -1,5 +1,9 @@
 import React from "react";
-import img from "../images/Mars-Orbit-Mission.jpg";
+import img from "../images/Delhi.webp";
+import img1 from "../images/ahmedabad.webp"
+import img2 from "../images/Pune.webp";
+import img3 from "../images/jaipur.webp"
+import img4 from "../images/Hotelimages/img1.webp"
 import "./styles.css";
 export const MostSearchedLocations = () => {
   const placesObj = [
@@ -9,24 +13,24 @@ export const MostSearchedLocations = () => {
       placeName: "Delhi",
     },
     {
-      url: img,
+      url: img1,
       numOfPlaces: 123,
-      placeName: "Delhi",
+      placeName: "Ahmedabad",
     },
     {
-      url: img,
+      url: img2,
       numOfPlaces: 123,
-      placeName: "Delhi",
+      placeName: "Pune",
     },
     {
-      url: img,
+      url: img3,
       numOfPlaces: 123,
-      placeName: "Delhi",
+      placeName: "Banglore",
     },
     {
-      url: img,
+      url: img4,
       numOfPlaces: 123,
-      placeName: "Delhi",
+      placeName: "Jaipur",
     },
   ];
   return (
