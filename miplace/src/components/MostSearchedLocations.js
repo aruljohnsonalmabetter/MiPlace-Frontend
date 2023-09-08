@@ -36,7 +36,7 @@ export const MostSearchedLocations = () => {
         <div id="box"className="flex justify-between items-center w-full my-5 md:flex-wrap gap-4">
           {placesObj.map((elem) => {
             return (
-              <div className="flex justify-evenly items-center mr-16 " key={Math.random() * 1000}>
+              <div className=" justify-evenly items-center mr-16 " key={Math.random() * 1000}>
                 <img className="rounded-xl" src={elem.url} alt="img" />
                 <div className="ml-3 text-start ">
                   <p className="text-lg font-semibold">{elem.placeName}</p>

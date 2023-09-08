@@ -8,25 +8,25 @@ import Rating from "./Rating";
 import "./styles.css";
 
 
-const HotelNamebooking = ({hotelname,city,price,text}) => {
+const HotelNamebooking = ({hotelname,city,price,text,review,address}) => {
   return (
     
-    <div class="flex justify-between mx-[3.125rem]  gap-2 border-solid border-2 border-indigo-600">
+    <div class="flex justify-between mx-[3.125rem]  space-x-4q">
             <div>
                 <h1 className="font-[Montserrat] text-[2.125rem] font-semibold">{hotelname}</h1>
                 
-                <h3 className=" flex font-[Montserrat]  font-medium" ><BiSolidLocationPlus/> {city}</h3>
+                <h3 className=" flex font-[Montserrat]  font-medium" ><BiSolidLocationPlus/> {address}</h3>
 
-                <div className='flex'>
+                <div className='flex gap-[1rem] '>
                       <Rating value="5" className="inline " />
 
-                      <p>review</p>
+                      <p>{review || "5"} </p>
                 </div>
                 
             </div>
-            <div  className='gap-2 px-1.5'>
-              <h1 id="nighthead" className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6]">{price}/night</h1>
-                <div id="nighticon" className='flex gap-2' >
+            <div>
+                <h1 className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6]">₹{price}/night</h1>
+                <div className='flex justify-between'>
                     <FcLike className="text-2xl hover:scale-75   cursor-pointer transition ease-in-out delay-250"/>
                     <BsFillShareFill/>
                     <Button

@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import place from "../images/Mars-Orbit-Mission.jpg";
+import React from "react";
 import { BiSolidLocationPlus } from "react-icons/bi";
 import { FcLike } from "react-icons/fc";
 import { BsFillCupFill } from "react-icons/bs";
 import Rating from "./Rating";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavHotel } from "../redux-features/userSlice";
+import { useNavigate } from "react-router-dom";
+import { setHotelDetails } from "../redux-features/indiHotelInfoSlice";
 
 export const IndividualPlaceCard = ({
   address,
@@ -22,32 +22,54 @@ export const IndividualPlaceCard = ({
 }) => {
   let dispatch = useDispatch();
   let favHotel = useSelector((state) => state.userFeature.favHotel);
+
+  const navigate = useNavigate();
   // useEffect(() => {
   //   console.log(favHotel)
   // }, [favHotel]);
   const handleAddtoFav = () => {
     dispatch(addFavHotel(Hotel_obj));
-    console.log(favHotel)
+    console.log(favHotel);
     console.log(Hotel_obj);
   };
 
+  const handleViewPlace = async () => {
+    // navigate(`/hotel/${Hotel_obj._id}`);
+    const hotelObj = {
+      hotel_name,
+      address,
+      city,
+      district,
+      main_photo_url,
+      review_score,
+      review_score_word,
+      url,
+      price_breakdown,
+      checkIn: "",
+      checkOut: "",
+    };
+    console.log(hotelObj);
+    dispatch(setHotelDetails(hotelObj));
+    navigate("/hotelInfo");
+  };
+
   return (
-    <div className=" w-full  rounded-lg my-3">
+    <div className=" w-full   my-5 border-b-2 border-black p-3">
       {/* Divide into two parts */}
       <div className="flex items-center justify-center w-full  ">
         {/* IMG */}
-        <div className="overflow-none h-[310px] w-[340px] 	rounded-md bg-red-900 bg-fixed	bg-center	bg-no-repeat	bg-cover	">
+        <div className="overflow-none h-[310px] w-[340px] 	rounded-md  bg-fixed	bg-center	bg-no-repeat	bg-cover	">
           <img
             src={main_photo_url}
             alt="asd"
-            className="object-cover bg-cover	"
+            className="object-center	object-cover	h-full	"
           />
         </div>
-        <div className="flex justify-center items-center flex-col  ">
+        <div className="flex justify-center items-center flex-col w-full ">
           {/* Written */}
           <div className="flex justify-center items-end w-full ">
             {/* Hotel info */}
-            <div className=" m-2 w-9/12  ">
+            <div className=" m-2 w-9/12   ">
               <p className="text-2xl text-bold ">
                 {/* {HotelName} */}
                 {/* Lemon Tree Premier Pune */}
@@ -82,7 +104,7 @@ export const IndividualPlaceCard = ({
             </div>
 
             {/* Price Part */}
-            <div className="m-2  p-2 text-right ">
+            <div className="m-2  p-2 text-right w-4/12">
               <p> starting from</p>
               <p className="text-lg text-bold text-blue-600 ">
                 ₹ {price_breakdown}/night
@@ -90,7 +112,8 @@ export const IndividualPlaceCard = ({
               <p className="">excl. tax</p>
             </div>
           </div>
-
+          
+          {/* Add to fav and view place button */}
           <div className=" flex justify-evenly items-center w-full">
             <button
               className="border-2 border-black p-2  rounded-md m-2"
@@ -98,11 +121,13 @@ export const IndividualPlaceCard = ({
             >
               <FcLike className="text-2xl hover:scale-75    transition ease-in-out delay-250" />
             </button>
-            <Link to="/hotelinfo " className="w-full bg-blue-800 rounded-md">
-              <button className=" w-full p-3 border-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold ">
-                View Place
-              </button>
-            </Link>
+
+            <button
+              className=" w-full bg-blue-800 rounded-mdw-full p-3 border-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold "
+              onClick={handleViewPlace}
+            >
+              View Place
+            </button>
           </div>
         </div>
       </div>

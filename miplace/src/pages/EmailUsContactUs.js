@@ -6,13 +6,13 @@ function EmailUsContactUs() {
   const [Email, setEmail] = useState("");
   const [Message, setMessage] = useState("");
   return (
-    <div className="bg-white p-4 pl-20 rounded-lg shadow-md flex justify-center items-center gap-4  mx-auto ">
+    <div className="bg-white p-4 pl-20 rounded-lg shadow-md flex justify-between space-between items-center gap-6  mx-auto ">
     <img
       src={image}
       alt="Book Hotels fast and easy with Hotels"
-      className="w-1/2"
+      className="w-1/2 "
     />
-    <div className="flex-1 flex flex-col gap-2">
+    <div className="flex-1 flex flex-col gap-3">
       <h1 className="text-3xl font-semibold">Contact Us</h1>
       <h2 className="text-l">We’ll soon try to contact you.</h2>
       <h3>Name</h3>

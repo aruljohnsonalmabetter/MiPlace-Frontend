@@ -18,11 +18,11 @@ export const Popularplace = () => {
                  alt=""/>
                  
               </div>
-              <div class="relative text-brown inset-0 items-end px-6 pb-6 mt-6">
+              <div class=" text-brown inset-0 items-end px-6 pb-6 mt-6">
                 <span class="block opacity-75 -mb-1">Indoor</span>
                 <div class="flex justify-between">
                   <span class="block font-semibold text-xl">Peace Lily</span>
-                  <span class="block bg-black rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$36.00</span>
+                  <span class=" bg-black rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$36.00</span>
                 </div>
               </div>
             </div>

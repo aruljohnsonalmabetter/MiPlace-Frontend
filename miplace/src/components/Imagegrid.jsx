@@ -5,42 +5,42 @@ import Image2 from '../images/Rectangle 6 (1).webp'
 import Image3 from '../images/Rectangle 5 (1).webp'
 import Image4 from '../images/Rectangle 6 (2).webp'
 
-function Imagegrid() {
-  return (
-    <>
-    <div className="flex justify-center px-1.5">
-    <div>
-        <img
-            src={Image}
-        />
-    </div>
+function Imagegrid({ img }) {
+    return (
+        <>
+            <div class="flex mx-[3.5rem] my-[3.5rem]">
+                <div>
+                    <img
+                        src={img}
+                    />
+                </div>
 
-    <div class="grid grid-cols-2 gap-4">
-            <div>
-            <img
-                src={Image1}
-                />
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <img
+                            src={img}
+                        />
+                    </div>
+                    <div>
+                        <img
+                            src={img}
+                        />
+                    </div>
+                    <div>
+                        <img
+                            src={img}
+                        />
+                    </div>
+                    <div>
+                        <img
+                            src={img}
+                        />
+                    </div>
+
+                </div>
             </div>
-            <div>
-            <img
-                src={Image2}
-                />
-            </div>
-            <div>
-            <img
-                src={Image3}
-                />
-            </div>
-            <div>
-            <img
-                src={Image4}
-                />
-            </div>
-      
-    </div>
-    </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default Imagegrid
