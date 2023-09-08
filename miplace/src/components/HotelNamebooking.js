@@ -5,6 +5,7 @@ import { BiSolidLocationPlus } from "react-icons/bi";
 import { FcLike } from "react-icons/fc";
 import { BsFillShareFill } from "react-icons/bs";
 import Rating from "./Rating";
+import "./styles.css";
 
 
 const HotelNamebooking = ({hotelname,city,price,text,review,address}) => {
