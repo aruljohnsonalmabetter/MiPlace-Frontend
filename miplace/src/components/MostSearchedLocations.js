@@ -30,9 +30,9 @@ export const MostSearchedLocations = () => {
     },
   ];
   return (
-    <div className=" flex justify-center items-center ">
+    <div className=" flex justify-center items-center mt-[3.625rem]">
       <div className="    mostSearchedPlaces w-11/12 ">
-        <p id="para" className="text-start text-2xl font-bold md:text-center  ">Most Searched Locations</p>
+        <p id="para" className="text-start text-2xl font-bold mb-[2.246875rem]  ">Most Searched Locations</p>
         <div id="box"className="flex justify-between items-center w-full my-5 md:flex-wrap gap-4">
           {placesObj.map((elem) => {
             return (
