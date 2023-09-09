@@ -11,7 +11,7 @@ const Amenities = ({ hotel_id }) => {
         method: 'GET',
         url: 'https://apidojo-booking-v1.p.rapidapi.com/properties/get-facilities',
         params: {
-          hotel_ids: '1055859',
+          hotel_ids: hotel_id,
           languagecode: 'en-us'
         },
         headers: {
