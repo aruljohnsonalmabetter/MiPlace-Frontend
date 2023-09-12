@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const FooterComponent = () => {
   return (
-    <div className="p-3 relative flex justify-center items-center  ">
+    <div className="p-3 relative flex justify-center items-center font-mullish ">
       <div className="  flex justify-between items-center  w-11/12 h-full	">
         <div className="left w-2/5 text-start	 space-y-4">
           <p className="text-xl font-bold	 inline-block	">
@@ -52,7 +52,7 @@ const FooterComponent = () => {
 </svg> </a>
           </ul>
         </div>
-        <div className=" p-5 text-start left-0 space-y-4	">
+        <div className=" p-5 text-start left-0 space-y-4 font-mullish">
           <p className="text-xl font-bold	">Company</p>
           <ul className="flex flex-col space-y-3 text-md ">
             <Link to="/">About</Link>
@@ -61,7 +61,7 @@ const FooterComponent = () => {
             <Link to="/">Career</Link>
           </ul>
         </div>
-        <div className=" p-5 text-start left-0 space-y-4	">
+        <div className=" p-5 text-start left-0 space-y-4 font-mullish">
           <p className="text-xl font-bold	">Help</p>
           <ul className="flex flex-col space-y-3 text-md ">
             <Link to="/">Customer Support</Link>

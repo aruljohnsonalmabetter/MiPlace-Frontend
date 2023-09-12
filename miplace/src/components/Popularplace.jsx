@@ -6,7 +6,7 @@ export const Popularplace = () => {
     return (
 
       <div className='mt-[2.246875rem]'>
-       <h1 className='mx-[4.8rem]   text-2xl font-bold'> Popular Place</h1>
+        <h1 className='mx-[4.8rem] font-mullish text-2xl font-bold'> Popular Places</h1>
         
         <div id = "popularsearch"class="flex justify-center items-center ">
 

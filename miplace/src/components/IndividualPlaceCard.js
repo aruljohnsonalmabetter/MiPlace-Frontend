@@ -70,14 +70,14 @@ export const IndividualPlaceCard = ({
           <div className="flex justify-center items-end w-full ">
             {/* Hotel info */}
             <div className=" m-2 w-9/12   ">
-              <p className="text-2xl text-bold ">
+              <p className="text-2xl text-bold font-mullish">
                 {/* {HotelName} */}
                 {/* Lemon Tree Premier Pune */}
                 {hotel_name}
               </p>
               <div className="text-sm">
                 {/* {HotelAddress} */}
-                <BiSolidLocationPlus className="inline text-lg" />
+                <BiSolidLocationPlus className="inline text-lg font-mullish" />
                 {address},{district} ,{city}
                 <div className="flex justify-between items-center text-bold">
                   <div className="flex justify-between items-center">
