@@ -26,7 +26,7 @@ export const Freebies = () => {
   return (
     <div className=" w-full p-2 ">
       {/* <div className="bg-green-900 w-full flex items-center justify-center flex-col"> */}
-      <p className="  p-1 text-bold">Freebies</p>
+      <p className="  pb-1  text-bold text-xl">Freebies</p>
       <div className="price-input   flex  flex-col">
         <div className="flex justify-between items-center text-start">
           <form>
@@ -37,7 +37,7 @@ export const Freebies = () => {
                 value=""
                 onClick={(e) => handlehasfreeparking(e)}
               />
-              <label class="inline-block pl-[0.15rem] hover:cursor-pointer">
+              <label class="inline-block pl-[0.15rem] hover:cursor-pointer ">
                 Free Parking
               </label>
             </div>
