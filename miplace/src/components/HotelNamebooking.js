@@ -8,7 +8,7 @@ import Rating from "./Rating";
 import "./styles.css";
 
 
-const HotelNamebooking = ({hotelname,city,price,text,review,address}) => {
+const HotelNamebooking = ({hotel_id,hotelname,city,price,text,review,address}) => {
   return (
     
     <div class="flex justify-between mx-[3.125rem]  space-x-4q">

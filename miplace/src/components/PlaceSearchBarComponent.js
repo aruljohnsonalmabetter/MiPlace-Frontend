@@ -255,7 +255,7 @@ export const PlaceSearchBarComponent = () => {
               // placeholder="Enter a location"
             />
             <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text text-bold">
-              Rooms and Guests
+              Rooms 
             </span>
           </label>
         </div>
@@ -269,7 +269,7 @@ export const PlaceSearchBarComponent = () => {
         </button>
       </Link> */}
       <button
-        className="bg-[#196680] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md hover:bg-sky-600 transition-all duration-500 ease-in"
+        className="bg-[#196680] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md font-mullish hover:bg-lightBlue-600 transition-all duration-500 ease-in"
         onClick={handleSearch}
       >
         Search

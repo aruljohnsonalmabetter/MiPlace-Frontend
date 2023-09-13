@@ -7,8 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFavHotel } from "../redux-features/userSlice";
 import { useNavigate } from "react-router-dom";
 import { setHotelDetails } from "../redux-features/indiHotelInfoSlice";
-
+import Hotel15 from "../images/Hotelimages/Hotel15.webp";
+import "./styles.css";
 export const IndividualPlaceCard = ({
+  hotel_id,
   address,
   city,
   district,
@@ -36,6 +38,7 @@ export const IndividualPlaceCard = ({
   const handleViewPlace = async () => {
     // navigate(`/hotel/${Hotel_obj._id}`);
     const hotelObj = {
+      hotel_id,
       hotel_name,
       address,
       city,
@@ -54,13 +57,13 @@ export const IndividualPlaceCard = ({
   };
 
   return (
-    <div className=" w-full   my-5 border-b-2 border-black p-3">
+    <div className=" w-full   border-b-2 border-black p-3">
       {/* Divide into two parts */}
-      <div className="flex items-center justify-center w-full  ">
+      <div id="placecard" className="flex items-center justify-center w-full  ">
         {/* IMG */}
         <div className="overflow-none h-[310px] w-[340px] 	rounded-md  bg-fixed	bg-center	bg-no-repeat	bg-cover	">
           <img
-            src={main_photo_url}
+            src={Hotel15}
             alt="asd"
             className="object-center	object-cover	h-full	"
           />
@@ -71,13 +74,15 @@ export const IndividualPlaceCard = ({
             {/* Hotel info */}
             <div className=" m-2 w-9/12   ">
               <p className="text-2xl text-bold ">
+              <p className="text-2xl text-bold font-mullish">
                 {/* {HotelName} */}
                 {/* Lemon Tree Premier Pune */}
                 {hotel_name}
+                {/* {hotel_name} - {hotel_id} */}
               </p>
               <div className="text-sm">
                 {/* {HotelAddress} */}
-                <BiSolidLocationPlus className="inline text-lg" />
+                <BiSolidLocationPlus className="inline text-lg font-mullish" />
                 {address},{district} ,{city}
                 <div className="flex justify-between items-center text-bold">
                   <div className="flex justify-between items-center">
@@ -92,8 +97,8 @@ export const IndividualPlaceCard = ({
                   </div>
                 </div>
                 <div className="flex  items-center my-4">
-                  <p className="border-2 mr-4 inline border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300 text-bold  	">
-                    {review_score}
+                  <p className="border-2 mr-4 inline border-sky-700 bg-white p-2 rounded-md text-bold  	">
+                    {review_score || "No review posted"}
                   </p>
                   <p className="text-lg">
                     <p className="text-bold  inline"> {review_score_word}</p>{" "}
@@ -112,7 +117,7 @@ export const IndividualPlaceCard = ({
               <p className="">excl. tax</p>
             </div>
           </div>
-          
+
           {/* Add to fav and view place button */}
           <div className=" flex justify-evenly items-center w-full">
             <button
