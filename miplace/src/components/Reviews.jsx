@@ -52,18 +52,18 @@ const reviews = [
 
 const ReviewsComponent = () => {
     return (
-        <div className="w-4xl mx-auto p-4">
+        <div className="w-4xl mx-auto p-2">
             <div className="w-1407px h-740px p-0 space-y-4 overflow-y-scroll">
                 <div className="flex items-center justify-between mb-4">
-                    <h1 className="text-2xl font-bold">Reviews</h1>
+                    <h1 className="text-2xl font-bold  font-mullish">Reviews</h1>
                     <Link to="/writeReview">
-                        <button className="bg-blue-500 text-white py-2 px-4 rounded">
+                        <button className="bg-blue-500 text-white py-2 px-4 rounded  font-mullish">
                             Give Your Review
                         </button>
                     </Link>
                 </div>
                 {reviews.map((review, index) => (
-                    <div key={index} className="flex items-center space-x-4">
+                    <div key={index} className="flex items-center space-x-4 nh font-mullish">
                         <div className="w-12 h-12 rounded-full overflow-hidden">
                             <img
                                 src={review.user.image}

@@ -40,7 +40,7 @@ const Amenities = ({ hotel_id }) => {
         <div className="">
           {facilites.map((indiFac) => {
             return (<p key={indiFac.facilitytype_id} htmlFor="" className="block m-2">{indiFac?.facilitytype_name}</p>)
-          })}
+          })}        
         </div>
       </div>
     </div>

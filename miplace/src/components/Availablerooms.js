@@ -7,15 +7,15 @@ const Availablerooms = ({ room, price, text }) => {
     <>
       <div className="max-w-1409px mx-auto p-4 h-600px border border-gray-300  rounded">
         <div>
-          <h1 className="text-2xl font-bold mb-4">Available rooms</h1>
+          <h1 className="text-2xl font-bold mb-4 font-mullish">Available rooms</h1>
         </div>
 
         <div class="flex justify-between my-2">
-          <div class="flex">
+          <div class="flex font-mullish">
             <img />
             <p>{room}</p>
           </div>
-          <div class="flex">
+          <div class="flex space-x-3 font-bold font-mullish">
             <h2>₹{price}/night</h2>
             <Link to="/bookingInfoandBill">
               <Button text={text} />{" "}
@@ -23,24 +23,11 @@ const Availablerooms = ({ room, price, text }) => {
           </div>
         </div>
         <div class="flex justify-between my-2">
-          <div class="flex">
+          <div class="flex  font-mullish">
             <img />
             <p>{room}</p>
           </div>
-          <div class="flex">
-            <h2>₹{price}/night</h2>
-            <Link to="/bookingInfoandBill">
-              <Button text={text} />{" "}
-            </Link>{" "}
-          </div>
-        </div>
-
-        <div class="flex justify-between my-2">
-          <div class="flex">
-            <img />
-            <p>{room}</p>
-          </div>
-          <div class="flex">
+          <div class="flex flex space-x-3 font-bold font-mullish">
             <h2>₹{price}/night</h2>
             <Link to="/bookingInfoandBill">
               <Button text={text} />{" "}
@@ -49,14 +36,27 @@ const Availablerooms = ({ room, price, text }) => {
         </div>
 
         <div class="flex justify-between my-2">
-          <div class="flex">
+          <div class="flex  font-mullish">
             <img />
             <p>{room}</p>
           </div>
-          <div class="flex">
+          <div class="flex flex space-x-3 font-bold font-mullish">
             <h2>₹{price}/night</h2>
             <Link to="/bookingInfoandBill">
               <Button text={text} />{" "}
+            </Link>{" "}
+          </div>
+        </div>
+
+        <div class="flex justify-between my-2">
+          <div class="flex  font-mullish">
+            <img />
+            <p>{room}</p>
+          </div>
+          <div class="flex flex space-x-3 font-bold font-mullish">
+            <h2 className="font-bold">₹{price}/night</h2>
+            <Link to="/bookingInfoandBill">
+              <Button  text={text} />{" "}
             </Link>{" "}
           </div>
         </div>
