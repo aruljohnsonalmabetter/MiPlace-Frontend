@@ -6,7 +6,7 @@ function EmailUsContactUs() {
   const [Email, setEmail] = useState("");
   const [Message, setMessage] = useState("");
   return (
-    <div className="bg-white p-4 pl-20 rounded-lg shadow-md flex justify-between space-between items-center gap-6  mx-auto ">
+    <div className="bg-white p-4 pl-20 rounded-lg shadow-md flex font-mullish justify-between space-between items-center gap-6  mx-auto ">
     <img
       src={image}
       alt="Book Hotels fast and easy with Hotels"

@@ -11,7 +11,7 @@ export const Favorites = () => {
     console.log(favHotel);
   }, [favHotel]);
   return (
-    <div className=" flex justify-center items-center flex-col">
+    <div className=" flex justify-center items-center flex-col font-mullish">
       <div className="  w-10/12 mt-4">
         <div className="flex  items-center rounded-lg w-full  px-6 py-4 shadow-lg mb-6">
           <div className=" border-l-2	border-gray-400 pl-2">

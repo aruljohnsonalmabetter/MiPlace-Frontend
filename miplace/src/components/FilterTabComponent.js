@@ -6,7 +6,7 @@ import { PriceFilter2 } from "./PriceFilter2";
 
 export const FilterTabComponent = () => {
   return (
-    <div className="mr-2 sticky">
+    <div className="mr-2 sticky font-mullish">
       <div className="  p-2 w-full min-w-max	text-start">
         <div className="  flex   flex-col">
           <h2 className=" text-bold">Filters</h2>

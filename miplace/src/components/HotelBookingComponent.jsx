@@ -4,7 +4,7 @@ const HotelBookingComponent = ({ hotelName, price, url, city, address, firstDay,
   return (
     <>
 
-      <div class=" border-solid rounded-lg border-2 border-{A1A1A1} mx-auto w-[49.375rem] h-[23.8125rem] ">
+      <div class=" border-solid rounded-lg border-2 font-mullish border-{A1A1A1} mx-auto w-[49.375rem] h-[23.8125rem] ">
 
 
         <div class="flex mx-[1.5rem] mt-[2rem] mb-[1.5rem] py-[1.5rem] justify-between">

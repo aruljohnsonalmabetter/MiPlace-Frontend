@@ -11,7 +11,7 @@ import "./styles.css";
 const HotelNamebooking = ({hotelname,city,price,text,review,address}) => {
   return (
     
-    <div class="flex justify-between mx-[3.125rem]  space-x-4q">
+      <div class="flex justify-between mx-[3.125rem] font-mullish space-x-4q">
             <div>
                 <h1 className="font-[Montserrat] text-[2.125rem] font-semibold">{hotelname}</h1>
                 

@@ -3,7 +3,7 @@ import { GoAlertFill } from "react-icons/go";
 import { Link } from "react-router-dom";
 function ErrorScreen() {
   return (
-    <div className=" h-screen w-full flex justify-center items-center p-4">
+    <div className=" h-screen w-full flex justify-center items-center p-4 font-mullish">
       <div className="  flex justify-center items-center flex-col">
         <GoAlertFill className="text-5xl m-2" />
         <p className="w-96 text-center text-lg text-gray-600 m-2">

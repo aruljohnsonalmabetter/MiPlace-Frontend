@@ -33,7 +33,7 @@ function BookingInfoandBill() {
           noOfDays={userEneterdHotelDetailsObj.noOfDays}
         />
 
-        <div class="border-solid my-[2.5rem]  w-[49.375rem] border-2 border-{A1A1A1} rounded-lg">
+        <div class="border-solid my-[2.5rem]  w-[49.375rem] border-2 border-{A1A1A1} rounded-lg font-mullish">
           <div class="flex my-[1rem] bg-[#1E91B6] w-[47.375rem] mx-[1rem]  justify-between rounded-lg">
             <div className="text-white my-[1rem] ml-[1rem]">
               <Link to="/mybookings">

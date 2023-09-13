@@ -54,7 +54,7 @@ export const IndividualPlaceCard = ({
   };
 
   return (
-    <div className=" w-full   my-5 border-b-2 border-black p-3">
+    <div className=" w-full font-mullish  my-5 border-b-2 border-black p-3">
       {/* Divide into two parts */}
       <div id="placecard" className="flex items-center justify-center w-full  ">
         {/* IMG */}

@@ -3,7 +3,7 @@ import { FaHotel } from "react-icons/fa";
 import { AiFillClockCircle } from "react-icons/ai";
 function Bookingreceipt() {
   return (
-    <div class="flex my-[3rem] mx-[3.125rem] border-double border-4 border-indigo-600 ">
+    <div class="flex my-[3rem] mx-[3.125rem] border-double border-4 border-indigo-600 font-mullish ">
             <div className='bg-[#ECFAFF]  w-[15.375rem] h-[18rem]  border-4 border-red-400 p-[2rem]'>
                 <div className='mx-auto my-auto gap-auto w-[11.75rem] h-[3.625] border-4 border-red-400'> 
                     <h1 className='font-semibold text-[2rem]'>Thur, Dec 8</h1>

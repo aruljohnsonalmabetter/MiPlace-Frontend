@@ -1,7 +1,7 @@
 import React from 'react'
 function FinalBookingSlipComponent({ url, review, rating, address }) {
   return (
-    <div class=" gap-[1rem] mt-[2.5rem]  w-[28.125rem] h-[29.34375rem] border-black ">
+    <div class=" gap-[1rem] mt-[2.5rem]  w-[28.125rem] h-[29.34375rem] border-black font-mullish ">
       <div class="flex gap-[2rem] justify-between mx-[2rem] my-[2rem]">
         <div className=' w-80		'>
 

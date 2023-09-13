@@ -8,7 +8,7 @@ export const WriteReview = () => {
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
   return (
-    <div className="flex justify-center items-center w-full ">
+    <div className="flex justify-center items-center w-full font-mullish ">
       {/* <div className="flex justify-center items-center w-10/12 bg-red-800 "> */}
       <div className="p-7 flex justify-center items-center flex-col border-2 border-gray-400 w-8/12 rounded-xl ">
         <p className="text-2xl text-bold m-2">Write a Review</p>

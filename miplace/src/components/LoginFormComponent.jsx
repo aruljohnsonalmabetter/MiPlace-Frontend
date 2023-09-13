@@ -9,7 +9,7 @@ const LoginFormComponent = () => {
     const [countryCode, setCountryCode] = useState("");
 
         return (
-            <div className="bg-white p-4 pl-40 rounded-lg shadow-md flex justify-center items-center gap-4  mx-auto">
+            <div className="bg-white p-4 pl-40 rounded-lg shadow-md flex justify-center items-center gap-4 font-mullish mx-auto">
                 <img
                     src={image}
                     alt="Book Hotels fast and easy with Hotels"
