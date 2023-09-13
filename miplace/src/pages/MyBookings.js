@@ -16,30 +16,22 @@ function MyBookings() {
   }, [hotelObj, userEneterdHotelDetailsObj]);
 
   return (
-    <div>
-      <div class="flex justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600">
-        <div>
-          {/* url={hotelObj.main_photo_url} */}
+    <div class="flex justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600">
+      <div>
+        {/* url={hotelObj.main_photo_url} */}
 
-          <h1>{hotelObj.hotel_name} </h1>
-          <Rating />
-          <h3 className="flex">
-            <FaLocationDot />
-            {hotelObj.address} , {hotelObj.city}
-          </h3>
-        </div>
-        <div>
-          <h1>₹ {hotelObj.price_breakdown}/night</h1>
-          <Button text="Download" />
-        </div>
+        <h1>{hotelObj.hotel_name} </h1>
+        <Rating />
+        <h3 className="flex">
+          <FaLocationDot />
+          {hotelObj.address} , {hotelObj.city}
+        </h3>
       </div>
-      <Bookingreceipt
-        hotel_name={hotelObj.hotel_name}
-        firstDay={userEneterdHotelDetailsObj.firstDay}
-        secondDay={userEneterdHotelDetailsObj.secondDay}
-        noOfDays={userEneterdHotelDetailsObj.noOfDays}
-        url={hotelObj.main_photo_url}
-      />
+      <div>
+        <h1>₹ {hotelObj.price_breakdown}/night</h1>
+        <Button text="Download" />
+      </div>
+      <Bookingreceipt />
       <div class="mx-[3.125rem] my-[2.125rem] border-solid border-2 border-red-600">
         <h1 className="mb-[2.125rem] font-semibold font-[Montserrat] ">
           Terms and Conditions
