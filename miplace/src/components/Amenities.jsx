@@ -5,8 +5,8 @@ const Amenities = () => {
   return (
     <div className=" w-full p-2 ">
       {/* <div className="bg-green-900 w-full flex items-center justify-center flex-col"> */}
-      <p className=" p-1 text-bold">Amenities</p>
-      <div className="price-input  flex  flex-col">
+      <p className=" p-1 text-bold text-2xl font-bold font-mullish">Amenities</p>
+      <div className="price-input  flex  flex-col font-mullish">
         <div className="flex justify-between items-center">
           <form>
             <div className="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
