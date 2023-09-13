@@ -1,6 +1,38 @@
 import React from "react";
 import "../styles/PriceFilter.css";
+import { useDispatch } from "react-redux";
+import {
+  setisfreecancellable,
+  sethasfreeparking,
+  // sethasswimmingpool,
+  // sethotelincludebreakfast,
+} from "../redux-features/filterSlice";
 
+// is_free_cancellable
+// has_free_parking
+// has_swimming_pool
+// hotel_include_breakfast
+const handleisfreecancellable = () => {
+  // let checkbox/
+  if (handleisfreecancellable.checked === true) {
+    alert("handleisfreecancellable");
+  }
+};
+const handlehasfreeparking = () => {
+  if (handlehasfreeparking.checked === true) {
+    alert("handlehasfreeparking");
+  }
+};
+// const handlehasswimmingpool = () => {
+//   if (handlehasswimmingpool.checked === true) {
+//     alert("handlehasswimmingpool");
+//   }
+// };
+// const handlehotelincludebreakfast = () => {
+//   if (handlehotelincludebreakfast.checked === true) {
+//     alert("handlehotelincludebreakfast");
+//   }
+// };
 export const Amenities = () => {
   return (
     <div className=" w-full p-2 ">
@@ -16,7 +48,7 @@ export const Amenities = () => {
                 value=""
               />
               <label className="inline-block pl-[0.15rem] hover:cursor-pointer">
-                Free Breakfast
+                Free Cancellable
               </label>
             </div>
             <div className="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">

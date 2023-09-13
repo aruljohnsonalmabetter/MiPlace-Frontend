@@ -255,7 +255,7 @@ export const PlaceSearchBarComponent = () => {
               // placeholder="Enter a location"
             />
             <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text text-bold">
-              Rooms and Guests
+              Rooms 
             </span>
           </label>
         </div>

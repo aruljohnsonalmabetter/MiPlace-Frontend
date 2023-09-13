@@ -17,6 +17,7 @@ const HotelInfo = () => {
   return (
     <div>
       <HotelNamebooking
+        hotel_id={hotelObj.hotel_id}
         hotelname={hotelObj.hotel_name}
         city={hotelObj.city}
         address={hotelObj.address}
@@ -24,14 +25,14 @@ const HotelInfo = () => {
         text="Download"
         review={hotelObj.review_score_word}
       />
-      <Imagegrid img={hotelObj.main_photo_url}/>
+      <Imagegrid img={hotelObj.main_photo_url} />
       <Overview />
       <Availablerooms
         room="Superior room - 1 double bed or 2 twin beds"
         price={hotelObj.price_breakdown}
         text="Book now"
       />
-      <Amenities />
+      <Amenities hotel_id={hotelObj.hotel_id} />
       <Location />
       <Reviews />
     </div>

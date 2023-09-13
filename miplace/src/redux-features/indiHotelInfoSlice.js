@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  hotel_id:"",
   hotel_name: "",
   address: "",
   city: "",
@@ -20,6 +21,7 @@ const indiHotelInfoSlice = createSlice({
   initialState,
   reducers: {
     setHotelDetails: (state, action) => {
+      state.hotel_id = action.payload.hotel_id;
       state.hotel_name = action.payload.hotel_name;
       state.address = action.payload.address;
       state.city = action.payload.city;
