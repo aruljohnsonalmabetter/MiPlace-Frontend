@@ -8,6 +8,7 @@ import Amenities from "../components/Amenities.jsx";
 import Location from "../components/Location.jsx";
 import HotelNamebooking from "../components/HotelNamebooking.js";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
+import Recommendations from "../components/Recommendations.js";
 const HotelInfo = () => {
   const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
 
@@ -20,6 +21,7 @@ const HotelInfo = () => {
         hotel_id={hotelObj.hotel_id}
         hotelname={hotelObj.hotel_name}
         city={hotelObj.city}
+        district={hotelObj.district}
         address={hotelObj.address}
         price={hotelObj.price_breakdown}
         text="Download"
@@ -35,6 +37,10 @@ const HotelInfo = () => {
       <Amenities hotel_id={hotelObj.hotel_id} />
       <Location />
       <Reviews />
+      <Recommendations
+        district={hotelObj.district}
+        hotelName={hotelObj.hotel_name}
+      />
     </div>
   );
 };

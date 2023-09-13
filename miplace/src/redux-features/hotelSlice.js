@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   hotels: [],
+  // recommendations: [],
   isFreeCancellableHotels: [],
   hasFreeParkingHotels: [],
   bothtrue: [],
@@ -29,6 +30,11 @@ const bothtrueFunc = (hotel) => {
   return newHotels;
 };
 
+// const setRecommendations = (hotel) => {
+//   let newHotels = [...hotel];
+//   //Load the hotel other than the selected hotel
+//   return newHotels;
+// };
 const hotelSlice = createSlice({
   name: "hotels",
   initialState,
@@ -38,6 +44,7 @@ const hotelSlice = createSlice({
     },
     fetchHotelsSuccess(state, action) {
       state.hotels = action.payload;
+      // state.recommendations = setRecommendations(action.payload);
       state.isFreeCancellableHotels = FCH(action.payload);
       state.hasFreeParkingHotels = FPH(action.payload);
       state.bothtrue = bothtrueFunc(action.payload);

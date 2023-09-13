@@ -112,7 +112,7 @@ export const PlaceSearchBarComponent = () => {
         languagecode: "en-us",
       },
       headers: {
-        "X-RapidAPI-Key": "61cb1a08f0mshd64d9d9a395d1dbp1298acjsnecd88864da94",
+        "X-RapidAPI-Key": "6dfae3dcc5msh4f874cfe28d4357p198f92jsneb96c8cfa217",
         "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
       },
     };
@@ -142,7 +142,7 @@ export const PlaceSearchBarComponent = () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "61cb1a08f0mshd64d9d9a395d1dbp1298acjsnecd88864da94",
+            "6dfae3dcc5msh4f874cfe28d4357p198f92jsneb96c8cfa217",
           "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
         },
       };
