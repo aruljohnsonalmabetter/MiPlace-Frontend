@@ -15,15 +15,15 @@ const Amenities = ({ hotel_id }) => {
           languagecode: 'en-us'
         },
         headers: {
-          'X-RapidAPI-Key': '61cb1a08f0mshd64d9d9a395d1dbp1298acjsnecd88864da94',
+          'X-RapidAPI-Key': '6dfae3dcc5msh4f874cfe28d4357p198f92jsneb96c8cfa217',
           'X-RapidAPI-Host': 'apidojo-booking-v1.p.rapidapi.com'
         }
       };
 
       try {
         const response = await axios.request(options);
-        const newSet=new Set(response.data);
-        const newArray= Array.from(newSet)
+        const newSet = new Set(response?.data);
+        const newArray = Array.from(newSet)
         setFacilites(newArray);
         console.log(response.data);
       } catch (error) {
@@ -40,7 +40,7 @@ const Amenities = ({ hotel_id }) => {
         <div className="">
           {facilites.map((indiFac) => {
             return (<p key={indiFac.facilitytype_id} htmlFor="" className="block m-2">{indiFac?.facilitytype_name}</p>)
-          })}        
+          })}
         </div>
       </div>
     </div>

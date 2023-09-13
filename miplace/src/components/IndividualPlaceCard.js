@@ -73,37 +73,38 @@ export const IndividualPlaceCard = ({
           <div className="flex justify-center items-end w-full ">
             {/* Hotel info */}
             <div className=" m-2 w-9/12   ">
-              <p className="text-2xl text-bold ">
-              <p className="text-2xl text-bold font-mullish">
-                {/* {HotelName} */}
-                {/* Lemon Tree Premier Pune */}
-                {hotel_name}
-                {/* {hotel_name} - {hotel_id} */}
-              </p>
-              <div className="text-sm">
-                {/* {HotelAddress} */}
-                <BiSolidLocationPlus className="inline text-lg font-mullish" />
-                {address},{district} ,{city}
-                <div className="flex justify-between items-center text-bold">
-                  <div className="flex justify-between items-center">
-                    <div className="flex justify-center items-center ">
-                      <Rating value="5" className="inline " />
-                      <p className="inline   ">5 Star Hotel</p>
+              <div className="text-2xl text-bold ">
+                <p className="text-2xl text-bold font-mullish">
+                  {/* {HotelName} */}
+                  {/* Lemon Tree Premier Pune */}
+                  {hotel_name}
+                  {/* {hotel_name} - {hotel_id} */}
+                </p>
+                <div className="text-sm">
+                  {/* {HotelAddress} */}
+                  <BiSolidLocationPlus className="inline text-lg font-mullish" />
+                  {address},{district} ,{city}
+                  <div className="flex justify-between items-center text-bold">
+                    <div className="flex justify-between items-center">
+                      <div className="flex justify-center items-center ">
+                        <Rating value="5" className="inline " />
+                        <p className="inline   ">5 Star Hotel</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-center items-center">
+                      <BsFillCupFill className="mr-2" />
+                      <p className="inline   "> 20+ Aminities</p>
                     </div>
                   </div>
-                  <div className="flex justify-center items-center">
-                    <BsFillCupFill className="mr-2" />
-                    <p className="inline   "> 20+ Aminities</p>
+                  <div className="flex  items-center my-4">
+                    <p className="border-2 mr-4 inline border-sky-700 bg-white p-2 rounded-md text-bold  	">
+                      {review_score || "No review posted"}
+                    </p>
+                    <p className="text-lg">
+                      <p className="text-bold  inline"> {review_score_word}</p>{" "}
+                      371 reviews
+                    </p>
                   </div>
-                </div>
-                <div className="flex  items-center my-4">
-                  <p className="border-2 mr-4 inline border-sky-700 bg-white p-2 rounded-md text-bold  	">
-                    {review_score || "No review posted"}
-                  </p>
-                  <p className="text-lg">
-                    <p className="text-bold  inline"> {review_score_word}</p>{" "}
-                    371 reviews
-                  </p>
                 </div>
               </div>
             </div>
