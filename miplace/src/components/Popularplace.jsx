@@ -94,9 +94,6 @@ export const Popularplace = () => {
           <div class="p-12 flex flex-wrap items-center justify-center">
             
 
-<<<<<<< HEAD
-            
-=======
             <div class="flex-shrink-0 m-6 relative overflow-hidde rounded-lg max-w-xs shadow-lg">
               
               <div class="relative  flex items-center justify-center">
@@ -116,7 +113,6 @@ export const Popularplace = () => {
                 </div>
               </div>
             </div>
->>>>>>> dbf7ee1ace0ea58712ce56875c6bba134352306b
             
             
           </div>

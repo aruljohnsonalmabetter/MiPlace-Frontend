@@ -9,7 +9,7 @@ import HomeCard from "../components/HomeCard";
 import { MostSearchedLocations } from "../components/MostSearchedLocations";
 function Home() {
 
-  console.log("API IS",`${API}`);
+  console.log("API IS",API);
   return (
     <div>
       <HomeCard />

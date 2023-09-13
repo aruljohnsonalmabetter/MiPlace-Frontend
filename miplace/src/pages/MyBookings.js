@@ -6,7 +6,7 @@ import Rating from '../components/Rating';
 function MyBookings() {
   return (
     <div>
-        <div class="flex justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600">
+        <div class="flex justify-between mx-[3.125rem]  space-x-4">
             <div>
                 <h1>Lemon Tree Premier Pune </h1>
                 <Rating/>
@@ -20,7 +20,7 @@ function MyBookings() {
             </div>
         </div>
          <Bookingreceipt/>
-        <div class="mx-[3.125rem] my-[2.125rem] border-solid border-2 border-red-600">
+        <div class="mx-[3.125rem] my-[2.125rem] ">
             <h1 className='mb-[2.125rem] font-semibold font-[Montserrat] '>Terms and Conditions</h1>
             <h2 className='mb-[1rem] font-medium font-[Montserrat]'>Payments</h2>
             <p >
@@ -30,7 +30,7 @@ function MyBookings() {
             </p>
         </div>
 
-        <div class="mx-[3.125rem] border-solid border-2 border-green-600">
+        <div class="mx-[3.125rem] ">
             <h1 className='mb-[1rem] font-medium font-[Montserrat]'>Contact Us</h1>
             <h3>If you have any questions about our Website or our Terms of Use, please contact:
             <li class="list-none">Golobe Group Q.C.S.C</li>
