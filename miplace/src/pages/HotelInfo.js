@@ -1,3 +1,5 @@
+// TODO :All the Hotel info has to be added.
+
 import React, { useEffect } from "react";
 // import { Link } from 'react-router-dom';
 import Reviews from "../components/Reviews.jsx";
@@ -14,6 +16,7 @@ const HotelInfo = () => {
 
   useEffect(() => {
     console.log(hotelObj);
+    // console.log(hotelObj.currency);
   }, [hotelObj]);
   return (
     <div>
@@ -23,15 +26,17 @@ const HotelInfo = () => {
         city={hotelObj.city}
         district={hotelObj.district}
         address={hotelObj.address}
+        // currency={hotelObj.currency}
         price={hotelObj.price_breakdown}
         text="Download"
         review={hotelObj.review_score_word}
       />
       <Imagegrid img={hotelObj.main_photo_url} />
-      <Overview />
+      <Overview website={hotelObj.webUrl} />
       <Availablerooms
         room="Superior room - 1 double bed or 2 twin beds"
         price={hotelObj.price_breakdown}
+        // currency={hotelObj.currency}
         text="Book now"
       />
       <Amenities hotel_id={hotelObj.hotel_id} />

@@ -35,6 +35,13 @@ const bothtrueFunc = (hotel) => {
 //   //Load the hotel other than the selected hotel
 //   return newHotels;
 // };
+const onlyIndian = (hotels) => {
+  // let newHotels = hotels;
+  let newHotels = hotels.filter((hotel) => hotel?.country_trans === "India");
+
+  return newHotels;
+  // country_trans
+};
 const hotelSlice = createSlice({
   name: "hotels",
   initialState,
@@ -43,6 +50,8 @@ const hotelSlice = createSlice({
       state.loading = true;
     },
     fetchHotelsSuccess(state, action) {
+      // Only indian hotels
+      // state.hotels = onlyIndian(action.payload);
       state.hotels = action.payload;
       // state.recommendations = setRecommendations(action.payload);
       state.isFreeCancellableHotels = FCH(action.payload);

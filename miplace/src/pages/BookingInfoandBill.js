@@ -54,6 +54,7 @@ function BookingInfoandBill() {
           price={hotelObj.price_breakdown}
           url={hotelObj.main_photo_url}
           city={hotelObj.city}
+          currency={hotelObj.currency}
           address={hotelObj.address}
           firstDay={userEneterdHotelDetailsObj.firstDay}
           secondDay={userEneterdHotelDetailsObj.secondDay}
