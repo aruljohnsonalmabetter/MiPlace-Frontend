@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mullish: ["Poppins"],
+        mullish : ["Poppins"],
       },
       colors: {
         deepBlue: "#02042a",

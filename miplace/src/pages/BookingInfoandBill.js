@@ -14,7 +14,7 @@ import { loadStripe } from '@stripe/stripe-js/pure';
   */
 function BookingInfoandBill() {
   const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
-  console.log(hotelObj);
+  const hotels = useSelector((state) => state.indiHotelInfoFeature);
   const userEneterdHotelDetailsObj = useSelector(
     (state) => state.enteredHotelDetailsFeature
   );
@@ -27,7 +27,7 @@ function BookingInfoandBill() {
   const makePayment = async () => {
     const stripe = await loadStripe("pk_test_51NposySFLJXN2nA64GVOfZD5breUlUgQGzHW8I8QYPrwUmRKWsuhw6nCMciae8e50lK4n3WWleC8g1cXrSaZorRD00aY0YUIIg");
     const body = {
-      products: hotelObj
+      products: hotels
     }
     const headers = {
       "Content-Type": "application/json"
