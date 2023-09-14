@@ -6,10 +6,10 @@ import { PriceFilter2 } from "./PriceFilter2";
 
 export const FilterTabComponent = () => {
   return (
-    <div className="mr-2 sticky font-mullish">
+    <div className=" sticky w-[300px] bg-gray-200 m-3 p-3 rounded-lg">
       <div className="  p-2 w-full min-w-max	text-start">
         <div className="  flex   flex-col">
-          <h2 className=" text-bold">Filters</h2>
+          <h2 className=" text-bold text-3xl border-b-2 border-b-black pb-2 ">Filters</h2>
           <div className="text-left  flex  items-center flex-col">
             {/* <div className="flex justify-center items-center flex-row">
             <p>Price</p>
@@ -33,11 +33,11 @@ export const FilterTabComponent = () => {
             {/* <AccordionPrice title="Accordion #1" /> */}
             <PriceFilter2 />
             <hr />
-            <PlaceSearchBarRating />
+            {/* <PlaceSearchBarRating /> */}
             <hr />
             <Freebies />
             <hr />
-            <Amenities />
+            {/* <Amenities /> */}
 
             <hr />
           </div>

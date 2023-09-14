@@ -13,19 +13,20 @@ function ErrorScreen() {
         </p>
         <div className="flex justify-center items-center m-2">
           <Link
-            to="/customersupport"
+            to="/emailuscontactus"
             className="bg-[#fff] px-2 m-2 w-48 py-2 text-black text-semibold text-lg rounded-md hover:bg-gray-300 transition-all duration-500 ease-in border-2 border-gray-400 "
           >
-            <button className="w-full text-bold " >Contact Support</button>
+            <button className="w-full text-bold ">Contact Support ☎️</button>
           </Link>
           <Link
+            to="/"
             className="bg-[#196680] px-2 m-2 w-48 py-2 text-white  text-semibold text-lg rounded-md hover:bg-sky-600 transition-all duration-500 ease-in"
           >
             <button
               className="w-full "
-              onClick={() => window.location.reload()}
+              // onClick={() => window.location.reload()}
             >
-              Refresh Page
+              Go to home page 🏠
             </button>
           </Link>
         </div>
