@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import { Link } from "react-router-dom";
-
+import "./styles.css";
 const Availablerooms = ({  room, price, text }) => {
   // function formatCurrency(amount, currencyCode) {
   //   // Create a formatter based on the currency code
@@ -15,9 +15,9 @@ const Availablerooms = ({  room, price, text }) => {
   // }
   return (
     <>
-      <div className="max-w-1409px mx-auto p-4 h-600px border border-gray-300  rounded">
+      <div className="border-2 rounded bg-gradient-to-r from-gray-500 via-lightgray-500 max-w-1409px mx-auto p-4 h-600px  border-gray-300  rounded font-mullish">
         <div>
-          <h1 className="text-2xl font-bold mb-4 font-mullish">
+          <h1 className="bg-cyan-500 shadow-lg shadow-cyan-500/50 rounded inline-block text-white text-2xl font-bold mb-4 font-mullish hover:shadow-indigo-500/40">
             Available rooms
           </h1>
         </div>
@@ -25,9 +25,9 @@ const Availablerooms = ({  room, price, text }) => {
         <div class="flex justify-between my-2">
           <div class="flex font-mullish">
             <img />
-            <p className="text-bold">{room}</p>
+            <p className="text-bold text-xl ">{room}</p>
           </div>
-          <div class="flex space-x-3 font-bold font-mullish">
+          <div id="available"class="flex space-x-3 font-bold font-mullish text-xl">
             <h2>{price}/night</h2>
             {/* <h2>{formatCurrency(price, currency)}/night</h2> */}
             <Link to="/bookingInfoandBill">

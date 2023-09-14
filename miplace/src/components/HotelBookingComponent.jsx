@@ -4,7 +4,7 @@ const HotelBookingComponent = ({ currency, hotelName, price, url, city, address,
 
   return (
     <>
-      <div class=" border-solid rounded-lg border-2 border-{A1A1A1} mx-auto w-[49.375rem] h-[23.8125rem] ">
+      <div class=" border-solid rounded-lg border-2 border-{A1A1A1} mx-auto w-[49.375rem] h-[23.8125rem] font-mullish">
 
         <div class="flex mx-[1.5rem] mt-[2rem] mb-[1.5rem] py-[1.5rem] justify-between">
           <h1>Superior room - 1 double bed or 2 twin beds</h1>

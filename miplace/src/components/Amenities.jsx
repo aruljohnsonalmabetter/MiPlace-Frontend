@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/PriceFilter.css";
+import Location from "./Location.jsx";
 import axios from "axios";
 const Amenities = ({ hotel_id }) => {
   const [facilites, setFacilites] = useState([]);
@@ -33,9 +34,9 @@ const Amenities = ({ hotel_id }) => {
     loadFacilities()
   }, [hotel_id])
   return (
-    <div className=" w-full p-2 ">
+    <div className="border-2 rounded w-full p-4 h-600 font-mullish bg-gradient-to-r from-gray-500 via-black-500">
       {/* <div className="bg-green-900 w-full flex items-center justify-center flex-col"> */}
-      <p className=" p-1 text-bold">Facilities</p>
+      <h1 className=" bg-cyan-500 shadow-lg inline-block shadow-cyan-500/50 rounded text-white text-2xl  font-bold mb-4 font-mullish hover:shadow-indigo-500/40">Facilities</h1>
       <div className="price-input  flex  flex-col">
         <div className="">
           {facilites.map((indiFac) => {

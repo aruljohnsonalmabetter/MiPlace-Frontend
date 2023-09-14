@@ -47,7 +47,7 @@ function BookingInfoandBill() {
     }
   }
   return (
-    <div class="flex  gap-[1.5rem]">
+    <div class="flex  gap-[1.5rem] font-mullish">
       <div class="  mt-[2.5rem]  w-[49.375rem] h-[64.25rem]  ">
         <HotelBookingComponent
           hotelName={hotelObj.hotel_name}

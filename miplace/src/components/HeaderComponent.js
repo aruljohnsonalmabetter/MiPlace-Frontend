@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
+import "./styles.css";
 const HeaderComponent = () => {
   let [open, setOpen] = useState(false);
 

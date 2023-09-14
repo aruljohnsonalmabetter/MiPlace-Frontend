@@ -1,44 +1,16 @@
 import React from 'react'
-import Image from '../images/Rectangle 3.webp'
-import Image1 from '../images/Rectangle 5 (2).webp'
-import Image2 from '../images/Rectangle 6 (1).webp'
-import Image3 from '../images/Rectangle 5 (1).webp'
-import Image4 from '../images/Rectangle 6 (2).webp'
-
+import Hotel15 from "../images/Hotelimages/Hotel15.webp";
+import Hotel23 from "../images/Hotelimages/hotel23.webp";
+import "./styles.css";
 function Imagegrid({ img }) {
+    
     return (
         <>
-            <div class="flex mx-[3.5rem] my-[3.5rem]">
-                <div>
-                    <img
-                        src={img}
-                    />
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <img
-                            src={img}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src={img}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src={img}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src={img}
-                        />
-                    </div>
-
-                </div>
-            </div>
+            <div id="imgrid"class="flex justify-center  mx-[0.5rem] my-[0.5rem] rounded  ">
+                <img id="img1" width="400px" height ="400px"src={Hotel15} />
+                <img id="img2"width="1000px" height="400px" src={Hotel23} />
+                <img id="img3"width="400px" height="400px" src={Hotel15} />
+            </div>    
         </>
     )
 }
