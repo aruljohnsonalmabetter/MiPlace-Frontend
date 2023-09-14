@@ -69,13 +69,20 @@ export const PlaceCard = () => {
   });
 
   console.log("hotel1 : ", hotel1);
+  function formatCurrency(amount, currencyCode) {
+    // Create a formatter based on the currency code
+    const formatter = new Intl.NumberFormat(undefined, {
+      style: "currency",
+      currency: currencyCode,
+    });
 
+    // Format the amount
+    return formatter.format(amount);
+  }
   const loading = useSelector((state) => state.hotelFeature.loading);
   const error = useSelector((state) => state.hotelFeature.error);
 
   const [allHotels, setAllHotels] = useState([]);
-  // const [lowToHighHotels, setlowToHighHotels] = useState([]);
-  // const [highToLowHotels, sethighToLowHotels] = useState([]);
   const [finalHoteList, setfinalHoteList] = useState([]);
   const [DescHowItisSorted, setDescHowItisSorted] = useState(null);
   const [TextisFreeCancellable, setTextisFreeCancellable] = useState(false);
@@ -153,7 +160,11 @@ export const PlaceCard = () => {
             noFilter :{noFilter == true ? "True" : "False"}
           </div>
         )} */}
-
+        {/* {!loading && !error && hotels.length == 0 && (
+          <div className="text-3xl w-full  rounded-lg my-3  flex justify-center items-center p-4 text-bold">
+            No hotels in India for the particular city...
+          </div>
+        )} */}
         {loading == false &&
           isFreeCancellable &&
           hasFreeParking &&
@@ -162,7 +173,9 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
+                  webUrl={hotel.url}
                   Hotel_obj={hotel}
                   address={hotel.address}
                   city={hotel.city_trans}
@@ -172,7 +185,11 @@ export const PlaceCard = () => {
                   review_score={hotel.review_score}
                   review_score_word={hotel.review_score_word}
                   url={hotel.url}
-                  price_breakdown={hotel.price_breakdown.all_inclusive_price}
+                  price_breakdown={formatCurrency(
+                    hotel.price_breakdown.all_inclusive_price,
+                    hotel.price_breakdown.currency
+                  )}
+                  // price_breakdown={hotel.price_breakdown.all_inclusive_price}
                 />
               </div>
             );
@@ -186,7 +203,9 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
+                  webUrl={hotel.url}
                   Hotel_obj={hotel}
                   address={hotel.address}
                   city={hotel.city_trans}
@@ -196,7 +215,10 @@ export const PlaceCard = () => {
                   review_score={hotel.review_score}
                   review_score_word={hotel.review_score_word}
                   url={hotel.url}
-                  price_breakdown={hotel.price_breakdown.all_inclusive_price}
+                  price_breakdown={formatCurrency(
+                    hotel.price_breakdown.all_inclusive_price,
+                    hotel.price_breakdown.currency
+                  )}
                 />
               </div>
             );
@@ -210,7 +232,9 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
+                  webUrl={hotel.url}
                   Hotel_obj={hotel}
                   address={hotel.address}
                   city={hotel.city_trans}
@@ -220,7 +244,10 @@ export const PlaceCard = () => {
                   review_score={hotel.review_score}
                   review_score_word={hotel.review_score_word}
                   url={hotel.url}
-                  price_breakdown={hotel.price_breakdown.all_inclusive_price}
+                  price_breakdown={formatCurrency(
+                    hotel.price_breakdown.all_inclusive_price,
+                    hotel.price_breakdown.currency
+                  )}
                 />
               </div>
             );
@@ -234,6 +261,8 @@ export const PlaceCard = () => {
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
                   hotel_id={hotel.hotel_id}
+                  currency={hotel.price_breakdown.currency}
+                  webUrl={hotel.url}
                   Hotel_obj={hotel}
                   address={hotel.address}
                   city={hotel.city_trans}
@@ -243,7 +272,10 @@ export const PlaceCard = () => {
                   review_score={hotel.review_score}
                   review_score_word={hotel.review_score_word}
                   url={hotel.url}
-                  price_breakdown={hotel.price_breakdown.all_inclusive_price}
+                  price_breakdown={formatCurrency(
+                    hotel.price_breakdown.all_inclusive_price,
+                    hotel.price_breakdown.currency
+                  )}
                 />
               </div>
             );
@@ -257,7 +289,9 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
+                  webUrl={hotel.url}
                   Hotel_obj={hotel}
                   address={hotel.address}
                   city={hotel.city_trans}
@@ -267,7 +301,10 @@ export const PlaceCard = () => {
                   review_score={hotel.review_score}
                   review_score_word={hotel.review_score_word}
                   url={hotel.url}
-                  price_breakdown={hotel.price_breakdown.all_inclusive_price}
+                  price_breakdown={formatCurrency(
+                    hotel.price_breakdown.all_inclusive_price,
+                    hotel.price_breakdown.currency
+                  )}
                 />
               </div>
             );
@@ -281,7 +318,9 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
+                  webUrl={hotel.url}
                   Hotel_obj={hotel}
                   address={hotel.address}
                   city={hotel.city_trans}
@@ -291,7 +330,10 @@ export const PlaceCard = () => {
                   review_score={hotel.review_score}
                   review_score_word={hotel.review_score_word}
                   url={hotel.url}
-                  price_breakdown={hotel.price_breakdown.all_inclusive_price}
+                  price_breakdown={formatCurrency(
+                    hotel.price_breakdown.all_inclusive_price,
+                    hotel.price_breakdown.currency
+                  )}
                 />
               </div>
             );
@@ -306,13 +348,14 @@ export const PlaceCard = () => {
           hasFreeParking == false &&
           isFreeCancellable == false &&
           // { noFilter==false &&}
-          // TODO : country_trans should be == "India"
 
           finalHoteList.map((hotel) => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
                   hotel_id={hotel.hotel_id}
+                  currency={hotel.price_breakdown.currency}
+                  webUrl={hotel.url}
                   Hotel_obj={hotel}
                   address={hotel.address}
                   city={hotel.city_trans}
@@ -322,7 +365,10 @@ export const PlaceCard = () => {
                   review_score={hotel.review_score}
                   review_score_word={hotel.review_score_word}
                   url={hotel.url}
-                  price_breakdown={hotel.price_breakdown.all_inclusive_price}
+                  price_breakdown={formatCurrency(
+                    hotel.price_breakdown.all_inclusive_price,
+                    hotel.price_breakdown.currency
+                  )}
                 />
               </div>
             );

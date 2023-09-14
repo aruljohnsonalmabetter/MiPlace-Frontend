@@ -11,8 +11,10 @@ import Hotel15 from "../images/Hotelimages/Hotel15.webp";
 import "./styles.css";
 export const IndividualPlaceCard = ({
   hotel_id,
+  webUrl,
   address,
   city,
+  currency,
   district,
   hotel_name,
   main_photo_url,
@@ -35,10 +37,22 @@ export const IndividualPlaceCard = ({
     console.log(Hotel_obj);
   };
 
+  function formatCurrency(amount, currencyCode) {
+    // Create a formatter based on the currency code
+    const formatter = new Intl.NumberFormat(undefined, {
+      style: "currency",
+      currency: currencyCode,
+    });
+
+    // Format the amount
+    return formatter.format(amount);
+  }
   const handleViewPlace = async () => {
     // navigate(`/hotel/${Hotel_obj._id}`);
     const hotelObj = {
       hotel_id,
+      webUrl,
+      currency,
       hotel_name,
       address,
       city,
@@ -78,6 +92,7 @@ export const IndividualPlaceCard = ({
                   {/* {HotelName} */}
                   {/* Lemon Tree Premier Pune */}
                   {hotel_name}
+                  {/* {webUrl} */}
                   {/* {hotel_name} - {hotel_id} */}
                 </p>
                 <div className="text-sm">
@@ -113,7 +128,8 @@ export const IndividualPlaceCard = ({
             <div className="m-2  p-2 text-right w-4/12">
               <p> starting from</p>
               <p className="text-lg text-bold text-blue-600 ">
-                ₹ {price_breakdown}/night
+                {price_breakdown} /night
+                {/* {formatCurrency(price_breakdown, currency)} /night */}
               </p>
               <p className="">excl. tax</p>
             </div>

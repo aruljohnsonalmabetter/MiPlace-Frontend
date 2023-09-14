@@ -8,6 +8,7 @@ import Rating from "./Rating";
 import "./styles.css";
 
 const HotelNamebooking = ({
+  // currency,
   hotel_id,
   hotelname,
   city,
@@ -24,12 +25,13 @@ const HotelNamebooking = ({
           {hotelname}
         </h1>
 
-        <h3 className=" flex font-[Montserrat]  font-medium">
-          <BiSolidLocationPlus /> {address}
+        <h3 className=" flex font-[Montserrat]  font-medium justify-center items-center">
+          <BiSolidLocationPlus className="mr-2" />
+          {address}, {city}
         </h3>
-        <h3 className=" flex font-[Montserrat]  font-medium">
+        {/* <h3 className=" flex font-[Montserrat]  font-medium">
           <BiSolidLocationPlus /> {district}
-        </h3>
+        </h3> */}
 
         <div className="flex gap-[1rem] ">
           <Rating value="5" className="inline " />
@@ -39,7 +41,8 @@ const HotelNamebooking = ({
       </div>
       <div>
         <h1 className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6]">
-          ₹{price}/night
+          {price}/night
+          {/* {formatCurrency(price, currency)}/night */}
         </h1>
         <div className="flex justify-between">
           <FcLike className="text-2xl hover:scale-75   cursor-pointer transition ease-in-out delay-250" />

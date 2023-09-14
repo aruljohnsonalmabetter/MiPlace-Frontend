@@ -6,6 +6,16 @@ import Rating from "../components/Rating";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
 
 function MyBookings() {
+  // function formatCurrency(amount, currencyCode) {
+  //   // Create a formatter based on the currency code
+  //   const formatter = new Intl.NumberFormat(undefined, {
+  //     style: "currency",
+  //     currency: currencyCode,
+  //   });
+
+  //   // Format the amount
+  //   return formatter.format(amount);
+  // }
   const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
   const userEneterdHotelDetailsObj = useSelector(
     (state) => state.enteredHotelDetailsFeature
@@ -18,22 +28,32 @@ function MyBookings() {
   return (
     <div class=" justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600">
       <div className="flex justify-between">
-      <div>
-        {/* url={hotelObj.main_photo_url} */}
+        <div>
+          {/* url={hotelObj.main_photo_url} */}
 
-        <h1>{hotelObj.hotel_name} </h1>
-        <Rating />
-        <h3 className="flex">
-          <FaLocationDot />
-          {hotelObj.address} , {hotelObj.city}
-        </h3>
+          <h1>{hotelObj.hotel_name} </h1>
+          <Rating />
+          <h3 className="flex">
+            <FaLocationDot />
+            {hotelObj.address},{hotelObj.city}
+          </h3>
+        </div>
+        <div>
+          <h1>
+            {hotelObj.price_breakdown}/night
+            {/* ₹ {formatCurrency(hotelObj.price_breakdown, hotelObj.currency)}
+            /night */}
+          </h1>
+          <Button text="Download" />
+        </div>
       </div>
-      <div>
-        <h1>₹ {hotelObj.price_breakdown}/night</h1>
-        <Button text="Download" />
-      </div>
-      </div>
-      <Bookingreceipt />
+      <Bookingreceipt
+        hotel_name={hotelObj.hotel_name}
+        firstDay={userEneterdHotelDetailsObj.firstDay}
+        secondDay={userEneterdHotelDetailsObj.secondDay}
+        noOfDays={userEneterdHotelDetailsObj.noOfDays}
+        url={hotelObj.main_photo_url}
+      />
       <div class="mx-[3.125rem] my-[2.125rem] border-solid border-2 border-red-600">
         <h1 className="mb-[2.125rem] font-semibold font-[Montserrat] ">
           Terms and Conditions
