@@ -1,4 +1,6 @@
 import { API } from "../backend";
+ 
+console.log("api is", API);
 
 export const signup = user => {
   return fetch(`${API}/signup`, {

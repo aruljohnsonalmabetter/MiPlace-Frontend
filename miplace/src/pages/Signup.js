@@ -3,8 +3,7 @@ import image from '../images/reception.webp';
 
 const Signup = () => {
   const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [countryCode, setCountryCode] = useState("");
+  const [password, setpassword] = useState("");
   const [email, setEmail] = useState("");
 
   return (
@@ -23,13 +22,7 @@ const Signup = () => {
           onChange={(e) => setName(e.target.value)}
           className="p-2 border border-gray-300 rounded-md w-1/2"
         />
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-          className="p-2 border border-gray-300 rounded-md w-1/2"
-        />
+        
         <input
           type="email"
           placeholder="Enter you e-mail"
@@ -37,17 +30,17 @@ const Signup = () => {
           onChange={(e) => setEmail(e.target.value)}
           className="p-2 border border-gray-300 rounded-md w-1/2"
         />
-        <select
-          value={countryCode}
-          onChange={(e) => setCountryCode(e.target.value)}
-          className="p-2 border border-gray-300 rounded-md w-1/3"
-        >
-          <option value="+1">+1 (United States)</option>
-          <option value="+44">+44 (United Kingdom)</option>
-          <option value="+91">+91 (India)</option>
-          <option value="+62">+62 (Indonesia)</option>
-          <option value="+86">+86 (China)</option>
-        </select>
+
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setpassword(e.target.value)}
+          className="p-2 border border-gray-300 rounded-md w-1/2"
+                
+        />
+
+       
         <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md w-1/3">
           Register
         </button>
