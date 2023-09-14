@@ -16,7 +16,8 @@ function MyBookings() {
   }, [hotelObj, userEneterdHotelDetailsObj]);
 
   return (
-    <div class="flex justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600">
+    <div class=" justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600">
+      <div className="flex justify-between">
       <div>
         {/* url={hotelObj.main_photo_url} */}
 
@@ -30,6 +31,7 @@ function MyBookings() {
       <div>
         <h1>₹ {hotelObj.price_breakdown}/night</h1>
         <Button text="Download" />
+      </div>
       </div>
       <Bookingreceipt />
       <div class="mx-[3.125rem] my-[2.125rem] border-solid border-2 border-red-600">
