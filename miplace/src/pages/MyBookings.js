@@ -6,6 +6,16 @@ import Rating from "../components/Rating";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
 
 function MyBookings() {
+  // function formatCurrency(amount, currencyCode) {
+  //   // Create a formatter based on the currency code
+  //   const formatter = new Intl.NumberFormat(undefined, {
+  //     style: "currency",
+  //     currency: currencyCode,
+  //   });
+
+  //   // Format the amount
+  //   return formatter.format(amount);
+  // }
   const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
   const userEneterdHotelDetailsObj = useSelector(
     (state) => state.enteredHotelDetailsFeature
@@ -18,8 +28,8 @@ function MyBookings() {
   return (
     <div class=" justify-between mx-[3.125rem]  space-x-4 ">
       <div className="flex justify-between">
-      <div>
-        {/* url={hotelObj.main_photo_url} */}
+        <div>
+          {/* url={hotelObj.main_photo_url} */}
 
         <h1 className="font-bold text-3xl">{hotelObj.hotel_name} </h1>
         <Rating />

@@ -1,8 +1,8 @@
- /* *{
+ *{
     margin :0;
     padding :0;
     box-sizing: border-box;
- } */
+ }
  #largecontainer{
     @media screen and (max-width: 1200px) {
             height: 20%;
@@ -25,14 +25,13 @@
     }
 }
 #txt{
-@media screen and (max-width: 1200px) {
-        padding-bottom: 50px ;
+@media screen and (max-width: 1900px) {
+        padding-bottom: 70px ;
     }
-@media screen and (max-width: 663px) {
-            padding-bottom: 30px;
-            font-size:larger;
-            font-weight:bold;
-        }
+@media screen and (max-width: 1200px) {
+          padding-bottom:500px;
+          font-size:small;
+}
 }
 #box{
     @media screen and (max-width: 663px) {
@@ -72,3 +71,120 @@
         flex-direction: column;
     }
  }
+ @media screen and (max-width: 1900px) {
+     #img1 {
+         width:300px;
+     }
+     #img2{
+        width:800px;
+     }
+     #img3{
+       width: 300px;
+      }
+ }
+ @media screen and (max-width: 1400px) { 
+     #img2 {
+         width: 600px;
+     }
+ }
+ @media screen and (max-width: 1200px) {
+     #img2 {
+         width: 400px;
+         object-fit: cover;
+     }
+ }
+ @media screen and (max-width: 800px) {
+     #img2 {
+         width: 300px;
+         object-fit: cover;
+     }
+
+         #img1 {
+             width: 150px;
+            object-fit: cover;
+         }
+    
+         #img3 {
+             width: 150px;
+            object-fit: cover;
+         }
+ }
+
+
+@media screen and (max-width: 650px) {
+    #img2 {
+        width: 200px;
+        object-fit: cover;
+    }
+
+    #img1 {
+        width: 100px;
+        object-fit: cover;
+    }
+
+    #img3 {
+        width: 100px;
+        object-fit: cover;
+    }
+}
+ 
+@media screen and (max-width: 300px) {
+    #img2 {
+        width: 150px;
+        object-fit: cover;
+    }
+
+    #img1 {
+        width: 50px;
+        object-fit: cover;
+    }
+
+    #img3 {
+        width: 50px;
+        object-fit: cover;
+    }
+}
+#icons{
+    @media screen and (max-width: 490px) {
+            flex-direction: column;
+            gap: 2px;
+            justify-content:center;
+            align-items:center;
+        }
+}
+ #available{
+    @media screen and (max-width: 430px) {
+            flex-direction: column;
+            gap: 2px;
+            justify-content: center;
+            align-items: center;
+        }
+ }
+#login{
+    @media screen and (max-width: 600px) {
+            padding-left:20px;
+            justify-content:center;
+        }
+}
+#signin {
+    @media screen and (max-width: 600px) {
+        padding-left: 20px;
+        justify-content: center;
+    }
+}
+
+    @media screen and (max-width: 600px) {
+         #btn{
+            width:100%
+         }
+                 #btn2 {
+                     width: 100%
+                 }
+
+            .in{
+                width:100%
+            }
+            .in2{
+                width:100%
+            }
+        }

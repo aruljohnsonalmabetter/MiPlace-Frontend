@@ -165,9 +165,9 @@ export const PlaceSearchBarComponent = () => {
     >
       <div
         id="container"
-        className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black "
+        className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black md:h-2/5"
       >
-        <div>
+        <div className="m-2"> 
           <label className="relative">
             <input
               className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5  rounded-md w-96 transition duration-200"
@@ -190,7 +190,7 @@ export const PlaceSearchBarComponent = () => {
             </span> */}
           </label>
         </div>
-        <div>
+        <div className="m-2">
           <label className="relative">
             <input
               className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5  rounded-md  transition duration-200"
@@ -204,7 +204,7 @@ export const PlaceSearchBarComponent = () => {
           </label>
         </div>
         <p className="text-bold text-indigo-700 text-lg">to</p>
-        <div>
+        <div className="m-2">
           <label className="relative">
             <input
               className="border-2 border-solid border-black border-opacity-40	  px-3 py-1.5  rounded-md  transition duration-200"
@@ -236,8 +236,8 @@ export const PlaceSearchBarComponent = () => {
           />
         </div> */}
 
-        <div className=" ">
-          <p className="rounded-3xl	 px-3 py-1 border-2 border-solid border-none border-opacity-40	text-lg text-white bg-black bg-opacity-80">
+        <div className="m-4">
+          <p className="rounded-3xl	 px-3 py-1 border-2  border-none border-opacity-40	text-lg text-white bg-black bg-opacity-80">
             {firstDay && secondDay ? noOfDays(firstDay, secondDay) : 0} Nights
             {/* {firstDay && secondDay ? set(firstDay, secondDay) : 0} Nights */}
             {/* {days} Nights */}

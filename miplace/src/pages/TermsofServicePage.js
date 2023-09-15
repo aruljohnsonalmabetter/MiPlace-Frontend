@@ -2,7 +2,7 @@ import React from "react";
 
 function TermsofServicePage() {
   return (
-    <div className=" h-full w-full flex justify-center items-center p-4">
+    <div className=" h-full w-full flex justify-center items-center font-mullish p-4">
       <div className=" w-10/12">
         <p className="text-3xl text-bold">Terms of Service</p>
         <p className="m-2">

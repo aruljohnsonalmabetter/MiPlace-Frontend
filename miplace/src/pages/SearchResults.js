@@ -8,12 +8,12 @@ import { PlaceSearchBarComponent } from "../components/PlaceSearchBarComponent";
 function SearchResults() {
   // const hotels = useSelector((state) => state.hotelFeature.hotels);
   return (
-    <div className="h-full p-6 ">
+    <div className="h-full p-6 font-mullish">
       <div className="">
         <div className="mb-8">
           <PlaceSearchBarComponent />
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex font-mullish justify-center items-center">
           <div className=" flex justify-between items-start w-11/12">
             {/* <div className=" flex justify-between items-center "> */}
             <FilterTabComponent />

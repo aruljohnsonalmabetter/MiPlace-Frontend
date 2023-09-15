@@ -17,15 +17,15 @@ const Recommendations = ({ district, hotelName }) => {
     console.log("recommondations : ", newRecom);
   }, [district, hotelName]);
   return (
-    <div>
-      <h1 className="text-3xl text-bold text-center ">
-        districtVar : {district || <span>NULL</span>}
+    <div className="text-semibold font-mullish">
+      <h1 className="text-2xl text-bold text-center ">
+        District : {district || <span>NULL</span>}
       </h1>
-      <h1 className="text-3xl text-bold text-center">
-        hotelNameVar : {hotelName || <span>NULL</span>}
+      <h1 className="text-2xl text-bold text-center">
+        HotelName : {hotelName || <span>NULL</span>}
       </h1>
       {district == "" && (
-        <h1 className="text-3xl text-bold text-center  my-4">
+        <h1 className="text-2xl text-bold text-center my-4">
           No recommondations for this one
         </h1>
       )}

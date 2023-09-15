@@ -35,7 +35,7 @@ const handlehasfreeparking = () => {
 // };
 export const Amenities = () => {
   return (
-    <div className=" w-full p-2 ">
+    <div className=" w-full p-2 font-mullish">
       {/* <div className="bg-green-900 w-full flex items-center justify-center flex-col"> */}
       <p className=" p-1 text-bold">Amenities</p>
       <div className="price-input  flex  flex-col">

@@ -19,7 +19,7 @@ export const FavoritesPlaceCardComponent = ({
   Hotel_obj,
 }) => {
   return (
-    <div className=" w-full  rounded-lg my-3 ">
+    <div className=" w-full  rounded-lg my-3 font-mullish">
       {/* Divide into two parts */}
       <div className="flex items-center justify-center w-full  ">
         {/* IMG */}
