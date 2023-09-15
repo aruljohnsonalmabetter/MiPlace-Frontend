@@ -40,7 +40,8 @@ const Signup = () => {
           });
         }
       })
-      .catch(console.log("Error in signup"));
+      .catch(console.log("Error in signup",{setValues}));
+      
   };
   return (
     <div className="bg-blue-500 sm-a51:bg-red-500 sm-a71:bg-green-500 font-mullish" >
@@ -57,7 +58,7 @@ const Signup = () => {
               type="text"
               placeholder="Name"
               value={name}
-              onChange={(e) => setValues(e.target.value)}
+              onChange={handleChange("name")}
               className="p-2 border border-gray-300 rounded-md w-1/2"
             />
         
@@ -66,7 +67,7 @@ const Signup = () => {
               type="email"
               placeholder="Enter you e-mail"
               value={email}
-              onChange={(e) => setValues(e.target.value)}
+              onChange={handleChange("email")}
               className="p-2 border border-gray-300 rounded-md w-1/2"
             />
 
@@ -75,7 +76,7 @@ const Signup = () => {
               type="password"
               placeholder="Password"
               value={password}
-              onChange={(e) => setValues(e.target.value)}
+              onChange={handleChange("password")}
               className="p-2 border border-gray-300 rounded-md w-1/2"
                 
             />
@@ -88,6 +89,8 @@ const Signup = () => {
     </div>
   </div>
   );
+
+  
 };
 
 
