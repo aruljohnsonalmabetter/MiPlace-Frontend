@@ -9,11 +9,13 @@ import Availablerooms from "../components/Availablerooms.js";
 import Amenities from "../components/Amenities.jsx";
 import Location from "../components/Location.jsx";
 import HotelNamebooking from "../components/HotelNamebooking.js";
-import { useSelector } from "react-redux/es/hooks/useSelector.js";
+// import { useSelector } from "react-redux/es/hooks/useSelector.js";
 import Recommendations from "../components/Recommendations.js";
+import { useDispatch, useSelector } from "react-redux";
 const HotelInfo = () => {
   const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
-
+  const dispatch = useDispatch();
+ 
   useEffect(() => {
     console.log(hotelObj);
     // console.log(hotelObj.currency);
@@ -21,6 +23,7 @@ const HotelInfo = () => {
   return (
     <div>
       <HotelNamebooking
+        hotelOBJ={hotelObj}
         hotel_id={hotelObj.hotel_id}
         hotelname={hotelObj.hotel_name}
         city={hotelObj.city}
