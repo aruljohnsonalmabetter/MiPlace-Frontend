@@ -1,15 +1,17 @@
 import React from "react";
 import Button from "./Button";
-// import { FaLocationDot } from "react-icons/fa" ;
 import { BiSolidLocationPlus } from "react-icons/bi";
 import { FcLike } from "react-icons/fc";
 import { BsFillShareFill } from "react-icons/bs";
 import Rating from "./Rating";
 import "./styles.css";
+import { useDispatch } from "react-redux";
+import { addFavHotel } from "../redux-features/userSlice";
 
 const HotelNamebooking = ({
   // currency,
   hotel_id,
+  hotelOBJ,
   hotelname,
   city,
   price,
@@ -18,6 +20,13 @@ const HotelNamebooking = ({
   address,
   district,
 }) => {
+  const dispatch = useDispatch();
+
+  const handleAddtoFav = () => {
+    dispatch(addFavHotel(hotelOBJ));
+    // console.log("favHotel : ", favHotel);
+    console.log(hotelOBJ);
+  };
   return (
     <div class="flex justify-between space-x-4q bg-blue-600 text-white rounded">
       <div>
@@ -44,10 +53,16 @@ const HotelNamebooking = ({
           {price}/night
           {/* {formatCurrency(price, currency)}/night */}
         </h1>
-        <div id="icons"className="flex justify-between space-x-4">
-          <FcLike className="text-xl hover:scale-75 cursor-pointer transition ease-in-out delay-250" />
+        <div id="icons" className="flex justify-between space-x-4">
+          {/* <FcLike className="text-xl hover:scale-75 cursor-pointer transition ease-in-out delay-250" /> */}
+          {/* <button
+            className="border-2 border-black p-2  rounded-md m-2"
+            onClick={handleAddtoFav}
+          >
+            <FcLike className="text-2xl hover:scale-75    transition ease-in-out delay-250" />
+          </button> */}
           <BsFillShareFill className="pt-1 snap-center" />
-          <Button className="md:text-sm inline-block"text={text} />
+          <Button className="md:text-sm inline-block" text={text} />
         </div>
       </div>
     </div>

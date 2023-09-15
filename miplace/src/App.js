@@ -42,7 +42,6 @@ import CustomerSupport from "./pages/CustomerSupport";
 import TermsofServicePage from "./pages/TermsofServicePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { Favorites } from "./pages/Favorites";
-import Recommendations from "./components/Recommendations";
 
 function App() {
   return (
@@ -51,22 +50,27 @@ function App() {
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
+        {/* ✅*/}
         <Route path="/hotelinfo" element={<HotelInfo />} />
+        {/* ✅*/}
         <Route path="/searchResults" element={<SearchResults />} />
-
-        <Route path="/login" element={<Login />} />
+        {/* ✅*/}
+        <Route path="/login" element={<Login />} /> {/* ✅*/}
         <Route path="/otp" element={<OTP />} />
         <Route path="/signup" element={<Signup />} />
+        {/* ✅*/}
         <Route path="/bookingInfoandBill" element={<BookingInfoandBill />} />
+        {/* ✅*/}
         <Route path="/mybookings" element={<MyBookings />} />
+        {/* ✅*/}
         <Route path="/emailuscontactus" element={<EmailUsContactUs />} />
+        {/* ✅*/}
         <Route path="/customersupport" element={<CustomerSupport />} />
-
         <Route path="/writeReview" element={<WriteReview />} />
         <Route path="/termsOfservice" element={<TermsofServicePage />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/favorites" element={<Favorites />} />
-        {/* <Route path="/recommendations" element={<Recommendations />} /> */}
+        {/* ✅*/}
         <Route path="*" element={<ErrorScreen />} />
       </Routes>
       <FooterComponent />
