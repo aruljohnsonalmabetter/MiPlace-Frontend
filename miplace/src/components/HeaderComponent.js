@@ -31,8 +31,13 @@ const HeaderComponent = () => {
           >
             {/* <ul className="flex justify-between items-center"> */}
             <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
-              <Link to="/aboutUs" className="">
-                About Us{" "}
+              <Link to="/Favorites">
+                <button
+                  className="border-2 text-bold   p-2 rounded-md  2 transition ease-in-out delay-100 bg-blue-500 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500 duration-300 text-white my-2"
+                  // className="border-2 text-bold border-sky-700 bg-white p-2 rounded-md  transition ease-in-out delay-250  hover:bg-sky-300 duration-300	m-2"
+                >
+                  View My Favorites{" "}
+                </button>
               </Link>
             </li>
             <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">

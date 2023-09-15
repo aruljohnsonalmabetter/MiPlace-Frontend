@@ -26,39 +26,29 @@ function MyBookings() {
   }, [hotelObj, userEneterdHotelDetailsObj]);
 
   return (
-    <div class=" justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600 font-mullish">
+    <div class=" justify-between mx-[3.125rem]  space-x-4 ">
       <div className="flex justify-between">
         <div>
           {/* url={hotelObj.main_photo_url} */}
 
-          <h1>{hotelObj.hotel_name} </h1>
-          <Rating />
-          <h3 className="flex">
-            <FaLocationDot />
-            {hotelObj.address},{hotelObj.city}
-          </h3>
-        </div>
-        <div>
-          <h1>
-            {hotelObj.price_breakdown}/night
-            {/* ₹ {formatCurrency(hotelObj.price_breakdown, hotelObj.currency)}
-            /night */}
-          </h1>
-          <Button text="Download" />
-        </div>
+        <h1 className="font-bold text-3xl">{hotelObj.hotel_name} </h1>
+        <Rating />
+        <h3 className="flex text-sm">
+          <FaLocationDot />
+          {hotelObj.address} , {hotelObj.city}
+        </h3>
       </div>
-      <Bookingreceipt
-        hotel_name={hotelObj.hotel_name}
-        firstDay={userEneterdHotelDetailsObj.firstDay}
-        secondDay={userEneterdHotelDetailsObj.secondDay}
-        noOfDays={userEneterdHotelDetailsObj.noOfDays}
-        url={hotelObj.main_photo_url}
-      />
-      <div class="mx-[3.125rem] my-[2.125rem] border-solid border-2 border-red-600 font-mullish">
-        <h1 className="mb-[2.125rem] font-semibold font-[Montserrat] ">
+      <div>
+        <h1>₹ {hotelObj.price_breakdown}/night</h1>
+        <Button text="Download" />
+      </div>
+      </div>
+      <Bookingreceipt />
+      <div class="mx-[3.125rem] my-[2.125rem] ">
+        <h1 className="mb-[2.125rem] text-2xl font-semibold font-[Montserrat] ">
           Terms and Conditions
         </h1>
-        <h2 className="mb-[1rem] font-medium font-[Montserrat]">Payments</h2>
+        <h2 className="mb-[1rem] font-bold font-[Montserrat]">Payments</h2>
         <p>
           <li className="mb-[1rem]">
             If you are purchasing your ticket using a debit or credit card via
@@ -92,8 +82,8 @@ function MyBookings() {
         </p>
       </div>
 
-      <div class="mx-[3.125rem] border-solid border-2 border-green-600">
-        <h1 className="mb-[1rem] font-medium font-[Montserrat]">Contact Us</h1>
+      <div class="mx-[3.125rem]">
+        <h1 className="mb-[1rem] font-bold font-[Montserrat]">Contact Us</h1>
         <h3>
           If you have any questions about our Website or our Terms of Use,
           please contact:

@@ -161,7 +161,7 @@ export const PlaceSearchBarComponent = () => {
   return (
     <div
       id="largecontainer"
-      className=" flex justify-center items-center  w-full h-24  flex-col"
+      className=" flex justify-center items-center  w-full h-22  flex-col"
     >
       <div
         id="container"

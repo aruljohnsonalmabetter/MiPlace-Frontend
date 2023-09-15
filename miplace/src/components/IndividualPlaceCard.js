@@ -33,7 +33,7 @@ export const IndividualPlaceCard = ({
   // }, [favHotel]);
   const handleAddtoFav = () => {
     dispatch(addFavHotel(Hotel_obj));
-    console.log(favHotel);
+    console.log("favHotel : ",favHotel);
     console.log(Hotel_obj);
   };
 
