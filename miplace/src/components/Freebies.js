@@ -24,7 +24,7 @@ export const Freebies = () => {
     // alert(isChecked);
   };
   return (
-    <div className=" w-full p-2 ">
+    <div className=" w-full p-2 font-mullish">
       {/* <div className="bg-green-900 w-full flex items-center justify-center flex-col"> */}
       <p className="  pb-1  text-bold text-xl">Freebies</p>
       <div className="price-input   flex  flex-col">

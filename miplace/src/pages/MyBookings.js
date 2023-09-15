@@ -26,7 +26,7 @@ function MyBookings() {
   }, [hotelObj, userEneterdHotelDetailsObj]);
 
   return (
-    <div class=" justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600">
+    <div class=" justify-between mx-[3.125rem]  space-x-4 border-solid border-2 border-indigo-600 font-mullish">
       <div className="flex justify-between">
         <div>
           {/* url={hotelObj.main_photo_url} */}
@@ -54,7 +54,7 @@ function MyBookings() {
         noOfDays={userEneterdHotelDetailsObj.noOfDays}
         url={hotelObj.main_photo_url}
       />
-      <div class="mx-[3.125rem] my-[2.125rem] border-solid border-2 border-red-600">
+      <div class="mx-[3.125rem] my-[2.125rem] border-solid border-2 border-red-600 font-mullish">
         <h1 className="mb-[2.125rem] font-semibold font-[Montserrat] ">
           Terms and Conditions
         </h1>

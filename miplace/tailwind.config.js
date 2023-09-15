@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mullish: ["Mulish", "sans-serif"],
+        mullish : ["Poppins","sans"],
       },
       colors: {
         deepBlue: "#02042a",
@@ -21,6 +21,11 @@ module.exports = {
         gray2: "#525a76",
       },
     
+      screens: {
+            'sm-a51': '360px', 
+            'sm-a71': '480px',
+      },
+
 },
   },
   plugins: [],
