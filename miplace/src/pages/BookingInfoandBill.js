@@ -4,7 +4,7 @@ import Loginbookinginfo from "../components/Loginbookinginfo";
 import FinalBookingSlipComponent from "../components/FinalBookingSlipComponent";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
-import { loadStripe } from '@stripe/stripe-js/pure';
+// import { loadStripe } from '@stripe/stripe-js/pure';
 // import { Method } from "ionicons/dist/types/stencil-public-runtime";
 /*
   district: "",
