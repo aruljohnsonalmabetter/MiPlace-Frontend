@@ -165,7 +165,7 @@ export const PlaceSearchBarComponent = () => {
     >
       <div
         id="container"
-        className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black md:h-2/5"
+        className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black"
       >
         <div className="m-2"> 
           <label className="relative">
