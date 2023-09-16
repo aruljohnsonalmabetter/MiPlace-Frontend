@@ -44,7 +44,7 @@ const HotelInfo = () => {
       />
       <Amenities hotel_id={hotelObj.hotel_id} />
       <Location />
-      <Reviews />
+     
       <Recommendations
         district={hotelObj.district}
         hotelName={hotelObj.hotel_name}

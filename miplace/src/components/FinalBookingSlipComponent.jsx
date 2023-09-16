@@ -25,6 +25,34 @@ function FinalBookingSlipComponent({ url, review, rating, address }) {
         <div className='w-[20.125rem] h-[0.03125rem] bg-[#112211]'></div>
       </div>
 
+      <div>
+          <h2>Price Details</h2>
+          <div className='flex justify-between'>
+              <h3>Base Fare</h3>
+              <h3>Rs 240</h3>
+          </div>
+          <div className='flex justify-between'>
+              <h3>Discount</h3>
+              <h3>Rs 240</h3>
+          </div>
+          <div className='flex justify-between'>
+              <h3>Taxes</h3>
+              <h3>Rs 240</h3>
+          </div>
+          <div className='flex justify-between'>
+              <h3>Service Fee</h3>
+              <h3>Rs 240</h3>
+          </div>
+
+          <div> <hr></hr></div>
+
+          <div className='flex justify-between'>
+              <h3>Total</h3>
+              <h3>Rs 240</h3>
+          </div>
+
+      </div>
+
 
 
     </div>
