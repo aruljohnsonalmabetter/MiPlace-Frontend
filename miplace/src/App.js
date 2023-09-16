@@ -43,6 +43,16 @@ import TermsofServicePage from "./pages/TermsofServicePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { Favorites } from "./pages/Favorites";
 
+// #1E91B6 ✅ - Rudransh
+// Toast notif ✅ - Rudransh
+// TODO:  Individual Place -> Card Layout   - Sejal
+// TODO: Hotel Info beautify - Sejal
+// State Persistant in place search bar ✅ - Rudransh
+// TODO: Place search bar -> search button inside it and reduce the width - Sejal
+// TODO: Convert them into Protected Routes and change price based on the number of days stay - Rudransh
+// Remove from favHotel list ✅ - Rudransh
+// Hotel name and review ko flex krna h ✅ - Rudransh
+
 function App() {
   return (
     <BrowserRouter>
