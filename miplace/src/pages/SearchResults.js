@@ -16,11 +16,11 @@ function SearchResults() {
           <PlaceSearchBarComponent />
           <div className="flex justify-center items-center">
             <div className="flex justify-center	 items-center m-2 bg-gray-300 p-3 rounded-lg  w-11/12">
-              <h1 className="text-xl text-bold">Entered Details -> </h1>
+              <h1 className="text-xl text-bold">Entered Details -{`>`} </h1>
               <span className="m-2">
                 {" "}
                 <span className="text-bold">City: </span>
-                {enteredHotelDetailsFeature.city|| "Empty" }
+                {enteredHotelDetailsFeature.city || "Empty"}
               </span>
               <span className="m-2">
                 {" "}
@@ -31,7 +31,7 @@ function SearchResults() {
                 <span className="text-bold">checkOut: </span>
                 {enteredHotelDetailsFeature.secondDay || "Empty"}
               </span>
-           
+
               <span className="m-2">
                 <span className="text-bold">noOfDays: </span>
                 {enteredHotelDetailsFeature.noOfDays || "Empty"}
