@@ -42,6 +42,9 @@ import CustomerSupport from "./pages/CustomerSupport";
 import TermsofServicePage from "./pages/TermsofServicePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { Favorites } from "./pages/Favorites";
+import { ProtectedHotelInfo } from "./components/ProtectedHotelInfo";
+import { ProtectedSearchResults } from "./components/ProtectedSearchResults";
+import { ProtectedBookingInfoandBill } from "./components/ProtectedBookingInfoandBill";
 
 // #1E91B6 ✅ - Rudransh
 // Toast notif ✅ - Rudransh
@@ -61,22 +64,33 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         {/* ✅*/}
-        <Route path="/hotelinfo" element={<HotelInfo />} />
+        <Route
+          path="/hotelinfo"
+          element={<ProtectedHotelInfo Component={HotelInfo} />}
+        />
         {/* ✅*/}
-        <Route path="/searchResults" element={<SearchResults />} />
+        <Route
+          path="/searchResults"
+          element={<ProtectedSearchResults Component={SearchResults} />}
+        />
         {/* ✅*/}
         <Route path="/login" element={<Login />} /> {/* ✅*/}
         <Route path="/otp" element={<OTP />} />
         <Route path="/signup" element={<Signup />} />
         {/* ✅*/}
-        <Route path="/bookingInfoandBill" element={<BookingInfoandBill />} />
+        <Route
+          path="/bookingInfoandBill"
+          element={
+            <ProtectedBookingInfoandBill Component={BookingInfoandBill} />
+          }
+        />
         {/* ✅*/}
         <Route path="/mybookings" element={<MyBookings />} />
         {/* ✅*/}
         <Route path="/emailuscontactus" element={<EmailUsContactUs />} />
         {/* ✅*/}
         <Route path="/customersupport" element={<CustomerSupport />} />
-        <Route path="/writeReview" element={<WriteReview />} />
+        {/* <Route path="/writeReview" element={<WriteReview />} /> */}
         <Route path="/termsOfservice" element={<TermsofServicePage />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/favorites" element={<Favorites />} />
