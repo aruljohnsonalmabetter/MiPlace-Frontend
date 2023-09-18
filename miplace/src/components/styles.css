@@ -187,6 +187,18 @@
     }
 }
 
+#searchdetails{
+@media screen and (max-width: 1050px) {
+        padding: 6px;
+        font-size:large;
+}
+}
+#searchbar{
+@media screen and (max-width: 650px) {
+        flex-direction: column;
+    }
+}
+
     @media screen and (max-width: 600px) {
          #btn{
             width:100%
