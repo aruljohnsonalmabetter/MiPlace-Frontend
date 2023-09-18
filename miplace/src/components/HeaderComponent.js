@@ -2,7 +2,7 @@ import React, { useState,Fragment }   from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { signout, isAutheticated } from "../auth/index";
+import { signout, isAutheticated, signin } from "../auth/index";
 
 import "./styles.css";
 
@@ -100,9 +100,7 @@ const HeaderComponent = () => {
                   // style={currentTab(history, "/signup")}
                   className="btn px-6 py-3 rounded-md"
                   onClick={() => {
-                    signout(() => {
-                      history("/profile");
-                    });
+                    history("/profile");
                   }}
                 >
                   Profile
