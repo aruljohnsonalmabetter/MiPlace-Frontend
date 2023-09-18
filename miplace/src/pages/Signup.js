@@ -20,16 +20,20 @@ const Signup = () => {
 
   const handleChange = name => event => {
     setValues({ ...values, error: false, [name]: event.target.value });
+    
   };
+
+  
 
   const onSubmit = event => {
     event.preventDefault();
     setValues({ ...values, error: false });
     signup({ name, email, password })
-      .then(data => {
-        if (data.error) {
-          setValues({ ...values, error: data.error, success: false });
+      .then(user => {
+        if (user.error) {
+          setValues({ ...values, error: user.error, success: true });
         } else {
+          alert("sigup sucess")
           setValues({
             ...values,
             name: "",
@@ -43,6 +47,9 @@ const Signup = () => {
       .catch(console.log("Error in signup",{setValues}));
       
   };
+
+  console.log(values);
+
   return (
     <div className="bg-blue-500 sm-a51:bg-red-500 sm-a71:bg-green-500 font-mullish" >
         <div id="signin" className="bg-white p-4 pl-40 font-mullish rounded-lg shadow-md flex justify-center items-center gap-4  mx-auto">

@@ -1,12 +1,91 @@
 
 import React, { useState } from "react";
 import image from '../images/reception.webp';
-import { Link } from 'react-router-dom';
+import { Link , Navigate } from 'react-router-dom';
 import "./styles.css";
+// import {  } from "react-router-dom";
+
+import { signin, authenticate, isAutheticated } from "../auth/index.js";
 
 const LoginFormComponent = () => {
-        const [email, setEmail] = useState("");
-        const [password, setPassword] = useState("");
+    
+        
+        const [values, setValues] = useState({
+            email: "a@arul.com",
+            password: "12345",
+            error: "",
+            loading: false,
+            didRedirect: false
+          });
+
+          const { email, password, error, loading, didRedirect } = values;
+            const { user } = isAutheticated();
+
+          const handleChange = name => event => {
+            setValues({ ...values, error: false, [name]: event.target.value });
+          };
+
+          const onSubmit = event => {
+            event.preventDefault();
+            setValues({ ...values, error: false, loading: true });
+            signin({ email, password })
+              .then(data => {
+                if (user.error) {
+                  setValues({ ...values, error: data.error, loading: false });
+                } else {
+                  authenticate(data, () => {
+                    setValues({
+                      ...values,
+                      didRedirect: true
+                    });
+                  });
+                }
+              })
+              .catch(console.log("signin request failed"));
+          };
+
+          console.log(setValues);
+
+          const performRedirect = () => {
+            if (didRedirect) {
+              if (user && user.role === 1) {
+                return < Navigate to="" />;
+              } else {
+                return < Navigate to="/writeReview" />;
+              }
+            }
+            if (isAutheticated()) {
+              return < Navigate to="/" />;
+            }
+          };
+
+          const loadingMessage = () => {
+            return (
+              loading && (
+                <div className="alert alert-info">
+                  <h2>Loading...</h2>
+                </div>
+              )
+            );
+          };
+
+          const errorMessage = () => {
+            return (
+              <div className="row">
+                <div className="col-md-6 offset-sm-3 text-left">
+                  <div
+                    className="alert alert-danger"
+                    style={{ display: error ? "" : "none" }}
+                  >
+                    {error}
+                  </div>
+                </div>
+              </div>
+            );
+          };
+
+          
+          
 
         return (
             <div id="login"className="bg-white p-4 pl-40 rounded-lg shadow-md flex justify-center items-center gap-4 font-mullish mx-auto">
@@ -21,8 +100,8 @@ const LoginFormComponent = () => {
                         class="in2"
                         type="email"
                         placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        valuse={email}
+                        onChange={handleChange("email")}
                         className="p-2 border border-gray-300 rounded-md w-1/2"
                     />
                     <input
@@ -30,19 +109,34 @@ const LoginFormComponent = () => {
                         type="password"
                         placeholder="Password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={handleChange("password")}
                         className="p-2 border border-gray-300 rounded-md w-1/2"
                     />
                    
-                    <button id="btn2" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md w-1/3">
-                        <Link to="/home" >
+                    <button onClick={onSubmit} id="btn2" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md w-1/3">
+                        <Link to="/hotelinfo" >
                            Login
                         </Link>
                     </button>
+
+                    <section title="Sign In page" description="A page for user to sign in!">
+                            {loadingMessage()}
+                            {errorMessage()}
+                           
+                            {performRedirect()}
+            
+                            <p className="text-white text-center">{JSON.stringify(values)}</p>
+                    </section>
                 </div>
+
             </div>
 
+           
+                
+              
+
         );
+        
     };
 
 

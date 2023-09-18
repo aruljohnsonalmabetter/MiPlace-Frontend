@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,Fragment }   from "react";
 import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
+import { signout, isAutheticated } from "../auth/index";
+
 import "./styles.css";
+
+
+
+
 const HeaderComponent = () => {
   let [open, setOpen] = useState(false);
 
@@ -10,7 +16,7 @@ const HeaderComponent = () => {
     <div className="z-10 navbar flex justify-center items-center h-20 top-0 sticky bg-white ">
       <div className="flex justify-between items-center w-11/12 h-full">
         <div className=" logo font-bold text-xl">
-          <Link to="/">
+          <Link  to="/">
             <h2>MiPlace</h2>
           </Link>
         </div>
@@ -31,11 +37,7 @@ const HeaderComponent = () => {
           >
             {/* <ul className="flex justify-between items-center"> */}
 
-            <li>
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
-              <path d='M16 6v2h2l2 12H0L2 8h2V6a6 6 0 1 1 12 0zm-2 0a4 4 0 1 0-8 0v2h8V6zM4 10v2h2v-2H4zm10 0v2h2v-2h-2z' />
-            </svg>
-      </li>
+            
 
 
             <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
@@ -53,18 +55,29 @@ const HeaderComponent = () => {
                 Contact Us
               </Link>
             </li>
-            <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
-              {/* Use Link to navigate to the login page */}
 
-              <Link to="/login" className="">
-                Login
-              </Link>
-            </li>
-            <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
-              <Link to="/signup" className="btn px-6 py-3 rounded-md">
-                Sign Up
-              </Link>
-            </li>
+            
+             
+                <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
+                  <Link
+                    // style={currentTab(history, "/login")}
+                    className=""
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
+                  <Link
+                    // style={currentTab(history, "/signup")}
+                    className="btn px-6 py-3 rounded-md"
+                    to="/signup"
+                  >
+                    Sign Up
+                  </Link>
+                </li>
+              
+            
 
            
           </ul>
