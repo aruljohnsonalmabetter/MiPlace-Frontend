@@ -16,7 +16,7 @@ const Amenities = ({ hotel_id }) => {
           languagecode: 'en-us'
         },
         headers: {
-          'X-RapidAPI-Key': '6dfae3dcc5msh4f874cfe28d4357p198f92jsneb96c8cfa217',
+          'X-RapidAPI-Key': "7743bfcba1msha1fa62656925329p1db8acjsnca94aaa717ba",
           'X-RapidAPI-Host': 'apidojo-booking-v1.p.rapidapi.com'
         }
       };

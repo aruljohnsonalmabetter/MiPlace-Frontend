@@ -9,6 +9,10 @@ import { useNavigate } from "react-router-dom";
 import { setHotelDetails } from "../redux-features/indiHotelInfoSlice";
 import Hotel15 from "../images/Hotelimages/Hotel15.webp";
 import "./styles.css";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export const IndividualPlaceCard = ({
   hotel_id,
   webUrl,
@@ -33,8 +37,18 @@ export const IndividualPlaceCard = ({
   // }, [favHotel]);
   const handleAddtoFav = () => {
     dispatch(addFavHotel(Hotel_obj));
-    console.log("favHotel : ",favHotel);
+    console.log("favHotel : ", favHotel);
     console.log(Hotel_obj);
+    // toast.success("Added to your favourites 😄!", {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    // });
   };
 
   function formatCurrency(amount, currencyCode) {
@@ -75,31 +89,34 @@ export const IndividualPlaceCard = ({
       {/* Divide into two parts */}
       <div id="placecard" className="flex items-center justify-center w-full  ">
         {/* IMG */}
-        <div className="overflow-none h-[310px] w-[340px] 	rounded-md  bg-fixed	bg-center	bg-no-repeat	bg-cover	">
+        <div className="overflow-none h-[230px] w-[340px] 	rounded-md  bg-fixed	bg-center	bg-no-repeat	bg-cover	">
           <img
             src={Hotel15}
             alt="asd"
             className="object-center	object-cover	h-full	"
           />
         </div>
+
+        {/* Written */}
         <div className="flex justify-center items-center flex-col w-full ">
-          {/* Written */}
           <div className="flex justify-center items-end w-full ">
             {/* Hotel info */}
-            <div className=" m-2 w-9/12   ">
-              <div className="text-2xl text-bold ">
-                <p className="text-2xl text-bold font-mullish">
-                  {/* {HotelName} */}
-                  {/* Lemon Tree Premier Pune */}
-                  {hotel_name}
-                  {/* {webUrl} */}
-                  {/* {hotel_name} - {hotel_id} */}
-                </p>
-                <div className="text-sm">
+            <div className="  w-full  ">
+              {/* <div className="  w-9/12   "> */}
+              <div className=" text-bold ">
+                <div className=" flex  items-start m-2  ">
+                  <p className="text-2xl text-bold font-mullish">
+                    {hotel_name}{" "}
+                  </p>
+                  <p className=" text-xs   border-2 mx-3 inline border-gray-500  p-1.5 rounded-md text-bold  text-gray-700	">
+                    {review_score || "No Rating posted"}
+                  </p>
+                </div>
+                <div className="text-sm text-gray-600 m-2 ">
                   {/* {HotelAddress} */}
-                  <BiSolidLocationPlus className="inline text-lg font-mullish" />
+                  <BiSolidLocationPlus className="inline text-lg font-mullish text-green-800" />
                   {address},{district} ,{city}
-                  <div className="flex justify-between items-center text-bold">
+                  {/* <div className="flex justify-between items-center text-bold">
                     <div className="flex justify-between items-center">
                       <div className="flex justify-center items-center ">
                         <Rating value="5" className="inline " />
@@ -110,22 +127,28 @@ export const IndividualPlaceCard = ({
                       <BsFillCupFill className="mr-2" />
                       <p className="inline   "> 20+ Aminities</p>
                     </div>
-                  </div>
-                  <div className="flex  items-center my-4">
+                  </div> */}
+                  {/* <div className="flex  items-center my-4">
                     <p className="border-2 mr-4 inline border-sky-700 bg-white p-2 rounded-md text-bold  	">
                       {review_score || "No review posted"}
                     </p>
                     <p className="text-lg">
-                      <p className="text-bold  inline"> {review_score_word}</p>{" "}
-                      371 reviews
+                    371 reviews
                     </p>
-                  </div>
+                  </div> */}
+                  <p className="text-bold my-2">
+                    {" "}
+                    <span className="text-bold text-black ">
+                      {" "}
+                      Review
+                    </span> : {review_score_word || "No review Posted "}
+                  </p>{" "}
                 </div>
               </div>
             </div>
 
             {/* Price Part */}
-            <div className="m-2  p-2 text-right w-4/12">
+            <div className="  p-2 text-right w-6/12">
               <p> starting from</p>
               <p className="text-lg text-bold text-blue-600 ">
                 {price_breakdown} /night
@@ -138,14 +161,14 @@ export const IndividualPlaceCard = ({
           {/* Add to fav and view place button */}
           <div className=" flex justify-evenly items-center w-full">
             <button
-              className="border-2 border-black p-2  rounded-md m-2"
+              className="text-2xl hover:scale-75    transition ease-in-out delay-250 border-2 border-black p-2  rounded-md m-2"
               onClick={handleAddtoFav}
             >
-              <FcLike className="text-2xl hover:scale-75    transition ease-in-out delay-250" />
+              <FcLike />
             </button>
 
             <button
-              className=" w-full bg-blue-800 rounded-mdw-full p-3 border-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold "
+              className=" w-full bg-[#1E91B6] rounded-mdw-full p-3 border-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold "
               onClick={handleViewPlace}
             >
               View Place
