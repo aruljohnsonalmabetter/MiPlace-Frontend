@@ -9,27 +9,22 @@ export const MostSearchedLocations = () => {
   const placesObj = [
     {
       url: img,
-      numOfPlaces: 123,
       placeName: "Delhi",
     },
     {
       url: img1,
-      numOfPlaces: 123,
       placeName: "Ahmedabad",
     },
     {
       url: img2,
-      numOfPlaces: 123,
       placeName: "Pune",
     },
     {
       url: img3,
-      numOfPlaces: 123,
       placeName: "Banglore",
     },
     {
       url: img4,
-      numOfPlaces: 123,
       placeName: "Jaipur",
     },
   ];
@@ -40,11 +35,11 @@ export const MostSearchedLocations = () => {
         <div id="box"className="flex justify-between items-center w-full my-5 md:flex-wrap gap-4">
           {placesObj.map((elem) => {
             return (
-              <div className=" justify-evenly items-center mr-16 " key={Math.random() * 1000}>
-                <img className="rounded-xl" src={elem.url} alt="img" />
-                <div className="ml-3 text-start ">
+              <div className="flex flex-col justify-center items-center mr-16 " key={Math.random() * 1000}>
+                <img className="rounded-xl " src={elem.url} alt="img" />
+                <div className="p-2  ">
                   <p className="text-lg font-semibold font-mullish">{elem.placeName}</p>
-                  <p className="text-base ">{elem.numOfPlaces}</p>
+                  {/* <p className="text-base ">{elem.numOfPlaces}</p> */}
                 </div>
               </div>
             );

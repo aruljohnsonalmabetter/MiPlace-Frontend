@@ -12,10 +12,10 @@ function SearchResults() {
   return (
     <div className="h-full p-6 font-mullish">
       <div className="">
-        <div className="mb-8">
+        <div className="mb-2">
           <PlaceSearchBarComponent />
           <div className="flex justify-center items-center">
-            <div className="flex justify-center	 items-center m-2 bg-gray-300 p-3 rounded-lg  w-11/12">
+            {/* <div className="flex justify-center	 items-center m-2 bg-gray-300 p-3 rounded-lg  w-11/12">
               <h1 className="text-xl text-bold">Entered Details -{`>`} </h1>
               <span className="m-2">
                 {" "}
@@ -40,7 +40,7 @@ function SearchResults() {
                 <span className="text-bold">roomsGuests: </span>
                 {enteredHotelDetailsFeature.roomsGuests || "Empty"}
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="flex font-mullish justify-center items-center">
