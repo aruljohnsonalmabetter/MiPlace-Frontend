@@ -195,10 +195,10 @@ export const PlaceSearchBarComponent = () => {
   return (
     <div
       id="largecontainer"
-      className=" flex justify-center items-center w-full h-22  flex-col"
+      className=" flex justify-center items-center w-full h-22  flex-col "
     >
       <ToastContainer />
-      <div className="flex-col space-y-1 border-2 border-black rounded-lg h-22 w-11/12 bg-white">
+      <div className="flex-col space-y-1 border-2 border-black rounded-lg h-22 w-11/12 bg-white my-8">
       <div
         id="container"
           className="bg-white flex  space-x-2 items-center justify-evenly rounded-lg pt-4"
@@ -229,7 +229,7 @@ export const PlaceSearchBarComponent = () => {
         </div>
        <div id="datecomponent" className="flex space-x-2">
           <div className="flex">
-            <span className=" text-bold text-sm">checkIn :</span>
+            <h3 className=" text-bold text-sm flex items-center justify-center font-bold  "> checkIn :</h3>
             <div className="m-2">
               <input
                 className="border-2 border-solid border-black border-opacity-40	 px-2 py-1.5  rounded-md  transition duration-200"
@@ -242,10 +242,10 @@ export const PlaceSearchBarComponent = () => {
               Check in
             </span> */}
             </div> </div>
-          <p className="text-bold text-indigo-700 text-lg m-3">to</p>
+          <p className=" text-black-700  mr-[2rem] font-bold flex items-center justify-center text-xl">to</p>
 
             <div className="flex">
-              <span className=" text-bold text-sm">checkout :</span>
+              <span className=" text-sm flex items-center justify-center font-bold">checkout :</span>
             <div className="m-2">
               <label className="relative">
                 <input

@@ -1,6 +1,11 @@
 
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import { BsFacebook,BsApple } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
+import { MdEmail } from "react-icons/md";
+
+
 
 const Loginbookinginfo = () => {
         const [phoneNumber, setPhoneNumber] = useState("");
@@ -30,20 +35,20 @@ const Loginbookinginfo = () => {
 
                     <div class="flex">
                     <div className="w-[21.0625rem] h-1 bg-[#D9D9D9]"></div>
-                    <div>
+                    <span>
                         Or
-                    </div>
+                    </span>
                     <div className="w-[21.0625rem] h-1 bg-[#D9D9D9]"></div>
                     </div>
 
                     <div class="flex justify-between">
-                        <div className="w-[14.791875rem] h-[3.5rem] border-solid border-2 border-[#1E91B6] ">facebook</div>
-                        <div className="w-[14.791875rem] h-[3.5rem] border-solid border-2 border-[#1E91B6] ">google</div>
-                        <div className="w-[14.791875rem] h-[3.5rem] border-solid border-2 border-[#1E91B6] ">apple</div>
+                        <div className="w-[14.791875rem] h-[3.5rem] border-solid border-2 border-[#1E91B6] flex items-center justify-center"><BsFacebook /></div>
+                        <div className="w-[14.791875rem] h-[3.5rem] border-solid border-2 border-[#1E91B6] flex items-center justify-center "><FcGoogle/></div>
+                        <div className="w-[14.791875rem] h-[3.5rem] border-solid border-2 border-[#1E91B6] flex items-center justify-center"><BsApple/></div>
                     </div>
 
                     <div class=" border-solid border-2 border-[#1E91B6] w-[46.375rem] h-[3.5rem]">
-                        <div className="  justify-center" >Continue with email</div>
+                        <div className=" flex items-center justify-center" ><MdEmail/>Continue with email</div>
                     </div>
 
                 </div>
