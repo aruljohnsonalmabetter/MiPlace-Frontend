@@ -161,11 +161,12 @@ export const PlaceSearchBarComponent = () => {
   return (
     <div
       id="largecontainer"
-      className=" flex justify-center items-center  w-full h-22  flex-col"
+      className=" flex justify-center items-center w-full h-22  flex-col"
     >
+      <div className="flex-col space-y-1 h-20 w-11/12 bg-white border-2 border-black rounded-lg pb-40">
       <div
         id="container"
-        className="bg-white flex justify-between items-center w-11/12 h-full rounded-lg p-8   border-2 border-black"
+        className="bg-white flex justify-between items-center rounded-lg p-4 "
       >
         <div className="m-2"> 
           <label className="relative">
@@ -190,10 +191,11 @@ export const PlaceSearchBarComponent = () => {
             </span> */}
           </label>
         </div>
+        <div className="flex space-x-2">
         <div className="m-2">
           <label className="relative">
             <input
-              className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5  rounded-md  transition duration-200"
+              className="border-2 border-solid border-black border-opacity-40	 px-3  rounded-md  transition duration-200"
               type="date"
               value={firstDay}
               onChange={(e) => setFirstDay(e.target.value)}
@@ -207,7 +209,7 @@ export const PlaceSearchBarComponent = () => {
         <div className="m-2">
           <label className="relative">
             <input
-              className="border-2 border-solid border-black border-opacity-40	  px-3 py-1.5  rounded-md  transition duration-200"
+              className="border-2 border-solid border-black border-opacity-40	  px-3  rounded-md  transition duration-200"
               type="date"
               value={secondDay}
               onChange={(e) => setSecondDay(e.target.value)}
@@ -217,6 +219,7 @@ export const PlaceSearchBarComponent = () => {
               Check out
             </span> */}
           </label>
+          </div>
         </div>
         {/* <div className="flex justify-center  flex-col text-start">
           <label>Check in</label>
@@ -259,7 +262,16 @@ export const PlaceSearchBarComponent = () => {
             </span>
           </label>
         </div>
-      </div>
+        </div>
+        <div className="flex justify-center pb-80 ">
+        <button
+            className="bg-[#196680] inline-block px-2 py-2 text-white text-semibold text-lg rounded-md font-mullish hover:bg-lightBlue-600 transition-all duration-500 ease-in"
+          onClick={handleSearch}
+        >
+          Search
+          </button>
+        </div>
+        </div>
       {/* <Link
         to="/searchResults"
         className="bg-[#196680] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md hover:bg-sky-600 transition-all duration-500 ease-in"
@@ -268,12 +280,6 @@ export const PlaceSearchBarComponent = () => {
           Search
         </button>
       </Link> */}
-      <button
-        className="bg-[#196680] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md font-mullish hover:bg-lightBlue-600 transition-all duration-500 ease-in"
-        onClick={handleSearch}
-      >
-        Search
-      </button>
     </div>
   );
 };
