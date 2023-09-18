@@ -45,7 +45,7 @@ import { Favorites } from "./pages/Favorites";
 import { ProtectedHotelInfo } from "./components/ProtectedHotelInfo";
 import { ProtectedSearchResults } from "./components/ProtectedSearchResults";
 import { ProtectedBookingInfoandBill } from "./components/ProtectedBookingInfoandBill";
-
+import {Profile} from "./pages/Profile";
 // #1E91B6 ✅ - Rudransh
 // Toast notif ✅ - Rudransh
 // TODO:  Individual Place -> Card Layout   - Sejal
@@ -94,6 +94,8 @@ function App() {
         <Route path="/termsOfservice" element={<TermsofServicePage />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/profile" element={<Profile />} />
+
         {/* ✅*/}
         <Route path="*" element={<ErrorScreen />} />
       </Routes>

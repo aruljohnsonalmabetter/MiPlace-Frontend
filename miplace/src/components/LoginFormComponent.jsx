@@ -30,7 +30,7 @@ const LoginFormComponent = () => {
             setValues({ ...values, error: false, loading: true });
             signin({ email, password })
               .then(data => {
-                if (user.error) {
+                if (data.error) {
                   setValues({ ...values, error: data.error, loading: false });
                 } else {
                   authenticate(data, () => {
@@ -51,7 +51,7 @@ const LoginFormComponent = () => {
               if (user && user.role === 1) {
                 return < Navigate to="" />;
               } else {
-                return < Navigate to="/writeReview" />;
+                return < Navigate to="/profile" />;
               }
             }
             if (isAutheticated()) {
@@ -100,7 +100,7 @@ const LoginFormComponent = () => {
                         class="in2"
                         type="email"
                         placeholder="Email"
-                        valuse={email}
+                        value={email}
                         onChange={handleChange("email")}
                         className="p-2 border border-gray-300 rounded-md w-1/2"
                     />
@@ -114,9 +114,9 @@ const LoginFormComponent = () => {
                     />
                    
                     <button onClick={onSubmit} id="btn2" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md w-1/3">
-                        <Link to="/hotelinfo" >
+                        
                            Login
-                        </Link>
+                        
                     </button>
 
                     <section title="Sign In page" description="A page for user to sign in!">
@@ -125,7 +125,7 @@ const LoginFormComponent = () => {
                            
                             {performRedirect()}
             
-                            <p className="text-white text-center">{JSON.stringify(values)}</p>
+                            <p className="text-black text-center">{JSON.stringify(values)}</p>
                     </section>
                 </div>
 
