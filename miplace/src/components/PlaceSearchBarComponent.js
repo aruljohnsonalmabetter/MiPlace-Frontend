@@ -3,13 +3,16 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setEnteredHotelDetails } from "../redux-features/enteredHotelDetailsSlice";
 import {
   fetchHotelsFailure,
   fetchHotelsStart,
   fetchHotelsSuccess,
 } from "../redux-features/hotelSlice";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const PlaceSearchBarComponent = () => {
   const [city, setCity] = useState("");
@@ -19,6 +22,9 @@ export const PlaceSearchBarComponent = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const enteredDetails = useSelector(
+    (state) => state.enteredHotelDetailsFeature
+  );
 
   const noOfDays = function getNumberOfNightsBetweenDates(
     start_date,
@@ -27,9 +33,26 @@ export const PlaceSearchBarComponent = () => {
     if (start_date && end_date) {
       if (start_date > end_date) {
         console.log(Date());
-        alert(
-          "Start Date should be smaller than end date.Please correct the start or the end date"
+        // toast(
+        //   "Start Date should be smaller than end date.Please correct the start or the end date"
+        // );
+
+        toast(
+          "⚠️ Start Date should be smaller than end date.Please correct the start or the end date!",
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          }
         );
+        // alert(
+        //   "Start Date should be smaller than end date.Please correct the start or the end date"
+        // );
         window.location.reload();
         // setFirstDay(Date());
         return 0;
@@ -56,8 +79,20 @@ export const PlaceSearchBarComponent = () => {
       firstDay === "" ||
       secondDay === "" ||
       roomsGuests === ""
-    )
-      return alert("Please enter all the details");
+    ) {
+      toast("⚠️ Please enter all the details", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      // alert("Please enter all the details");
+      return;
+    }
 
     //----------
     dispatch(fetchHotelsStart());
@@ -103,7 +138,6 @@ export const PlaceSearchBarComponent = () => {
     // }
 
     // https://rapidapi.com/apidojo/api/booking
-
     const options1 = {
       method: "GET",
       url: "https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete",
@@ -112,7 +146,7 @@ export const PlaceSearchBarComponent = () => {
         languagecode: "en-us",
       },
       headers: {
-        "X-RapidAPI-Key": "6dfae3dcc5msh4f874cfe28d4357p198f92jsneb96c8cfa217",
+        "X-RapidAPI-Key": "7743bfcba1msha1fa62656925329p1db8acjsnca94aaa717ba",
         "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
       },
     };
@@ -142,7 +176,7 @@ export const PlaceSearchBarComponent = () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "6dfae3dcc5msh4f874cfe28d4357p198f92jsneb96c8cfa217",
+            "7743bfcba1msha1fa62656925329p1db8acjsnca94aaa717ba",
           "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
         },
       };
@@ -163,16 +197,17 @@ export const PlaceSearchBarComponent = () => {
       id="largecontainer"
       className=" flex justify-center items-center w-full h-22  flex-col"
     >
-      <div className="flex-col space-y-1 h-20 w-11/12 bg-white border-2 border-black rounded-lg pb-40">
+      <ToastContainer />
       <div
         id="container"
         className="bg-white flex justify-between items-center rounded-lg p-4 "
       >
-        <div className="m-2"> 
+        <div className="m-2">
           <label className="relative">
             <input
-              className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5  rounded-md w-96 transition duration-200"
+              className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5  rounded-md w-80 transition duration-200"
               type="text"
+              // value={city || "" || enteredDetails.city}
               value={city}
               onChange={(e) => setCity(e.target.value)}
               placeholder=" "
@@ -191,26 +226,27 @@ export const PlaceSearchBarComponent = () => {
             </span> */}
           </label>
         </div>
-        <div className="flex space-x-2">
+        <span className=" text-bold text-sm">checkIn :</span>
         <div className="m-2">
-          <label className="relative">
-            <input
-              className="border-2 border-solid border-black border-opacity-40	 px-3  rounded-md  transition duration-200"
-              type="date"
-              value={firstDay}
-              onChange={(e) => setFirstDay(e.target.value)}
-            />
-            {/* <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text">
+          <input
+            className="border-2 border-solid border-black border-opacity-40	 px-3 py-1.5  rounded-md  transition duration-200"
+            type="date"
+            // value={firstDay || enteredDetails.firstDay}
+            value={firstDay}
+            onChange={(e) => setFirstDay(e.target.value)}
+          />
+          {/* <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text">
               Check in
             </span> */}
-          </label>
         </div>
-        <p className="text-bold text-indigo-700 text-lg">to</p>
+        <p className="text-bold text-indigo-700 text-lg m-3">to</p>
+        <span className=" text-bold text-sm">checkout :</span>
         <div className="m-2">
           <label className="relative">
             <input
               className="border-2 border-solid border-black border-opacity-40	  px-3  rounded-md  transition duration-200"
               type="date"
+              // value={secondDay || enteredDetails.secondDay}
               value={secondDay}
               onChange={(e) => setSecondDay(e.target.value)}
               // placeholder="Enter a location"
@@ -221,29 +257,11 @@ export const PlaceSearchBarComponent = () => {
           </label>
           </div>
         </div>
-        {/* <div className="flex justify-center  flex-col text-start">
-          <label>Check in</label>
-          <input
-            className="px-3 py-1.5 w-200px  rounded-md"
-            type="date"
-            placeholder="Enter a location"
-          />
-        </div> */}
 
-        {/* <div className="flex justify-center  flex-col text-start">
-          <label>Check out</label>
-          <input
-            className="px-3 py-1.5 w-200px  rounded-md"
-            type="date"
-            placeholder="Enter a location"
-          />
-        </div> */}
-
-        <div className="m-4">
-          <p className="rounded-3xl	 px-3 py-1 border-2  border-none border-opacity-40	text-lg text-white bg-black bg-opacity-80">
+        <div className="">
+          <p className="rounded-3xl	 px-3 py-1 border-2 border-solid border-black border-opacity-40	text-bold 	text-md  bg-opacity-80">
             {firstDay && secondDay ? noOfDays(firstDay, secondDay) : 0} Nights
-            {/* {firstDay && secondDay ? set(firstDay, secondDay) : 0} Nights */}
-            {/* {days} Nights */}
+            {/* {firstDay && secondDay ? noOfDays(firstDay, secondDay) : 0} Nights */}
           </p>
         </div>
 
@@ -255,31 +273,27 @@ export const PlaceSearchBarComponent = () => {
               placeholder=" "
               value={roomsGuests}
               onChange={(e) => setRoomsGuests(e.target.value)}
-              // placeholder="Enter a location"
             />
             <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text text-bold">
-              Rooms 
+              Rooms
             </span>
           </label>
         </div>
-        </div>
-        <div className="flex justify-center pb-80 ">
-        <button
-            className="bg-[#196680] inline-block px-2 py-2 text-white text-semibold text-lg rounded-md font-mullish hover:bg-lightBlue-600 transition-all duration-500 ease-in"
+
+        {/* <button
+          className="bg-[#1E91B6] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md font-mullish hover:bg-lightBlue-600 transition-all duration-500 ease-in"
           onClick={handleSearch}
         >
           Search
-          </button>
-        </div>
-        </div>
-      {/* <Link
-        to="/searchResults"
-        className="bg-[#196680] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md hover:bg-sky-600 transition-all duration-500 ease-in"
+        </button> */}
+      
+
+      <button
+        className="bg-[#1E91B6] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md font-mullish hover:bg-lightBlue-600 transition-all duration-500 ease-in"
+        onClick={handleSearch}
       >
-        <button className="w-full" onClick={handleSearch}>
-          Search
-        </button>
-      </Link> */}
+        Search
+      </button>
     </div>
   );
 };

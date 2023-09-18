@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FavoritesPlaceCardComponent } from "../components/FavoritesPlaceCardComponent";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { IndividualPlaceCard } from "../components/IndividualPlaceCard";
+
+import { ToastContainer, toast } from "react-toastify";
 
 export const Favorites = () => {
   let favHotel = useSelector((state) => state.userFeature.favHotel);
+  const dispatch = useDispatch();
   const [markedPlaces, setMarkedPlaces] = useState([]);
   function formatCurrency(amount, currencyCode) {
     // Create a formatter based on the currency code
@@ -16,17 +19,19 @@ export const Favorites = () => {
     // Format the amount
     return formatter.format(amount);
   }
+
   useEffect(() => {
     setMarkedPlaces(favHotel);
     console.log("favHotel :", favHotel);
   }, [favHotel]);
   return (
     <div className=" flex justify-center items-center flex-col font-mullish">
+      <ToastContainer />
       <div className="  w-10/12 mt-4">
         <div className="flex  items-center rounded-lg w-full  px-6 py-4 shadow-lg mb-6">
           <div className=" border-l-2	border-gray-400 pl-2">
             <p className="text-bold">Places</p>
-            <p className="text-gray-400  ">
+            <p className="text-gray-600  ">
               {markedPlaces?.length || 0} marked
             </p>
           </div>
@@ -41,7 +46,7 @@ export const Favorites = () => {
           ) : (
             favHotel.map((hotel) => {
               return (
-                <IndividualPlaceCard
+                <FavoritesPlaceCardComponent
                   currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
                   webUrl={hotel.url}
@@ -59,18 +64,18 @@ export const Favorites = () => {
                     hotel.price_breakdown.currency
                   )}
                 />
-                //   <FavoritesPlaceCardComponent
-                //     Hotel_obj={hotel}
-                //     address={hotel.address}
-                //     city={hotel.city_trans}
-                //     district={hotel.district}
-                //     hotel_name={hotel.hotel_name}
-                //     main_photo_url={hotel.main_photo_url}
-                //     review_score={hotel.review_score}
-                //     review_score_word={hotel.review_score_word}
-                //     url={hotel.url}
-                //     price_breakdown={hotel.price_breakdown.all_inclusive_price}
-                //   />
+                // <FavoritesPlaceCardComponent
+                //   Hotel_obj={hotel}
+                //   address={hotel.address}
+                //   city={hotel.city_trans}
+                //   district={hotel.district}
+                //   hotel_name={hotel.hotel_name}
+                //   main_photo_url={hotel.main_photo_url}
+                //   review_score={hotel.review_score}
+                //   review_score_word={hotel.review_score_word}
+                //   url={hotel.url}
+                //   price_breakdown={hotel.price_breakdown.all_inclusive_price}
+                // />
                 // </div>
               );
             })

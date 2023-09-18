@@ -2,16 +2,46 @@ import React from "react";
 import { FilterTabComponent } from "../components/FilterTabComponent";
 import { PlaceCard } from "../components/PlaceCard";
 import { PlaceSearchBarComponent } from "../components/PlaceSearchBarComponent";
-
+import { useSelector } from "react-redux";
 // import { useSelector } from "react-redux/es/hooks/useSelector";
 
 function SearchResults() {
-  // const hotels = useSelector((state) => state.hotelFeature.hotels);
+  const enteredHotelDetailsFeature = useSelector(
+    (state) => state.enteredHotelDetailsFeature
+  );
   return (
     <div className="h-full p-6 font-mullish">
       <div className="">
         <div className="mb-8">
           <PlaceSearchBarComponent />
+          <div className="flex justify-center items-center">
+            <div className="flex justify-center	 items-center m-2 bg-gray-300 p-3 rounded-lg  w-11/12">
+              <h1 className="text-xl text-bold">Entered Details -{`>`} </h1>
+              <span className="m-2">
+                {" "}
+                <span className="text-bold">City: </span>
+                {enteredHotelDetailsFeature.city || "Empty"}
+              </span>
+              <span className="m-2">
+                {" "}
+                <span className="text-bold">checkIn: </span>
+                {enteredHotelDetailsFeature.firstDay || "Empty"}
+              </span>
+              <span className="m-2">
+                <span className="text-bold">checkOut: </span>
+                {enteredHotelDetailsFeature.secondDay || "Empty"}
+              </span>
+
+              <span className="m-2">
+                <span className="text-bold">noOfDays: </span>
+                {enteredHotelDetailsFeature.noOfDays || "Empty"}
+              </span>
+              <span className="m-2">
+                <span className="text-bold">roomsGuests: </span>
+                {enteredHotelDetailsFeature.roomsGuests || "Empty"}
+              </span>
+            </div>
+          </div>
         </div>
         <div className="flex font-mullish justify-center items-center">
           <div className=" flex justify-between items-start w-11/12">

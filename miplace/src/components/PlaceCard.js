@@ -5,7 +5,9 @@ import loader from "../assests/loader.svg";
 export const PlaceCard = () => {
   const hotels = useSelector((state) => state.hotelFeature.hotels);
   const bothtrue = useSelector((state) => state.hotelFeature.bothtrue);
-
+  const userEnteredDetails = useSelector(
+    (state) => state.enteredHotelDetailsFeature
+  );
   const isFreeCancellableHotels = useSelector(
     (state) => state.hotelFeature.isFreeCancellableHotels
   );
@@ -144,9 +146,13 @@ export const PlaceCard = () => {
             <img className="svg " src={loader} />
           </div>
         )}
-        {!loading && error && (
-          <div className="text-3xl w-full  rounded-lg my-3  flex justify-center items-center p-4 text-bold">
-            Error in loading the data 🥹....
+        {loading==false&& userEnteredDetails.city != "" && hotels.length === 0 && (
+          <div className=" w-full  rounded-lg m-3   flex justify-center items-center p-4 text-gray-600 text-bold">
+            <div className="p-5 text-center">
+              Oops! 😬 We couldn't find the data you need right now. 📊 There
+              might be a small hiccup with the info you entered. 🤔 Please
+              double-check your details to ensure accuracy. 🕵️‍♂️
+            </div>
           </div>
         )}
         {/* {hotels.length > 0 && (
@@ -339,7 +345,7 @@ export const PlaceCard = () => {
             );
           })}
 
-        {loading === false && !error && hotels.length === 0 ? (
+        {userEnteredDetails.city == "" ? (
           <div className="text-3xl w-full  rounded-lg my-3  flex justify-center items-center p-4 text-bold animate-bounce">
             Fill the form above to load hotel info 🛎️🏩....
           </div>

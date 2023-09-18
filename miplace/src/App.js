@@ -42,6 +42,19 @@ import CustomerSupport from "./pages/CustomerSupport";
 import TermsofServicePage from "./pages/TermsofServicePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { Favorites } from "./pages/Favorites";
+import { ProtectedHotelInfo } from "./components/ProtectedHotelInfo";
+import { ProtectedSearchResults } from "./components/ProtectedSearchResults";
+import { ProtectedBookingInfoandBill } from "./components/ProtectedBookingInfoandBill";
+
+// #1E91B6 ✅ - Rudransh
+// Toast notif ✅ - Rudransh
+// TODO:  Individual Place -> Card Layout   - Sejal
+// TODO: Hotel Info beautify - Sejal
+// State Persistant in place search bar ✅ - Rudransh
+// TODO: Place search bar -> search button inside it and reduce the width - Sejal
+// TODO: Convert them into Protected Routes and change price based on the number of days stay - Rudransh
+// Remove from favHotel list ✅ - Rudransh
+// Hotel name and review ko flex krna h ✅ - Rudransh
 
 function App() {
   return (
@@ -51,22 +64,33 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         {/* ✅*/}
-        <Route path="/hotelinfo" element={<HotelInfo />} />
+        <Route
+          path="/hotelinfo"
+          element={<ProtectedHotelInfo Component={HotelInfo} />}
+        />
         {/* ✅*/}
-        <Route path="/searchResults" element={<SearchResults />} />
+        <Route
+          path="/searchResults"
+          element={<ProtectedSearchResults Component={SearchResults} />}
+        />
         {/* ✅*/}
         <Route path="/login" element={<Login />} /> {/* ✅*/}
         <Route path="/otp" element={<OTP />} />
         <Route path="/signup" element={<Signup />} />
         {/* ✅*/}
-        <Route path="/bookingInfoandBill" element={<BookingInfoandBill />} />
+        <Route
+          path="/bookingInfoandBill"
+          element={
+            <ProtectedBookingInfoandBill Component={BookingInfoandBill} />
+          }
+        />
         {/* ✅*/}
         <Route path="/mybookings" element={<MyBookings />} />
         {/* ✅*/}
         <Route path="/emailuscontactus" element={<EmailUsContactUs />} />
         {/* ✅*/}
         <Route path="/customersupport" element={<CustomerSupport />} />
-        <Route path="/writeReview" element={<WriteReview />} />
+        {/* <Route path="/writeReview" element={<WriteReview />} /> */}
         <Route path="/termsOfservice" element={<TermsofServicePage />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/favorites" element={<Favorites />} />
