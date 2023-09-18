@@ -9,7 +9,7 @@ import "./styles.css";
 
 
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ history }) => {
   let [open, setOpen] = useState(false);
 
   return (
@@ -57,7 +57,8 @@ const HeaderComponent = () => {
             </li>
 
             
-             
+            {!isAutheticated() && (
+              <Fragment>
                 <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
                   <Link
                     // style={currentTab(history, "/login")}
@@ -67,7 +68,7 @@ const HeaderComponent = () => {
                     Login
                   </Link>
                 </li>
-                <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
+                <li className="md:ml-8  text-xl md:my-0 my-7 font-mullish">
                   <Link
                     // style={currentTab(history, "/signup")}
                     className="btn px-6 py-3 rounded-md"
@@ -76,8 +77,23 @@ const HeaderComponent = () => {
                     Sign Up
                   </Link>
                 </li>
-              
-            
+                </Fragment>
+                )}
+                {isAutheticated() && (
+                <li className="md:ml-8  text-xl md:my-0 my-7 font-mullish">
+                <span
+                  // style={currentTab(history, "/signup")}
+                  className="btn px-6 py-3 rounded-md"
+                  onClick={() => {
+                    signout(() => {
+                      history.push("/home");
+                    });
+                  }}
+                >
+                  Sign Out
+                </span>
+              </li>)}
+                
 
            
           </ul>
