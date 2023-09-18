@@ -7,7 +7,7 @@ const HotelBookingComponent = ({ currency, hotelName, price, url, city, address,
       <div class=" border-solid rounded-lg border-2 border-{A1A1A1} mx-auto w-[49.375rem] h-[23.8125rem] font-mullish">
 
         <div class="flex mx-[1.5rem] mt-[2rem] mb-[1.5rem] py-[1.5rem] justify-between">
-          <h1>Superior room - 1 double bed or 2 twin beds</h1>
+          <h1 className='text-3xl font-semibold'>{hotelName}</h1>
           <h2>{price}/night</h2>
           {/* <h2>{formatCurrency(price,currency)}/night</h2> */}
         </div>
@@ -23,7 +23,7 @@ const HotelBookingComponent = ({ currency, hotelName, price, url, city, address,
           <div>{secondDay}</div>
         </div>
 
-        <div class="ml-[1.5rem] "><button className='rounded-full border-solid border-2 border-{#A1A1A1} p-1'>{noOfDays} Days</button></div>
+        <div class="ml-[1.5rem] "><button className='rounded-full w-[5rem]  border-solid border-2 border-{#A1A1A1} p-1'>{noOfDays} Days</button></div>
 
 
       </div>

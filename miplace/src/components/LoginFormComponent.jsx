@@ -11,8 +11,8 @@ const LoginFormComponent = () => {
     
         
         const [values, setValues] = useState({
-            email: "a@arul.com",
-            password: "12345",
+            email: "arul@ppum.com",
+            password: "abc1103",
             error: "",
             loading: false,
             didRedirect: false
