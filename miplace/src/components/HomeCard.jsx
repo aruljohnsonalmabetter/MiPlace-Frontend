@@ -14,8 +14,8 @@ const HomeCard = () => {
             <div className=' bottom-6 w-full absolute'>
                 {/* <div className=' bottom-0 w-full absolute flex justify-center items-center'> */}
                 {/* <div className='bg-white w-11/12'> */}
-                <div className='flex justify-center items-center flex-col'>
-                    <h1 id="txt" class="text-3xl text-white text-center pb-40 font-mullish font-bold ">Hotels For Moments are Rich in Emotions</h1>
+                <div id="homecard"className='flex justify-center items-center flex-col'>
+                    <h1 id="txt" class="text-3xl text-white text-center pb-10 font-mullish font-bold ">Hotels For Moments are Rich in Emotions</h1>
 
                     <PlaceSearchBarComponent />
                     {/* <button className='bg-[#196680] px-2 py-2 text-white w-11/12 text-semibold text-lg rounded-md'>
