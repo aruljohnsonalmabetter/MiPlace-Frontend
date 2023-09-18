@@ -93,6 +93,21 @@ const HeaderComponent = () => {
                   Sign Out
                 </span>
               </li>)}
+
+              {isAutheticated() && (
+                <li className="md:ml-8  text-xl md:my-0 my-7 font-mullish">
+                <span
+                  // style={currentTab(history, "/signup")}
+                  className="btn px-6 py-3 rounded-md"
+                  onClick={() => {
+                    signout(() => {
+                      history("/profile");
+                    });
+                  }}
+                >
+                  Profile
+                </span>
+              </li>)}
                 
 
            

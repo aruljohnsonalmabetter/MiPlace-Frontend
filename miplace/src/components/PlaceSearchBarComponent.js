@@ -198,7 +198,7 @@ export const PlaceSearchBarComponent = () => {
       className=" flex justify-center items-center w-full h-22  flex-col "
     >
       <ToastContainer />
-      <div className="flex-col space-y-1 border-2 border-black rounded-lg h-22 w-11/12 bg-white my-8">
+      <div className="flex-col pb-5 space-y-1 border-2 border-black rounded-lg h-30 w-11/12 bg-white my-8">
       <div
         id="container"
           className="bg-white flex  space-x-2 items-center justify-evenly rounded-lg pt-4"
@@ -314,7 +314,7 @@ export const PlaceSearchBarComponent = () => {
           Search
         </button> */}
 
-        <div className="flex justify-center pb-70">
+        <div className="flex justify-center pb-70 mb-[4rem] ">
           <button
             className="bg-[#1E91B6] px-2 py-1.5 text-white inline-block text-semibold text-lg rounded-md font-mullish hover:bg-lightBlue-600 transition-all duration-500 ease-in"
             onClick={handleSearch}
