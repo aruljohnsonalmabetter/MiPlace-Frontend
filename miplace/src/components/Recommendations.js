@@ -17,7 +17,7 @@ const Recommendations = ({ district, hotelName }) => {
     console.log("recommondations : ", newRecom);
   }, [district, hotelName]);
   return (
-    <div className="text-semibold font-mullish">
+    <div className="text-semibold font-mullish p-8">
       <h1 className="text-2xl text-bold text-center ">
         District : {district || <span>NULL</span>}
       </h1>
