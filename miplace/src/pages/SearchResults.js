@@ -3,6 +3,7 @@ import { FilterTabComponent } from "../components/FilterTabComponent";
 import { PlaceCard } from "../components/PlaceCard";
 import { PlaceSearchBarComponent } from "../components/PlaceSearchBarComponent";
 import { useSelector } from "react-redux";
+import "../components/styles.css";
 // import { useSelector } from "react-redux/es/hooks/useSelector";
 
 function SearchResults() {
@@ -14,8 +15,8 @@ function SearchResults() {
       <div className="">
         <div className="mb-8">
           <PlaceSearchBarComponent />
-          <div className="flex justify-center items-center">
-            <div className="flex justify-center	 items-center m-2 bg-gray-300 p-3 rounded-lg  w-11/12">
+          <div id="searchdetails" className="flex justify-center items-center  m-2 rounded-lg  bg-gray-300 p-3 ">
+            <div id="searchbar"className="flex justify-center	 items-center">
               <h1 className="text-xl text-bold">Entered Details -{`>`} </h1>
               <span className="m-2">
                 {" "}
