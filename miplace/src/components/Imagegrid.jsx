@@ -1,16 +1,55 @@
 import React from 'react'
-import Hotel15 from "../images/Hotelimages/Hotel15.webp";
-import Hotel23 from "../images/Hotelimages/hotel23.webp";
+import image1 from "../images/rec.webp"
+
 import "./styles.css";
 function Imagegrid({ img }) {
     
     return (
         <>
-            <div id="imgrid"class="flex justify-center  mx-[0.5rem] my-[0.5rem] rounded  ">
-                <img id="img1" width="400px" height ="400px"src={Hotel15} />
-                <img id="img2"width="1000px" height="400px" src={Hotel23} />
-                <img id="img3"width="400px" height="400px" src={Hotel15} />
-            </div>    
+          
+            <div className="p-8 flex">
+                <div className="w-1/2 h-full rounded-lg">
+                   <img src={image1} className="object-cover rounded-lg"></img>
+                </div>
+
+               <div className="w-1/2 flex h-full">
+                    <div className="flex w-1/2">
+                      <div className="flex-col h-full">
+                        <img src={image1} className="object-cover h-1/2 ">
+                            </img>
+                            <img src={image1} className="object-cover h-1/2 ">
+                            </img>
+                        </div>
+                        {/* <div className='flex-col h-full'>
+                            <img src={image1} className="object-cover h-1/2 ">
+                            </img>
+                            <img src={image1} className="object-cover  h-1/2 ">
+                            </img>
+                        </div>   */}
+                     </div>    
+                    <div className="flex w-1/2">
+                        <div className="flex-col h-full">
+                            <img src={image1} className="object-cover h-1/2 ">
+                            </img>
+                            <img src={image1} className="object-cover h-1/2 ">
+                            </img>
+                        </div>
+                        {/* <div className='flex-col h-full'>
+                            <img src={image1} className="object-cover h-1/2 ">
+                            </img>
+                            <img src={image1} className="object-cover  h-1/2 ">
+                            </img>
+                        </div>   */}
+                    </div>
+                    {/* <div className='flex-col h-full'>
+                            <img src={image1} className="object-cover h-1/2 ">
+                            </img>
+                            <img src={image1} className="object-cover  h-1/2 ">
+                            </img>
+                        </div>   */} 
+            </div>
+           </div> 
+                
         </>
     )
 }

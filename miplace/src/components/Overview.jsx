@@ -5,9 +5,10 @@ const Overview = ({ website }) => {
         console.log(website);
     }, [website])
     return (
-        <div className="border-2 rounded max-w-1409px mx-auto h-600px font-mullish bg-gradient-to-r from-gray-500 via-black-500">
-            <div className=" border-gray-300 p-4 rounded">
-                <h1 className=" bg-cyan-500 shadow-lg shadow-cyan-500/50 rounded inline-block text-white text-2xl font-bold mb-4 font-mullish hover:shadow-indigo-500/40">Overview</h1>
+        <div>
+        <div className=" max-w-1409px mx-auto h-600px font-mullish">
+            <div className=" p-8 rounded">
+                <h1 className=" text-2xl font-bold mb-4 font-mullish ">Overview</h1>
                 <div className="w-500px">
                     <p className=" font-mullish text-xl ">
                         <span className='text-bold'>Wish to know more ?
@@ -34,7 +35,9 @@ const Overview = ({ website }) => {
                 </div> */}
             </div>
         </div>
-
+          <hr class="h-px my-8 bg-Gray-700"></hr>
+        </div>
+ 
 
     );
 };
