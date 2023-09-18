@@ -17,6 +17,12 @@
    gap:4px;
 }
 } 
+#datecomponent{
+    @media screen and (max-width: 500px) {
+            flex-direction: column;
+            /* height : 70%; */
+        }
+}
 #date{
 @media screen and (max-width: 1200px) {
         flex-direction: column;
@@ -24,20 +30,22 @@
         gap: 4px;
     }
 }
-/* #txt{
-@media screen and (max-width: 1900px) {
-        padding-bottom: 70px ;
+ #txt{
+@media screen and (max-width: 500px) {
+        
+    font-size:large;
+        /* height : 70%; */
     }
-@media screen and (max-width: 1200px) {
-          padding-bottom:500px;
-          font-size:small;
-}
 } */
 
 #homecard{
     @media screen and (max-width: 1300px) {
-           padding-bottom: 120px;
+           padding-bottom: 50px;
     }
+        @media screen and (max-width: 500px) {
+          padding-bottom:5px;
+            /* height : 70%; */
+        }
 }
 #box{
     @media screen and (max-width: 663px) {
