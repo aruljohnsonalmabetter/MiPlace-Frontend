@@ -45,7 +45,7 @@ import { Favorites } from "./pages/Favorites";
 import { ProtectedHotelInfo } from "./components/ProtectedHotelInfo";
 import { ProtectedSearchResults } from "./components/ProtectedSearchResults";
 import { ProtectedBookingInfoandBill } from "./components/ProtectedBookingInfoandBill";
-import {Profile} from "./pages/Profile";
+import { Profile } from "./pages/Profile";
 // #1E91B6 ✅ - Rudransh
 // Toast notif ✅ - Rudransh
 // TODO:  Individual Place -> Card Layout   - Sejal
@@ -55,6 +55,8 @@ import {Profile} from "./pages/Profile";
 // TODO: Convert them into Protected Routes and change price based on the number of days stay - Rudransh
 // Remove from favHotel list ✅ - Rudransh
 // Hotel name and review ko flex krna h ✅ - Rudransh
+
+//LocalStorage mein entered details enter krni h - Rudransh
 
 function App() {
   return (
@@ -95,7 +97,6 @@ function App() {
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/profile" element={<Profile />} />
-
         {/* ✅*/}
         <Route path="*" element={<ErrorScreen />} />
       </Routes>

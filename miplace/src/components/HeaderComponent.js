@@ -1,13 +1,10 @@
-import React, { useState,Fragment }   from "react";
+import React, { useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { signout, isAutheticated } from "../auth/index";
 
 import "./styles.css";
-
-
-
 
 const HeaderComponent = ({ history }) => {
   let [open, setOpen] = useState(false);
@@ -16,9 +13,9 @@ const HeaderComponent = ({ history }) => {
     <div className="z-10 navbar flex justify-center items-center h-20 top-0 sticky bg-white ">
       <div className="flex justify-between items-center w-11/12 h-full">
         <div className=" logo font-bold text-xl">
-          <Link  to="/">
+          <a href="/">
             <h2>MiPlace</h2>
-          </Link>
+          </a>
         </div>
 
         <div
@@ -37,9 +34,6 @@ const HeaderComponent = ({ history }) => {
           >
             {/* <ul className="flex justify-between items-center"> */}
 
-            
-
-
             <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
               <Link to="/Favorites">
                 <button
@@ -56,7 +50,6 @@ const HeaderComponent = ({ history }) => {
               </Link>
             </li>
 
-            
             {!isAutheticated() && (
               <Fragment>
                 <li className="md:ml-8 text-xl md:my-0 my-7 font-mullish">
@@ -77,10 +70,10 @@ const HeaderComponent = ({ history }) => {
                     Sign Up
                   </Link>
                 </li>
-                </Fragment>
-                )}
-                {isAutheticated() && (
-                <li className="md:ml-8  text-xl md:my-0 my-7 font-mullish">
+              </Fragment>
+            )}
+            {isAutheticated() && (
+              <li className="md:ml-8  text-xl md:my-0 my-7 font-mullish">
                 <span
                   // style={currentTab(history, "/signup")}
                   className="btn px-6 py-3 rounded-md"
@@ -92,10 +85,8 @@ const HeaderComponent = ({ history }) => {
                 >
                   Sign Out
                 </span>
-              </li>)}
-                
-
-           
+              </li>
+            )}
           </ul>
         </div>
       </div>

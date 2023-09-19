@@ -12,16 +12,19 @@ import HotelNamebooking from "../components/HotelNamebooking.js";
 // import { useSelector } from "react-redux/es/hooks/useSelector.js";
 import Recommendations from "../components/Recommendations.js";
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const HotelInfo = () => {
   const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
     console.log(hotelObj);
     // console.log(hotelObj.currency);
   }, [hotelObj]);
   return (
     <div>
+      <ToastContainer/>
       <HotelNamebooking
         hotelOBJ={hotelObj}
         hotel_id={hotelObj.hotel_id}
@@ -44,7 +47,7 @@ const HotelInfo = () => {
       />
       <Amenities hotel_id={hotelObj.hotel_id} />
       <Location />
-     
+
       <Recommendations
         district={hotelObj.district}
         hotelName={hotelObj.hotel_name}

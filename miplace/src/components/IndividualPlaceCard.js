@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiSolidLocationPlus } from "react-icons/bi";
 import { FcLike } from "react-icons/fc";
 import { BsFillCupFill } from "react-icons/bs";
+import { AiOutlineHeart } from "react-icons/ai";
 import Rating from "./Rating";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavHotel } from "../redux-features/userSlice";
+import { addFavHotel, deleteFavHotel } from "../redux-features/userSlice";
 import { useNavigate } from "react-router-dom";
 import { setHotelDetails } from "../redux-features/indiHotelInfoSlice";
 import Hotel15 from "../images/Hotelimages/Hotel15.webp";
@@ -29,6 +30,9 @@ export const IndividualPlaceCard = ({
   price_breakdown,
   Hotel_obj,
 }) => {
+  const [clicked, setClicked] = useState(true);
+  // let favHotel = useSelector((state) => state.userFeature.favHotel);
+
   let dispatch = useDispatch();
   let favHotel = useSelector((state) => state.userFeature.favHotel);
 
@@ -36,6 +40,11 @@ export const IndividualPlaceCard = ({
   // useEffect(() => {
   //   console.log(favHotel)
   // }, [favHotel]);
+  useEffect(() => {
+    let includeHotel = favHotel.filter((hotel) => hotel.hotel_id === hotel_id);
+    let isInclude = includeHotel.length > 0 ? false : true;
+    setClicked(isInclude);
+  }, []);
   const handleAddtoFav = () => {
     dispatch(addFavHotel(Hotel_obj));
     console.log("favHotel : ", favHotel);
@@ -50,6 +59,21 @@ export const IndividualPlaceCard = ({
     //   progress: undefined,
     //   theme: "light",
     // });
+  };
+
+  const deleteHotel = () => {
+    toast.success("🗑️ Deleted the hotel from the Favorites list !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+    dispatch(deleteFavHotel(Hotel_obj));
+    console.log(Hotel_obj);
   };
 
   function formatCurrency(amount, currencyCode) {
@@ -160,12 +184,33 @@ export const IndividualPlaceCard = ({
           </div>
 
           {/* Add to fav and view place button */}
+          {/*     if (!clicked) {
+      toast.info("Hotel deleted from your favourites !", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } */}
           <div className=" flex justify-evenly items-center w-full">
             <button
               className="text-2xl hover:scale-75    transition ease-in-out delay-250 border-2 border-black p-2  rounded-md m-2"
-              onClick={handleAddtoFav}
+              onClick={() => {
+                console.log("clicked value is: ", clicked);
+                // clicked=!clicked;
+                setClicked((clicked) => !clicked);
+                clicked == true ? handleAddtoFav() : deleteHotel();
+              }}
             >
-              <FcLike />
+              {clicked == true ? (
+                <AiOutlineHeart />
+              ) : (
+                <FcLike className="text-white" />
+              )}
             </button>
 
             <button
