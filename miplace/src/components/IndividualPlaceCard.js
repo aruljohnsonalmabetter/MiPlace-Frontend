@@ -9,6 +9,7 @@ import { addFavHotel, deleteFavHotel } from "../redux-features/userSlice";
 import { useNavigate } from "react-router-dom";
 import { setHotelDetails } from "../redux-features/indiHotelInfoSlice";
 import Hotel15 from "../images/Hotelimages/Hotel15.webp";
+import Hotel from "../images/rec.webp";
 import "./styles.css";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -113,11 +114,11 @@ export const IndividualPlaceCard = ({
       {/* Divide into two parts */}
       <div id="placecard" className="flex items-center justify-center w-full  ">
         {/* IMG */}
-        <div className="overflow-none h-[230px] w-[340px] 	rounded-md  bg-fixed	bg-center	bg-no-repeat	bg-cover	">
+        <div className="overflow-none h-[230px] w-[360px] 	rounded-md  bg-fixed	bg-center	bg-no-repeat	bg-cover	">
           <img
-            src={Hotel15}
+            src={Hotel}
             alt="asd"
-            className="object-center	object-cover	h-full	"
+            className="object-center rounded-lg	object-cover	h-full	"
           />
         </div>
 
@@ -213,7 +214,7 @@ export const IndividualPlaceCard = ({
             </button>
 
             <button
-              className=" w-full bg-[#1E91B6] rounded-mdw-full p-3 border-none  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold "
+              className=" w-full bg-[#1E91B6] rounded-md p-3 border-none inline-block  mr-4 inline rounded-md text-white transition ease-in-out delay-250  hover:bg-blue-700 duration-300 text-bold "
               onClick={handleViewPlace}
             >
               View Place
