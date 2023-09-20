@@ -7,7 +7,7 @@ import Rating from "./Rating";
 import "./styles.css";
 import { useDispatch } from "react-redux";
 import { addFavHotel } from "../redux-features/userSlice";
-
+import Share from "./Share";
 const HotelNamebooking = ({
   // currency,
   hotel_id,
@@ -27,6 +27,7 @@ const HotelNamebooking = ({
     // console.log("favHotel : ", favHotel);
     console.log(hotelOBJ);
   };
+
   return (
     <div class="flex justify-between p-8 text-black rounded">
       <div>
@@ -53,7 +54,7 @@ const HotelNamebooking = ({
           {price}/night
           {/* {formatCurrency(price, currency)}/night */}
         </h1>
-        <div id="icons" className="flex justify-between space-x-2">
+        {/* <div id="icons" className="flex justify-between space-x-2"> */}
           {/* <FcLike className="text-xl hover:scale-75 cursor-pointer transition ease-in-out delay-250" /> */}
           {/* <button
             className="border-2 border-black p-2  rounded-md m-2"
@@ -61,11 +62,17 @@ const HotelNamebooking = ({
           >
             <FcLike className="text-2xl hover:scale-75    transition ease-in-out delay-250" />
           </button> */}
-          <div className="border-2 border-black inline-block flex justify-center h-6 px-1 ">
+          {/* <div className="border-2 border-black inline-block h-6 w-6 px-1 ">
             <BsFillShareFill className="pt-2 snap-center" /></div>
-          <Button className="md:text-sm inline-block" text={text} />
-        </div>
+          {/* <Button className="md:text-sm inline-block" text={text} /> */}
+        <Share
+          label="Share"
+          title="My Web Share Adventures"
+          text="Hello World! I shared this content via Web Share"
+        />
       </div>
+    
+      {/* </div> */}
     </div>
   );
 };
