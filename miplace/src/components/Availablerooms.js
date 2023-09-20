@@ -2,7 +2,9 @@ import React from "react";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import "./styles.css";
-const Availablerooms = ({  room, price, text }) => {
+import Slides from "./Slides";
+import { Slide } from "react-toastify";
+const Availablerooms = ({ room, price, text }) => {
   // function formatCurrency(amount, currencyCode) {
   //   // Create a formatter based on the currency code
   //   const formatter = new Intl.NumberFormat(undefined, {
@@ -27,7 +29,7 @@ const Availablerooms = ({  room, price, text }) => {
             <img />
             <p className="text-bold text-xl ">{room}</p>
           </div>
-          <div id="available"class="flex space-x-3 font-bold font-mullish text-xl">
+          <div id="available" class="flex space-x-3 font-bold font-mullish text-xl">
             <h2>{price}/night</h2>
             {/* <h2>{formatCurrency(price, currency)}/night</h2> */}
             <Link to="/bookingInfoandBill">
@@ -35,7 +37,9 @@ const Availablerooms = ({  room, price, text }) => {
             </Link>{" "}
           </div>
         </div>
-        
+      
+        <Slides/>
+
       </div>
       <hr class="h-1px my-8 bg-black"></hr>
     </>
