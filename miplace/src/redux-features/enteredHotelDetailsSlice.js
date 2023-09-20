@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const initialState = {
   city: "",
   firstDay: "",
@@ -12,8 +13,18 @@ const noOfDays = function getNumberOfNightsBetweenDates(start_date, end_date) {
   if (start_date && end_date) {
     if (start_date > end_date) {
       console.log(Date());
-      alert(
-        "Start Date should be smaller than end date.Please correct the start or the end date"
+      toast.warning(
+        "⚠️ Start Date should be smaller than end date.Please correct the start or the end date!",
+        {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        }
       );
       window.location.reload();
       // setFirstDay(Date());

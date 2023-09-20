@@ -25,7 +25,12 @@ export const PlaceSearchBarComponent = () => {
   const enteredDetails = useSelector(
     (state) => state.enteredHotelDetailsFeature
   );
-
+  useEffect(() => {
+    setCity(enteredDetails.city);
+    setFirstDay(enteredDetails.firstDay);
+    setSecondDay(enteredDetails.secondDay);
+    setRoomsGuests(enteredDetails.roomsGuests);
+  }, [enteredDetails]);
   const noOfDays = function getNumberOfNightsBetweenDates(
     start_date,
     end_date
@@ -37,19 +42,19 @@ export const PlaceSearchBarComponent = () => {
         //   "Start Date should be smaller than end date.Please correct the start or the end date"
         // );
 
-        toast(
-          "⚠️ Start Date should be smaller than end date.Please correct the start or the end date!",
-          {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-          }
-        );
+        // toast.warning(
+        //   "⚠️ Start Date should be smaller than end date.Please correct the start or the end date!",
+        //   {
+        //     position: "top-center",
+        //     autoClose: 5000,
+        //     hideProgressBar: false,
+        //     closeOnClick: true,
+        //     pauseOnHover: true,
+        //     draggable: true,
+        //     progress: undefined,
+        //     theme: "dark",
+        //   }
+        // );
         // alert(
         //   "Start Date should be smaller than end date.Please correct the start or the end date"
         // );
@@ -74,6 +79,22 @@ export const PlaceSearchBarComponent = () => {
   };
 
   const handleSearch = async () => {
+    let currDate = new Date();
+    console.log(currDate < firstDay);
+    if (firstDay > currDate) {
+      console.log("yes");
+      toast.warning("⚠️ Please select valid First Day.", {
+        position: "top-center",
+      });
+      return;
+    }
+    if (secondDay > currDate) {
+      console.log("yes");
+      toast.warning("⚠️ Please select valid First Day.", {
+        position: "top-center",
+      });
+      return;
+    }
     if (
       city === "" ||
       firstDay === "" ||
@@ -95,7 +116,18 @@ export const PlaceSearchBarComponent = () => {
     }
 
     //----------
+    localStorage.setItem(
+      "enteredDetails",
+      JSON.stringify({
+        city,
+        firstDay,
+        secondDay,
+        roomsGuests,
+      })
+    );
+    console.log(JSON.parse(localStorage.getItem("enteredDetails")));
     dispatch(fetchHotelsStart());
+
     dispatch(
       setEnteredHotelDetails({
         city,
@@ -198,74 +230,107 @@ export const PlaceSearchBarComponent = () => {
       className=" flex justify-center items-center w-full h-22  flex-col "
     >
       <ToastContainer />
+      
       <div className="flex-col pb-5 space-y-1 border-2 border-black rounded-lg h-30 w-11/12 bg-white my-8">
       <div
         id="container"
           className="bg-white flex  space-x-2 items-center justify-evenly rounded-lg pt-4"
-      >
-        <div className="m-2">
-          <label className="relative">
-            <input
-              className="border-2 border-solid border-black border-opacity-40	 px-2 py-1.5  rounded-md w-80 transition duration-200"
-              type="text"
-              // value={city || "" || enteredDetails.city}
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              placeholder=" "
-            />
-            <span className="top-0 absolute left-0  mx-3  transition duration-200 input-text text-bold">
-              Enter City or Location
-            </span>
-            {/* <span
-              className={
-                city!==""
-                  ? `-top-8 absolute left-0  mx-3  transition duration-200 input-text`
-                  : `top-0 absolute left-0  mx-3  transition duration-200 input-text`
-              }
-            >
-              Enter City or Location
-            </span> */}
-          </label>
-        </div>
-       <div id="datecomponent" className="flex space-x-2">
-          <div className="flex">
-            <h3 className=" text-bold text-sm flex items-center justify-center font-bold  "> checkIn :</h3>
-            <div className="m-2">
+        >
+          <div className="m-2">
+            <label className="relative">
               <input
-                className="border-2 border-solid border-black border-opacity-40	 px-2 py-1.5  rounded-md  transition duration-200"
-                type="date"
-                // value={firstDay || enteredDetails.firstDay}
-                value={firstDay}
-                onChange={(e) => setFirstDay(e.target.value)}
+                className="border-2 border-solid border-black border-opacity-40	 px-2 py-1.5  rounded-md w-80 transition duration-200"
+                type="text"
+                value={city || enteredDetails.city}
+                // value={city}
+                onChange={(e) => {
+                  dispatch(
+                    setEnteredHotelDetails({
+                      ...enteredDetails,
+                      city: e.target.value,
+                    })
+                  );
+                  setCity(e.target.value);
+                }}
+                placeholder=" "
               />
-              {/* <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text">
-              Check in
-            </span> */}
-            </div> </div>
-          <p className=" text-black-700  mr-[2rem] font-bold flex items-center justify-center text-xl">to</p>
-
+              <span className="top-0 absolute left-0  mx-3  transition duration-200 input-text text-bold">
+                Enter City or Location
+              </span>
+            </label>
+          </div>
+          <div id="datecomponent" className="flex space-x-2">
             <div className="flex">
-              <span className=" text-sm flex items-center justify-center font-bold">checkout :</span>
-            <div className="m-2">
-              <label className="relative">
+              <h3 className=" text-bold text-sm flex items-center justify-center font-bold  ">
+                {" "}
+                checkIn :
+              </h3>
+              <div className="m-2">
                 <input
-                    className="border-2 border-solid border-black border-opacity-40	py-1.5  px-3  rounded-md  transition duration-200"
+                  className="border-2 border-solid border-black border-opacity-40	 px-2 py-1.5  rounded-md  transition duration-200"
                   type="date"
-                  // value={secondDay || enteredDetails.secondDay}
-                  value={secondDay}
-                  onChange={(e) => setSecondDay(e.target.value)}
-                // placeholder="Enter a location"
+                  // value={firstDay || enteredDetails.firstDay}
+                  value={firstDay || enteredDetails.firstDay}
+                  onChange={(e) => {
+                    dispatch(
+                      setEnteredHotelDetails({
+                        ...enteredDetails,
+                        firstDay: e.target.value,
+                      })
+                    );
+                    setFirstDay(e.target.value);
+                  }}
                 />
                 {/* <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text">
+              Check in
+            </span> */}
+              </div>{" "}
+            </div>
+            <p className=" text-black-700  mr-[2rem] font-bold flex items-center justify-center text-xl">
+              to
+            </p>
+
+            <div className="flex">
+              <span className=" text-sm flex items-center justify-center font-bold">
+                checkout :
+              </span>
+              <div className="m-2">
+                <label className="relative">
+                  <input
+                    className="border-2 border-solid border-black border-opacity-40	py-1.5  px-3  rounded-md  transition duration-200"
+                    type="date"
+                    // value={secondDay || enteredDetails.secondDay}
+                    value={secondDay || enteredDetails.secondDay}
+                    onChange={(e) => {
+                      dispatch(
+                        setEnteredHotelDetails({
+                          ...enteredDetails,
+                          secondDay: e.target.value,
+                        })
+                      );
+                      setSecondDay(e.target.value);
+                    }}
+                    // placeholder="Enter a location"
+                  />
+                  {/* <span className="absolute left-0 top-0 mx-3  transition duration-200 input-text">
               Check out
             </span> */}
-              </label>
+                </label>
+              </div>
             </div>
-        </div>
-        </div>
-       <div className="">
+          </div>
+          <div className="">
             <p className="rounded-3xl	 px-3 py-1 border-2 border-solid border-black border-opacity-40	text-bold 	text-md  bg-opacity-80">
-              {firstDay && secondDay ? noOfDays(firstDay, secondDay) : 0} Nights
+              {}
+              {(firstDay && secondDay) ||
+              enteredDetails.firstDay ||
+              enteredDetails.secondDay
+                ? noOfDays(
+                    firstDay || enteredDetails.firstDay,
+                    secondDay || enteredDetails.secondDay
+                  )
+                : 0}{" "}
+              Nights
               {/* {firstDay && secondDay ? noOfDays(firstDay, secondDay) : 0} Nights */}
             </p>
           </div>
@@ -316,13 +381,13 @@ export const PlaceSearchBarComponent = () => {
 
         <div className="flex justify-center pb-70 mb-[4rem] ">
           <button
-            className="bg-[#1E91B6] px-2 py-1.5 text-white inline-block text-semibold text-lg rounded-md font-mullish hover:bg-lightBlue-600 transition-all duration-500 ease-in"
+            className="bg-[#1E91B6] px-4 py-1.5 text-white inline-block text-semibold text-lg rounded-md font-mullish hover:bg-blue-600 transition-all duration-300 ease-in mb-2"
             onClick={handleSearch}
           >
             Search
           </button>
         </div>
-        </div>
       </div>
-      );
+    </div>
+  );
 };

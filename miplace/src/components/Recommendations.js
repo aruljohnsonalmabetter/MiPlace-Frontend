@@ -18,12 +18,13 @@ const Recommendations = ({ district, hotelName }) => {
   }, [district, hotelName]);
   return (
     <div className="text-semibold font-mullish p-8">
-      <h1 className="text-2xl text-bold text-center ">
+      {/* <h1 className="text-2xl text-bold text-center ">
         District : {district || <span>NULL</span>}
       </h1>
       <h1 className="text-2xl text-bold text-center">
         HotelName : {hotelName || <span>NULL</span>}
-      </h1>
+      </h1> */}
+      <h1 className="text-5xl text-bold text-start my-2">Recommendations : </h1>
       {district == "" && (
         <h1 className="text-2xl text-bold text-center my-4">
           No recommondations for this one
