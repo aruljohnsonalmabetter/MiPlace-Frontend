@@ -28,7 +28,7 @@ function Share({ label, text, title }) {
     const [showModal, setShowModal] = useState(false);
     return (
         <>
-            <button className="share-button " onClick={handleSharing}>
+            <button className="border-2 text-bolder text-xl  p-2 rounded-md   transition ease-in-out delay-100 bg-[#1E91B6] hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500 duration-300 text-white my-2" onClick={handleSharing}>
             <span className="sharer-button-text">{label}</span>
         </button>
         <ShareModal
