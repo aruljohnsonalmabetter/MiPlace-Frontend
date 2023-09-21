@@ -4,6 +4,7 @@ import Loginbookinginfo from "../components/Loginbookinginfo";
 import FinalBookingSlipComponent from "../components/FinalBookingSlipComponent";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
+import {FaRegDotCircle} from 'react-icons/fa'
 // import { loadStripe } from '@stripe/stripe-js/pure';
 // import { Method } from "ionicons/dist/types/stencil-public-runtime";
 /*
@@ -47,7 +48,7 @@ function BookingInfoandBill() {
               </button>
               <p>Pay the total and you are all set</p>
             </div>
-            <div className="my-[1rem] mr-[1rem]">dot</div>
+            <div className="my-[1rem] mr-[1rem] flex justify-center items-center"><FaRegDotCircle /></div>
           </div>
         </div>
 
