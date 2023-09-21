@@ -16,7 +16,7 @@ const Amenities = ({ hotel_id }) => {
           languagecode: 'en-us'
         },
         headers: {
-          'X-RapidAPI-Key': "7743bfcba1msha1fa62656925329p1db8acjsnca94aaa717ba",
+          'X-RapidAPI-Key': "0a6df34f49msh485db061a21545fp13f7b8jsn583a63d71c33",
           'X-RapidAPI-Host': 'apidojo-booking-v1.p.rapidapi.com'
         }
       };
@@ -40,8 +40,8 @@ const Amenities = ({ hotel_id }) => {
       {/* <div className="price-input  flex  flex-col">
         <div className=""> */}
       <div className="grid grid-cols-4 gap-2">
-          {facilites.map((indiFac) => {
-            return ( //<p key={indiFac.facilitytype_id} htmlFor="" className="block m-2 ">{indiFac?.facilitytype_name}</p>)
+        {facilites.map((indiFac) => {
+          return ( //<p key={indiFac.facilitytype_id} htmlFor="" className="block m-2 ">{indiFac?.facilitytype_name}</p>)
             // <div
             //   key={indiFac.facilitytype_id}
             //   className=" block m-2 border border-gray-300 p-2 rounded-lg bg-white"
@@ -59,10 +59,11 @@ const Amenities = ({ hotel_id }) => {
                 {indiFac?.facilitytype_name}
               </p>
             </div>
-              
-          )})}
-        </div>
+
+          )
+        })}
       </div>
+    </div>
     // </div>
   );
 };

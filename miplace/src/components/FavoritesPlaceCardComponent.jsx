@@ -45,17 +45,6 @@ export const FavoritesPlaceCardComponent = ({
   };
   const navigate = useNavigate();
 
-
-  function formatCurrency(amount, currencyCode) {
-    // Create a formatter based on the currency code
-    const formatter = new Intl.NumberFormat(undefined, {
-      style: "currency",
-      currency: currencyCode,
-    });
-
-    // Format the amount
-    return formatter.format(amount);
-  }
   const handleViewPlace = async () => {
     // navigate(`/hotel/${Hotel_obj._id}`);
     const hotelObj = {
@@ -144,7 +133,6 @@ export const FavoritesPlaceCardComponent = ({
               <p> starting from</p>
               <p className="text-lg text-bold text-blue-600 ">
                 {price_breakdown} /night
-                {/* {formatCurrency(price_breakdown, currency)} /night */}
               </p>
               <p className="">excl. tax</p>
             </div>

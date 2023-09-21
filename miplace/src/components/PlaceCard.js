@@ -181,6 +181,7 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currencyPrice={hotel.price_breakdown.all_inclusive_price}
                   currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
                   webUrl={hotel.url}
@@ -211,6 +212,7 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currencyPrice={hotel.price_breakdown.all_inclusive_price}
                   currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
                   webUrl={hotel.url}
@@ -240,6 +242,7 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currencyPrice={hotel.price_breakdown.all_inclusive_price}
                   currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
                   webUrl={hotel.url}
@@ -268,6 +271,7 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currencyPrice={hotel.price_breakdown.all_inclusive_price}
                   hotel_id={hotel.hotel_id}
                   currency={hotel.price_breakdown.currency}
                   webUrl={hotel.url}
@@ -297,6 +301,7 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currencyPrice={hotel.price_breakdown.all_inclusive_price}
                   currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
                   webUrl={hotel.url}
@@ -326,6 +331,7 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currencyPrice={hotel.price_breakdown.all_inclusive_price}
                   currency={hotel.price_breakdown.currency}
                   hotel_id={hotel.hotel_id}
                   webUrl={hotel.url}
@@ -347,10 +353,10 @@ export const PlaceCard = () => {
             );
           })}
 
-        {(userEnteredDetails.city == "" ||
+        {userEnteredDetails.city == "" ||
         userEnteredDetails.firstDay == "" ||
         userEnteredDetails.secondDay == "" ||
-        userEnteredDetails.roomsGuests == "" )? (
+        userEnteredDetails.roomsGuests == "" ? (
           <div className="text-3xl w-full  rounded-lg my-3  flex justify-center items-center p-4 text-bold animate-bounce">
             Fill the form above to load hotel info 🛎️🏩....
           </div>
@@ -364,6 +370,7 @@ export const PlaceCard = () => {
             return (
               <div key={hotel.hotel_id}>
                 <IndividualPlaceCard
+                  currencyPrice={hotel.price_breakdown.all_inclusive_price}
                   hotel_id={hotel.hotel_id}
                   currency={hotel.price_breakdown.currency}
                   webUrl={hotel.url}

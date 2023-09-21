@@ -15,6 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const PlaceSearchBarComponent = () => {
+  const rapidApiKey = process.env.REACT_APP_RapidAPI_KEY;
   const [city, setCity] = useState("");
   const [roomsGuests, setRoomsGuests] = useState("");
   const [firstDay, setFirstDay] = useState("");
@@ -178,7 +179,8 @@ export const PlaceSearchBarComponent = () => {
         languagecode: "en-us",
       },
       headers: {
-        "X-RapidAPI-Key": "7743bfcba1msha1fa62656925329p1db8acjsnca94aaa717ba",
+        "X-RapidAPI-Key": "0a6df34f49msh485db061a21545fp13f7b8jsn583a63d71c33",
+        // "X-RapidAPI-Key": `${process.env.REACT_APP_RapidAPI_KEY}`,
         "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
       },
     };
@@ -208,7 +210,8 @@ export const PlaceSearchBarComponent = () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "7743bfcba1msha1fa62656925329p1db8acjsnca94aaa717ba",
+            "0a6df34f49msh485db061a21545fp13f7b8jsn583a63d71c33",
+          // "X-RapidAPI-Key": ,
           "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
         },
       };
