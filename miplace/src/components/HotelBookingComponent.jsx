@@ -4,7 +4,7 @@ const HotelBookingComponent = ({ currency, hotelName, price, url, city, address,
 
   return (
     <>
-      <div class=" border-solid rounded-lg border-2 border-{A1A1A1} mx-auto w-[49.375rem] h-[23.8125rem] font-mullish">
+      <div class=" border-solid rounded-lg border-2 border-{A1A1A1} mx-auto w-[49.375rem] h-[24.8125rem] font-mullish">
 
         <div class="flex mx-[1.5rem] mt-[2rem] mb-[1.5rem] py-[1.5rem] justify-between">
           <h1 className='text-3xl font-semibold'>{hotelName}</h1>
@@ -23,7 +23,7 @@ const HotelBookingComponent = ({ currency, hotelName, price, url, city, address,
           <div>{secondDay}</div>
         </div>
 
-        <div class="ml-[1.5rem] "><button className='rounded-full w-[5rem]  border-solid border-2 border-{#A1A1A1} p-1'>{noOfDays} Days</button></div>
+        <div class="ml-[1.5rem] "><button className='rounded-full w-[5rem] mb-2  border-solid border-2 border-{#A1A1A1} p-1'>{noOfDays} Days</button></div>
 
 
       </div>

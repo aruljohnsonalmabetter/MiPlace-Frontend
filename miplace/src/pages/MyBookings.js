@@ -39,7 +39,7 @@ function MyBookings() {
         </h3>
       </div>
       <div>
-        <h1>₹ {hotelObj.price_breakdown}/night</h1>
+        <h1 className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6]">{hotelObj.price_breakdown}/night</h1>
         <Button text="Download" />
       </div>
       </div>

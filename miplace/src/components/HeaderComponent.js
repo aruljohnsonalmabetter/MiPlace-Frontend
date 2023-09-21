@@ -1,14 +1,17 @@
-import React, { useState, Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { useState,Fragment }   from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { signout, isAutheticated } from "../auth/index";
+import { signout, isAutheticated, signin } from "../auth/index";
 
 import "./styles.css";
 
-const HeaderComponent = ({ history }) => {
-  let [open, setOpen] = useState(false);
 
+
+
+const HeaderComponent = () => {
+  let [open, setOpen] = useState(false);
+  const history = useNavigate();
   return (
     <div className="z-10 navbar flex justify-center items-center h-20 top-0 sticky bg-white ">
       <div className="flex justify-between items-center w-11/12 h-full">
@@ -79,14 +82,29 @@ const HeaderComponent = ({ history }) => {
                   className="btn px-6 py-3 rounded-md"
                   onClick={() => {
                     signout(() => {
-                      history.push("/home");
+                      history("/home");
                     });
                   }}
                 >
                   Sign Out
                 </span>
-              </li>
-            )}
+              </li>)}
+
+              {isAutheticated() && (
+                <li className="md:ml-8  text-xl md:my-0 my-7 font-mullish">
+                <span
+                  // style={currentTab(history, "/signup")}
+                  className="btn px-6 py-3 rounded-md"
+                  onClick={() => {
+                    history("/profile");
+                  }}
+                >
+                  Profile
+                </span>
+              </li>)}
+                
+
+           
           </ul>
         </div>
       </div>

@@ -4,6 +4,17 @@ import Loginbookinginfo from "../components/Loginbookinginfo";
 import FinalBookingSlipComponent from "../components/FinalBookingSlipComponent";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
+<<<<<<< HEAD
+import {FaRegDotCircle} from 'react-icons/fa'
+// import { loadStripe } from '@stripe/stripe-js/pure';
+// import { Method } from "ionicons/dist/types/stencil-public-runtime";
+/*
+  district: "",
+  review_score: "",
+  review_score_word: "",
+  url: "",
+  */
+=======
 import { loadStripe } from "@stripe/stripe-js";
 import { signout, isAutheticated } from "../auth/index";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,6 +22,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const PUBLI_KEY =
   "pk_test_51NsnOGSICQL4cc0kpJTFk4IiycCAix6ymed9VpMHMUVyuxV7viIaUXJw2wo9yXPtJjzuqFJp1CVTWfAe0VSUBERT00N4eYVReF";
+>>>>>>> 20a89c82b1c9193af1c1f6f71bb7b60def290b98
 function BookingInfoandBill() {
   const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
   console.log("Hotel Obj : ", [hotelObj]);
@@ -85,8 +97,12 @@ function BookingInfoandBill() {
   };
 
   return (
+<<<<<<< HEAD
+    <div class="flex justify-center items-top  gap-[1.5rem] font-mullish">
+=======
     <div class="flex  gap-[1.5rem] font-mullish">
       <ToastContainer />
+>>>>>>> 20a89c82b1c9193af1c1f6f71bb7b60def290b98
       <div class="  mt-[2.5rem]  w-[49.375rem] h-[64.25rem]  ">
         <HotelBookingComponent
           hotelName={hotelObj.hotel_name}
@@ -101,6 +117,16 @@ function BookingInfoandBill() {
         />
 
         <div class="border-solid my-[2.5rem]  w-[49.375rem] border-2 border-{A1A1A1} rounded-lg font-mullish">
+<<<<<<< HEAD
+          <div class="flex my-[1rem] bg-[#1E91B6] w-[47.375rem] mx-[1rem]  justify-between rounded-lg">
+            <div className="text-white my-[1rem] ml-[1rem]">
+              <button className="bg-lightBlue font-bold" >
+              <Link to="/mybookings"> Pay in Full  </Link>
+              </button>
+              <p>Pay the total and you are all set</p>
+            </div>
+            <div className="my-[1rem] mr-[1rem] flex justify-center items-center"><FaRegDotCircle /></div>
+=======
           <div class="flex my-[1rem] bg-[#1E91B6] w-[47.375rem] mx-[1rem]  justify-between items-center rounded-lg p-3">
             <p className="text-bold">Pay the total and you are all set : </p>
 
@@ -111,6 +137,7 @@ function BookingInfoandBill() {
               Pay in Full
               {/* <Link to="/mybookings"> Pay in Full </Link> */}
             </button>
+>>>>>>> 20a89c82b1c9193af1c1f6f71bb7b60def290b98
           </div>
         </div>
 

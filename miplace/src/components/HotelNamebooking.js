@@ -35,7 +35,7 @@ const HotelNamebooking = ({
           {hotelname}
         </h1>
 
-        <h3 className=" flex font-[Montserrat]  font-medium justify-center items-center">
+        <h3 className=" flex font-[Montserrat]  font-medium justify-start items-start">
           <BiSolidLocationPlus className="mr-2" />
           {address}, {city}
         </h3>
@@ -46,11 +46,11 @@ const HotelNamebooking = ({
         <div className="flex gap-[1rem] ">
           <Rating value="5" className="inline " />
 
-          <p>{review || "5"} </p>
+          <p>{review} </p>
         </div>
       </div>
       <div className="space-y-2">
-        <h1 className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6] text-black">
+        <h1 className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6] ">
           {price}/night
           {/* {formatCurrency(price, currency)}/night */}
         </h1>

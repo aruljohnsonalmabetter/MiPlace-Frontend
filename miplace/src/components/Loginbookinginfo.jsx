@@ -35,9 +35,9 @@ const Loginbookinginfo = () => {
 
                     <div class="flex">
                     <div className="w-[21.0625rem] h-1 bg-[#D9D9D9]"></div>
-                    <span>
-                        Or
-                    </span>
+                    <div >
+                        <h3 classname="flex font-semibold">Or</h3>
+                    </div>
                     <div className="w-[21.0625rem] h-1 bg-[#D9D9D9]"></div>
                     </div>
 
