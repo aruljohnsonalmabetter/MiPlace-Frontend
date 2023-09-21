@@ -16,6 +16,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const IndividualPlaceCard = ({
+  currencyPrice,
   hotel_id,
   webUrl,
   address,
@@ -89,6 +90,7 @@ export const IndividualPlaceCard = ({
   const handleViewPlace = async () => {
     // navigate(`/hotel/${Hotel_obj._id}`);
     const hotelObj = {
+      currencyPrice,
       hotel_id,
       webUrl,
       currency,

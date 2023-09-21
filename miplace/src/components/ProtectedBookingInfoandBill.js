@@ -7,7 +7,7 @@ export const ProtectedBookingInfoandBill = (props) => {
   const { Component } = props;
   const navigate = useNavigate();
   useEffect(() => {
-    if (indiHotelState.hotel_id === "") {
+    if (indiHotelState.hotel_id === "" || indiHotelState.currency==="") {
       navigate("/");
     }
   }, []);

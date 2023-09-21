@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  // currencyPrice: "",
   hotel_id: "",
   webUrl: "",
   hotel_name: "",
@@ -43,9 +44,9 @@ const indiHotelInfoSlice = createSlice({
   name: "indiHotelInfo",
   initialState,
   reducers: {
-    
     setHotelDetails: (state, action) => {
       state.hotel_id = action.payload.hotel_id;
+      state.currencyPrice = Number(action.payload.currencyPrice);
       state.webUrl = action.payload.webUrl;
       state.currency = action.payload.currency;
       state.hotel_name = action.payload.hotel_name;
