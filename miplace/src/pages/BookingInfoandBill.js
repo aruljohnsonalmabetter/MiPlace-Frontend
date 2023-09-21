@@ -29,12 +29,20 @@ function BookingInfoandBill() {
 
   // Payment Integration
   const makePayment = async () => {
-    // if (!isAutheticated()) {
-    //   toast.warning("Please Login to continue");
-    //   return;
-    // } else setIsloading(true);
-    setIsloading(true);
-    // if (isloading === true) {
+    if (!isAutheticated()) {
+      toast.warn("Please LogIn/SignUp to continue", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      return;
+    } else setIsloading(true);
+
     toast.warn("Do not Click back or Refresh the page.....", {
       position: "top-center",
       autoClose: 5000,
@@ -66,13 +74,13 @@ function BookingInfoandBill() {
         body: JSON.stringify(body),
       }
     );
-
+    // if (respone.error) toast.warn("Warning");
     const session = await respone.json();
     const result = stripe.redirectToCheckout({
       sessionId: session.id,
     });
 
-    if (result.error) console.log(result.error);
+    if (result.error) toast.warn(result.error);
     // navigate("/mybookings");
   };
 
