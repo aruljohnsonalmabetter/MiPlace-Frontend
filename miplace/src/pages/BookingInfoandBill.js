@@ -8,6 +8,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { signout, isAutheticated } from "../auth/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { API } from "../backend";
 
 const PUBLI_KEY =
   "pk_test_51NsnOGSICQL4cc0kpJTFk4IiycCAix6ymed9VpMHMUVyuxV7viIaUXJw2wo9yXPtJjzuqFJp1CVTWfAe0VSUBERT00N4eYVReF";
@@ -66,14 +67,11 @@ function BookingInfoandBill() {
     };
 
     const headers = { "Content-Type": "application/json" };
-    const respone = await fetch(
-      "http://localhost:8000/api/create-checkout-session",
-      {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(body),
-      }
-    );
+    const respone = await fetch(`${API}/create-checkout-session`, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body),
+    });
     // if (respone.error) toast.warn("Warning");
     const session = await respone.json();
     const result = stripe.redirectToCheckout({
