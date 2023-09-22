@@ -8,6 +8,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { signout, isAutheticated } from "../auth/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { API } from "../backend";
 
 const PUBLI_KEY =
   "pk_test_51NsnOGSICQL4cc0kpJTFk4IiycCAix6ymed9VpMHMUVyuxV7viIaUXJw2wo9yXPtJjzuqFJp1CVTWfAe0VSUBERT00N4eYVReF";
@@ -42,8 +43,12 @@ function BookingInfoandBill() {
       });
       return;
     } else setIsloading(true);
+<<<<<<< HEAD
     setIsloading(true);
     // if (isloading === true) {
+=======
+
+>>>>>>> ba2e5743db3499677a15139f5ca10e18d0098421
     toast.warn("Do not Click back or Refresh the page.....", {
       position: "top-center",
       autoClose: 5000,
@@ -67,6 +72,7 @@ function BookingInfoandBill() {
     };
 
     const headers = { "Content-Type": "application/json" };
+<<<<<<< HEAD
     const respone = await fetch(
       "http://localhost:5000/api/create-checkout-session",
       {
@@ -76,18 +82,31 @@ function BookingInfoandBill() {
       }
     );
 
+=======
+    const respone = await fetch(`${API}/create-checkout-session`, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body),
+    });
+    // if (respone.error) toast.warn("Warning");
+>>>>>>> ba2e5743db3499677a15139f5ca10e18d0098421
     const session = await respone.json();
     const result = stripe.redirectToCheckout({
       sessionId: session.id,
     });
 
-    if (result.error) console.log(result.error);
+    if (result.error) toast.warn(result.error);
     // navigate("/mybookings");
   };
   
   return (
+<<<<<<< HEAD
     <div class="flex justify-center items-top  gap-[1.5rem] font-mullish">
     <ToastContainer />
+=======
+    <div class="flex  gap-[1.5rem] font-mullish">
+      <ToastContainer />
+>>>>>>> ba2e5743db3499677a15139f5ca10e18d0098421
       <div class="  mt-[2.5rem]  w-[49.375rem] h-[64.25rem]  ">
         <HotelBookingComponent
           hotelName={hotelObj.hotel_name}
