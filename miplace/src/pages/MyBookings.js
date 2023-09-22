@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
-import Button from "../components/Button";
+// import Button from "../components/Button";
 import Bookingreceipt from "../components/Bookingreceipt";
-import { FaLocationDot } from "react-icons/fa6";
-import Rating from "../components/Rating";
+// import { FaLocationDot } from "react-icons/fa6";
+// import Rating from "../components/Rating";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
+import HotelNamebooking from "../components/HotelNamebooking.js";
+
+
 
 function MyBookings() {
   // function formatCurrency(amount, currencyCode) {
@@ -27,22 +30,18 @@ function MyBookings() {
 
   return (
     <div class=" justify-between mx-[3.125rem]  space-x-4 ">
-      <div className="flex justify-between">
-        <div>
-          {/* url={hotelObj.main_photo_url} */}
-
-        <h1 className="font-bold text-3xl">{hotelObj.hotel_name} </h1>
-        <Rating />
-        <h3 className="flex text-sm">
-          <FaLocationDot />
-          {hotelObj.address} , {hotelObj.city}
-        </h3>
-      </div>
-      <div>
-        <h1 className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6]">{hotelObj.price_breakdown}/night</h1>
-        <Button text="Download" />
-      </div>
-      </div>
+    <HotelNamebooking
+    hotelOBJ={hotelObj}
+    hotel_id={hotelObj.hotel_id}
+    hotelname={hotelObj.hotel_name}
+    city={hotelObj.city}
+    district={hotelObj.district}
+    address={hotelObj.address}
+    // currency={hotelObj.currency}
+    price={hotelObj.price_breakdown}
+    text="Download"
+    review={hotelObj.review_score_word}
+  />
       <Bookingreceipt />
       <div class="mx-[3.125rem] my-[2.125rem] ">
         <h1 className="mb-[2.125rem] text-2xl font-semibold font-[Montserrat] ">
@@ -96,8 +95,41 @@ function MyBookings() {
           </li>
         </h3>
       </div>
+
+
+      <HotelNamebooking
+    hotelOBJ={hotelObj}
+    hotel_id={hotelObj.hotel_id}
+    hotelname={hotelObj.hotel_name}
+    city={hotelObj.city}
+    district={hotelObj.district}
+    address={hotelObj.address}
+    // currency={hotelObj.currency}
+    price={hotelObj.price_breakdown}
+    text="Download"
+    review={hotelObj.review_score_word}
+  />
+
     </div>
   );
 }
 
 export default MyBookings;
+
+
+// <div className="flex justify-between">
+//         <div>
+//           {/* url={hotelObj.main_photo_url} */}
+
+//         <h1 className="font-bold text-3xl">{hotelObj.hotel_name} </h1>
+//         <Rating />
+//         <h3 className="flex text-sm">
+//           <FaLocationDot />
+//           {hotelObj.address} , {hotelObj.city}
+//         </h3>
+//       </div>
+//       <div>
+//         <h1 className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6]">{hotelObj.price_breakdown}/night</h1>
+//         <Button text="Download" />
+//       </div>
+//       </div>

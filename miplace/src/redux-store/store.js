@@ -5,7 +5,6 @@ import indiHotelInfoSlice from "../redux-features/indiHotelInfoSlice";
 import enteredHotelDetailsSlice from "../redux-features/enteredHotelDetailsSlice";
 import filterSlice from "../redux-features/filterSlice";
 // We will import all the individual slices here
-
 const store = configureStore({
   reducer: {
     hotelFeature: hotelSlice,
@@ -15,5 +14,4 @@ const store = configureStore({
     filterFeature: filterSlice,
   },
 });
-
 export default store;
