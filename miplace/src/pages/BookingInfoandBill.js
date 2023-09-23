@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import HotelBookingComponent from "../components/HotelBookingComponent";
 import Loginbookinginfo from "../components/Loginbookinginfo";
 import FinalBookingSlipComponent from "../components/FinalBookingSlipComponent";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
 import { loadStripe } from "@stripe/stripe-js";
-import { signout, isAutheticated } from "../auth/index";
+import { isAutheticated } from "../auth/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { API } from "../backend";
 
 const PUBLI_KEY =
   "pk_test_51NsnOGSICQL4cc0kpJTFk4IiycCAix6ymed9VpMHMUVyuxV7viIaUXJw2wo9yXPtJjzuqFJp1CVTWfAe0VSUBERT00N4eYVReF";
+
 function BookingInfoandBill() {
   const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
   console.log("Hotel Obj : ", [hotelObj]);
@@ -30,10 +31,15 @@ function BookingInfoandBill() {
 
   // Payment Integration
   const makePayment = async () => {
+    localStorage.setItem("hotelObj", JSON.stringify(hotelObj));
+    localStorage.setItem(
+      "userEneterdHotelDetailsObj",
+      JSON.stringify(userEneterdHotelDetailsObj)
+    );
     if (!isAutheticated()) {
-      toast.warn("Please LogIn/SignUp to continue", {
+      toast.warn("Please LogIn/SignUp to continue booking the hotel rooms ", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 10000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -44,13 +50,9 @@ function BookingInfoandBill() {
       return;
     } else setIsloading(true);
 
-   
-
-
-
     toast.warn("Do not Click back or Refresh the page.....", {
       position: "top-center",
-      autoClose: 5000,
+      autoClose: 10000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -76,19 +78,17 @@ function BookingInfoandBill() {
       headers: headers,
       body: JSON.stringify(body),
     });
-    // if (respone.error) toast.warn("Warning");
     const session = await respone.json();
     const result = stripe.redirectToCheckout({
       sessionId: session.id,
     });
 
     if (result.error) toast.warn(result.error);
-    // navigate("/mybookings");
   };
-  
+
   return (
     <div class="flex justify-center items-top  gap-[1.5rem] font-mullish">
-    <ToastContainer />
+      <ToastContainer />
       <div class="  mt-[2.5rem]  w-[49.375rem] h-[64.25rem]  ">
         <HotelBookingComponent
           hotelName={hotelObj.hotel_name}
@@ -111,7 +111,6 @@ function BookingInfoandBill() {
               onClick={makePayment}
             >
               Pay in Full
-              {/* <Link to="/mybookings"> Pay in Full </Link> */}
             </button>
           </div>
         </div>
@@ -135,27 +134,3 @@ function BookingInfoandBill() {
 }
 
 export default BookingInfoandBill;
-
-//payment integration
-// const makePayment = async () => {
-//   const stripe = await loadStripe("pk_test_51NposySFLJXN2nA64GVOfZD5breUlUgQGzHW8I8QYPrwUmRKWsuhw6nCMciae8e50lK4n3WWleC8g1cXrSaZorRD00aY0YUIIg");
-//   const body = {
-//     products: hotels
-//   }
-//   const headers = {
-//     "Content-Type": "application/json"
-//   }
-//   const response = await fetch("http://localhost:8000/api/create-checkout-session", {
-//     method: "POST",
-//     headers: headers,
-//     body: JSON.stringify(body)
-
-//   });
-//   const session = await response.json();
-//   const result = stripe.redirectToCheckout({
-//     sessionId:session.id
-//   })
-//   if (result.error) {
-//     console.log(result.error);
-//   }
-// }

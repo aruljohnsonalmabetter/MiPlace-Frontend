@@ -1,48 +1,58 @@
-import React, { useEffect } from "react";
-// import Button from "../components/Button";
+import React, { useEffect, useState } from "react";
 import Bookingreceipt from "../components/Bookingreceipt";
-// import { FaLocationDot } from "react-icons/fa6";
-// import Rating from "../components/Rating";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
 import HotelNamebooking from "../components/HotelNamebooking.js";
 
-
-
 function MyBookings() {
-  // function formatCurrency(amount, currencyCode) {
-  //   // Create a formatter based on the currency code
-  //   const formatter = new Intl.NumberFormat(undefined, {
-  //     style: "currency",
-  //     currency: currencyCode,
-  //   });
-
-  //   // Format the amount
-  //   return formatter.format(amount);
-  // }
-  const hotelObj = useSelector((state) => state.indiHotelInfoFeature);
-  const userEneterdHotelDetailsObj = useSelector(
-    (state) => state.enteredHotelDetailsFeature
+  const [hotelObj, setHotelObj] = useState({});
+  const [userEneterdHotelDetailsObj, setuserEneterdHotelDetailsObj] = useState(
+    {}
   );
+
   useEffect(() => {
+    const hotelobj = JSON.parse(localStorage.getItem("hotelObj"));
+    const userEneterdHotelDetailsObj = JSON.parse(
+      localStorage.getItem("userEneterdHotelDetailsObj")
+    );
+    setHotelObj(hotelobj);
+    setuserEneterdHotelDetailsObj(userEneterdHotelDetailsObj);
     console.log(hotelObj);
     console.log(userEneterdHotelDetailsObj);
-  }, [hotelObj, userEneterdHotelDetailsObj]);
+  }, []);
 
   return (
     <div class=" justify-between mx-[3.125rem]  space-x-4 ">
-    <HotelNamebooking
-    hotelOBJ={hotelObj}
-    hotel_id={hotelObj.hotel_id}
-    hotelname={hotelObj.hotel_name}
-    city={hotelObj.city}
-    district={hotelObj.district}
-    address={hotelObj.address}
-    // currency={hotelObj.currency}
-    price={hotelObj.price_breakdown}
-    text="Download"
-    review={hotelObj.review_score_word}
-  />
-      <Bookingreceipt />
+      <HotelNamebooking
+        hotelOBJ={hotelObj}
+        hotel_id={hotelObj.hotel_id}
+        hotelname={hotelObj.hotel_name}
+        city={hotelObj.city}
+        district={hotelObj.district}
+        address={hotelObj.address}
+        // currency={hotelObj.currency}
+        price={hotelObj.price_breakdown}
+        currencyPrice={hotelObj.currencyPrice}
+        currency={hotelObj.currency}
+        url={hotelObj.main_photo_url}
+        text="Download"
+        review={hotelObj.review_score_word}
+        noOfDays={userEneterdHotelDetailsObj.noOfDays}
+        rooms={userEneterdHotelDetailsObj.roomsGuests}
+      />
+      <Bookingreceipt
+        hotel_id={hotelObj.hotel_id}
+        hotel_name={hotelObj.hotel_name}
+        city={hotelObj.city}
+        district={hotelObj.district}
+        address={hotelObj.address}
+        price={hotelObj.price_breakdown}
+        url={hotelObj.main_photo_url}
+        text="Download"
+        review={hotelObj.review_score_word}
+        firstDay={userEneterdHotelDetailsObj.firstDay}
+        secondDay={userEneterdHotelDetailsObj.secondDay}
+        noOfDays={userEneterdHotelDetailsObj.noOfDays}
+      />
       <div class="mx-[3.125rem] my-[2.125rem] ">
         <h1 className="mb-[2.125rem] text-2xl font-semibold font-[Montserrat] ">
           Terms and Conditions
@@ -95,41 +105,8 @@ function MyBookings() {
           </li>
         </h3>
       </div>
-
-
-      <HotelNamebooking
-    hotelOBJ={hotelObj}
-    hotel_id={hotelObj.hotel_id}
-    hotelname={hotelObj.hotel_name}
-    city={hotelObj.city}
-    district={hotelObj.district}
-    address={hotelObj.address}
-    // currency={hotelObj.currency}
-    price={hotelObj.price_breakdown}
-    text="Download"
-    review={hotelObj.review_score_word}
-  />
-
     </div>
   );
 }
 
 export default MyBookings;
-
-
-// <div className="flex justify-between">
-//         <div>
-//           {/* url={hotelObj.main_photo_url} */}
-
-//         <h1 className="font-bold text-3xl">{hotelObj.hotel_name} </h1>
-//         <Rating />
-//         <h3 className="flex text-sm">
-//           <FaLocationDot />
-//           {hotelObj.address} , {hotelObj.city}
-//         </h3>
-//       </div>
-//       <div>
-//         <h1 className="font-[Montserrat] text-[2.125rem] font-bold text-[#1E91B6]">{hotelObj.price_breakdown}/night</h1>
-//         <Button text="Download" />
-//       </div>
-//       </div>

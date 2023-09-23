@@ -32,8 +32,10 @@ const HotelInfo = () => {
         city={hotelObj.city}
         district={hotelObj.district}
         address={hotelObj.address}
-        // currency={hotelObj.currency}
         price={hotelObj.price_breakdown}
+        currencyPrice={hotelObj.currencyPrice}
+        currency={hotelObj.currency}
+        url={hotelObj.main_photo_url}
         text="Download"
         review={hotelObj.review_score_word}
       />
