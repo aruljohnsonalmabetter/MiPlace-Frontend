@@ -39,7 +39,7 @@ const Amenities = ({ hotel_id }) => {
       <h1 className="  text-2xl  font-bold mb-4 font-mullish">Facilities</h1>
       {/* <div className="price-input  flex  flex-col">
         <div className=""> */}
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-4 gap-2 md: grid-cols-2 ">
         {facilites.map((indiFac) => {
           return ( //<p key={indiFac.facilitytype_id} htmlFor="" className="block m-2 ">{indiFac?.facilitytype_name}</p>)
             // <div

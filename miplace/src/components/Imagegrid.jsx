@@ -10,7 +10,7 @@ function Imagegrid({ img }) {
           
             <div id="imggrid"className="flex space-x-2 justify-center m-auto py-16 px-4 max-w-[1500px] w-full">
                 <div className="rounded-lg">
-                   <img class="img"src={image1} className="object-cover rounded-lg"></img>
+                   <img class="img"src={image1} className="object-cover rounded-lg md:w-full"></img>
                 </div>
 
                {/* <div className="w-1/2 flex"> */}
@@ -28,8 +28,8 @@ function Imagegrid({ img }) {
                             </img>
                         </div>   */}
                      {/* </div>     */}
-                <div class="img" className=" w-1/2">
-                    <img class="img" src={image2} className="object-cover rounded-lg"></img>
+                <div id="img2"className=" w-1/2">
+                    <img id="img12" src={image2} className="object-cover rounded-lg"></img>
                         {/* <div className="flex-col h-full">
                             <img src={image1} className="object-cover m-1 h-1/2 ">
                             </img>

@@ -1,4 +1,5 @@
 import React from 'react'
+import "../components/styles.css";
 function FinalBookingSlipComponent({ url, review, rating, address, price, noOfDays, rooms, currencyPrice, currency }) {
   
   function formatCurrency(amount, currencyCode) {
@@ -16,7 +17,7 @@ function FinalBookingSlipComponent({ url, review, rating, address, price, noOfDa
   let totalPrice = justNumbers(price)
   // console.log(totalPrice)
   return (
-    <div class=" gap-[1rem] mt-[2.5rem]  w-[28.125rem] h-[29.34375rem] border-black font-mullish ">
+    <div id="div2" class=" gap-[1rem] mt-[2.5rem]  w-[28.125rem] h-[29.34375rem] border-black font-mullish ">
       <div class="flex gap-[2rem] justify-between mx-[2rem] my-[2rem]">
         <div className=' w-80		'>
 

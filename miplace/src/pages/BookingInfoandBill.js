@@ -9,6 +9,7 @@ import { isAutheticated } from "../auth/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { API } from "../backend";
+import "../components/styles.css";
 
 const PUBLI_KEY =
   "pk_test_51NsnOGSICQL4cc0kpJTFk4IiycCAix6ymed9VpMHMUVyuxV7viIaUXJw2wo9yXPtJjzuqFJp1CVTWfAe0VSUBERT00N4eYVReF";
@@ -87,9 +88,9 @@ function BookingInfoandBill() {
   };
 
   return (
-    <div class="flex justify-center items-top  gap-[1.5rem] font-mullish">
+    <div id="bookinfo"class="flex justify-center items-top  gap-[1.5rem] font-mullish">
       <ToastContainer />
-      <div class="  mt-[2.5rem]  w-[49.375rem] h-[64.25rem]  ">
+      <div id="div1" class="  mt-[2.5rem]  w-[49.375rem] h-[64.25rem]  ">
         <HotelBookingComponent
           hotelName={hotelObj.hotel_name}
           price={hotelObj.price_breakdown}
@@ -103,7 +104,7 @@ function BookingInfoandBill() {
         />
 
         <div class="border-solid my-[2.5rem]  w-[49.375rem] border-2 border-{A1A1A1} rounded-lg font-mullish">
-          <div class="flex my-[1rem] bg-[#1E91B6] w-[47.375rem] mx-[1rem]  justify-between items-center rounded-lg p-3">
+          <div  class="flex my-[1rem] bg-[#1E91B6] w-[47.375rem] mx-[1rem]  justify-between items-center rounded-lg p-3">
             <p className="text-bold">Pay the total and you are all set : </p>
 
             <button
