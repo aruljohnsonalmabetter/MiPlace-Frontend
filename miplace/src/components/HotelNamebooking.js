@@ -44,7 +44,7 @@ const HotelNamebooking = ({
   };
 
   return (
-    <div class="flex justify-between p-8 text-black rounded">
+    <div id ="hotelname"class="flex justify-between p-8 text-black rounded">
       <div>
         <h1 className="font-[Montserrat] text-[2.125rem] font-semibold">
           {hotelname}

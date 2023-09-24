@@ -56,7 +56,14 @@
 #testimonial{
     @media screen and (max-width: 1038px) {
             flex-direction: column;
-            gap:6px;
+            gap:5rem;
+           
+        }
+}
+#testimonial2{
+    @media screen and (max-width: 1038px) {
+           padding-right: 8rem;
+    
         }
 }
 
@@ -199,7 +206,7 @@
     }
 }
 
-    @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
          #btn{
             width:100%
          }
@@ -214,3 +221,24 @@
                 width:100%
             }
         }
+#imggrid{
+    @media screen and (max-width: 1450px) {
+            flex-direction: column;
+            gap:20px;
+        }
+}
+.img{
+    @media screen and (max-width: 1450px) {
+            width:100%;
+        }
+}
+.img2 {
+    @media screen and (max-width: 1450px) {
+        width: 100%;
+    }
+}
+#hotelname{
+    @media screen and (max-width: 500px) {
+            gap:15px;
+        }
+}
