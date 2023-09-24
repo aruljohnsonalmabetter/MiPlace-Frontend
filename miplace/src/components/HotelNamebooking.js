@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { addFavHotel } from "../redux-features/userSlice";
 import Share from "./Share";
 const HotelNamebooking = ({
-  // currency,
+  url,
   hotel_id,
   hotelOBJ,
   hotelname,
@@ -19,9 +19,24 @@ const HotelNamebooking = ({
   review,
   address,
   district,
+  noOfDays,
+  rooms,
+  currencyPrice,
+  currency,
 }) => {
-  const dispatch = useDispatch();
+  function formatCurrency(amount, currencyCode) {
+    // Create a formatter based on the currency code
+    const formatter = new Intl.NumberFormat(undefined, {
+      style: "currency",
+      currency: currencyCode,
+    });
 
+    // Format the amount
+    return formatter.format(amount);
+  }
+
+  const dispatch = useDispatch();
+  // const totalPrice=
   const handleAddtoFav = () => {
     dispatch(addFavHotel(hotelOBJ));
     // console.log("favHotel : ", favHotel);
@@ -44,9 +59,9 @@ const HotelNamebooking = ({
         </h3> */}
 
         <div className="flex gap-[1rem] ">
-          <Rating value="5" className="inline " />
-
-          <p>{review} </p>
+          <p>
+            <span className="text-bold"> Review :</span> {review}{" "}
+          </p>
         </div>
       </div>
       <div className="space-y-2">
@@ -55,14 +70,14 @@ const HotelNamebooking = ({
           {/* {formatCurrency(price, currency)}/night */}
         </h1>
         {/* <div id="icons" className="flex justify-between space-x-2"> */}
-          {/* <FcLike className="text-xl hover:scale-75 cursor-pointer transition ease-in-out delay-250" /> */}
-          {/* <button
+        {/* <FcLike className="text-xl hover:scale-75 cursor-pointer transition ease-in-out delay-250" /> */}
+        {/* <button
             className="border-2 border-black p-2  rounded-md m-2"
             onClick={handleAddtoFav}
           >
             <FcLike className="text-2xl hover:scale-75    transition ease-in-out delay-250" />
           </button> */}
-          {/* <div className="border-2 border-black inline-block h-6 w-6 px-1 ">
+        {/* <div className="border-2 border-black inline-block h-6 w-6 px-1 ">
             <BsFillShareFill className="pt-2 snap-center" /></div>
           {/* <Button className="md:text-sm inline-block" text={text} /> */}
         <Share
@@ -71,7 +86,7 @@ const HotelNamebooking = ({
           text="Hello World! I shared this content via Web Share"
         />
       </div>
-    
+
       {/* </div> */}
     </div>
   );

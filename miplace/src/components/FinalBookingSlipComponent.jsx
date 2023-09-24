@@ -1,15 +1,14 @@
 import React from 'react'
-function FinalBookingSlipComponent({ url, review, rating, address, price, noOfDays, rooms, currencyPrice ,currency}) {
+function FinalBookingSlipComponent({ url, review, rating, address, price, noOfDays, rooms, currencyPrice, currency }) {
+  
   function formatCurrency(amount, currencyCode) {
-    // Create a formatter based on the currency code
     const formatter = new Intl.NumberFormat(undefined, {
       style: "currency",
       currency: currencyCode,
     });
-
-    // Format the amount
     return formatter.format(amount);
   }
+
   function justNumbers(string) {
     var numsStr = parseFloat(string.match(/[\d.]+/));
     return numsStr;
@@ -64,7 +63,7 @@ function FinalBookingSlipComponent({ url, review, rating, address, price, noOfDa
 
         <div className='flex justify-between'>
           <h3>Total</h3>
-          <h3>{formatCurrency(currencyPrice * (noOfDays + 1) * rooms,currency)}</h3>
+          <h3>{formatCurrency(currencyPrice * (noOfDays + 1) * rooms, currency)}</h3>
           {/* <h3>{price}</h3> */}
         </div>
 
