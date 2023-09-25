@@ -182,9 +182,14 @@
         }
  }
 #login{
+    @media screen and (max-width: 1050px) {
+            align-self: center;
+        }
     @media screen and (max-width: 600px) {
-            padding-left:20px;
-            justify-content:center;
+            width:100%;
+            padding:1px;
+            /* justify-content:center; */
+            flex-direction: column;
         }
 }
 #signin {
@@ -268,4 +273,22 @@
             padding-left: 80px;
         align-self: center;
         }
+}
+#textt{
+    @media screen and (max-width: 1300px) {
+           text-align-last: left;
+        }
+}
+#register{
+    @media screen and (max-width: 720px) {
+            width:100%;
+        }
+}
+@media screen and (max-width: 720px) {
+   #placeholder2{
+            width: 100%;
+   }
+   #placeholder3 {
+width: 100%;
+   }
 }

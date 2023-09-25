@@ -64,7 +64,8 @@ const Signup = () => {
             class="in"
               type="text"
               placeholder="Name"
-              value={name}
+            value={name}
+              
               onChange={handleChange("name")}
               className="p-2 border border-gray-300 rounded-md w-1/2"
             />
@@ -73,23 +74,25 @@ const Signup = () => {
             class="in"
               type="email"
               placeholder="Enter you e-mail"
-              value={email}
+            value={email}
+            id="placeholder2"
               onChange={handleChange("email")}
-              className="p-2 border border-gray-300 rounded-md w-1/2"
+              className="p-2 border border-gray-300 rounded-md w-1/2 "
             />
 
           <input
             class="in"
               type="password"
               placeholder="Password"
-              value={password}
+            value={password}
+            id="placeholder3"
               onChange={handleChange("password")}
               className="p-2 border border-gray-300 rounded-md w-1/2"
                 
             />
 
        
-        <button onClick={onSubmit} className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md w-1/3">
+        <button onClick={onSubmit} id ="register"className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md w-1/3">
           Register
         </button>
       </div>
