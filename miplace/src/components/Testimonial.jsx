@@ -1,6 +1,7 @@
 import React from 'react'
 import image from '../images/BG (1).webp'
 import image1 from '../images/BG-1 (1).webp'
+import "./styles.css";
 export default function Testimonial(){
   return (
     <section class="relative isolate overflow-hidden bg-white px-6 py-24 font-mullish sm:py-32 lg:px-8">
@@ -30,12 +31,12 @@ export default function Testimonial(){
                        </div>
                        </div>
             </div>
-        <div class="">
+                  <div id="testimonial2"class="flex mx-auto ">
                 <div class="flex space-x-4">
                 <img class="mx-auto h-30 w-30  " 
                        src={image1}
                        alt=""/>       
-                       <div class=" text-left items-center justify-center  text-base">
+                          <div class=" text-left  space-x-3  text-base">
                            <div class="font-semibold text-gray-900">Judith Black</div>
                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
                                    <circle cx="1" cy="1" r="1" />
@@ -44,8 +45,7 @@ export default function Testimonial(){
                            <div class="text-gray-600 items-start">CEO of Workcation</div>
                        </div>
                        </div>
-        </div>
-    
+                  </div>
     </div>
   </div>
 </section>  
