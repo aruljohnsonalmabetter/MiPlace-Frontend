@@ -18,7 +18,7 @@ export const Profile = ( ) => {
 
 
   return (
-    <div className='flex mx-auto my-auto justify-center w-[27.875rem] h-[21.5625rem] border-4 border-blue-600'>
+    <div className='flex mx-auto my-auto justify-center w-[27.875rem] h-[21.5625rem] '>
         
       <div>
         <div className=''>
@@ -26,7 +26,7 @@ export const Profile = ( ) => {
         </div>
         <div>
             
-            <h3>email</h3>
+            
 
             <Button
              onClick={handleclick}

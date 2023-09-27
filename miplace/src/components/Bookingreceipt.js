@@ -68,7 +68,7 @@ function Bookingreceipt({ hotel_name, firstDay, secondDay, noOfDays, url }) {
       </div>
 
       <div className="w-[19.9375rem] h-[19.3125rem] ">
-        <h1>Hotel Image</h1>
+        
         <img src={url} />
       </div>
 

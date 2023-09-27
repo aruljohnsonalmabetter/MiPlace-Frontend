@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import image from '../images/reception.webp';
-import { Link , Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import "./styles.css";
 // import {  } from "react-router-dom";
 
@@ -10,15 +10,16 @@ import { signin, authenticate, isAutheticated } from "../auth/index.js";
 const LoginFormComponent = () => {
     
         
-        const [values, setValues] = useState({
-            email: "arul@ppum.com",
-            password: "abc1103",
+        const [values, setValues] = useState({ 
+            name: "Arul",
+            email: "aj123@gmail.com",
+            password: "arul123",
             error: "",
             loading: false,
             didRedirect: false
           });
 
-          const { email, password, error, loading, didRedirect } = values;
+          const { name, email, password, error, loading, didRedirect } = values;
             const { user } = isAutheticated();
 
           const handleChange = name => event => {
@@ -28,7 +29,7 @@ const LoginFormComponent = () => {
           const onSubmit = event => {
             event.preventDefault();
             setValues({ ...values, error: false, loading: true });
-            signin({ email, password })
+            signin({ name, email, password })
               .then(data => {
                 if (data.error) {
                   setValues({ ...values, error: data.error, loading: false });
@@ -62,7 +63,7 @@ const LoginFormComponent = () => {
           const loadingMessage = () => {
             return (
               loading && (
-                <div className="alert alert-info">
+                <div className="alert ">
                   <h2>Loading...</h2>
                 </div>
               )
@@ -88,14 +89,14 @@ const LoginFormComponent = () => {
           
 
         return (
-            <div id="login"className="bg-white w-[103%] p-4 pl-20 rounded-lg shadow-md flex justify-center items-center gap-4 font-mullish mx-auto">
+            <div id="login"className="bg-white p-4 pl-40 rounded-lg shadow-md flex justify-center items-center gap-4 font-mullish mx-auto">
                 <img
                     src={image}
                     alt="Book Hotels fast and easy with Hotels"
                     className="w-1/2"
                 />
-                <div className="flex-1 flex flex-col gap-2 w-1/2">
-                    <h1 className="text-3xl font-semibold md:text-l">Book Hotels fast and easy with Hotels</h1>
+                <div className="flex-1 flex flex-col gap-2">
+                    <h1 className="text-3xl font-semibold">Book Hotels fast and easy with Hotels</h1>
                     <input
                         class="in2"
                         type="email"
@@ -124,13 +125,13 @@ const LoginFormComponent = () => {
                             {errorMessage()}
                            
                             {performRedirect()}
-{/*             
-                <p id="textt" className="text-black text-center lg:overflow-visible">{JSON.stringify(values)}</p> */}
+            
+                            
                     </section>
                 </div>
 
-          </div>
-          
+            </div>
+
            
                 
               
@@ -141,3 +142,6 @@ const LoginFormComponent = () => {
 
 
 export default LoginFormComponent;
+
+
+// <p className="text-black text-center">{JSON.stringify(values)}</p>

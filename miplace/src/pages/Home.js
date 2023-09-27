@@ -12,7 +12,7 @@ import { setEnteredHotelDetails } from "../redux-features/enteredHotelDetailsSli
 function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("Home");
+    // console.log("Home");
     // dispatch(
     //   setEnteredHotelDetails({
     //     city:"",

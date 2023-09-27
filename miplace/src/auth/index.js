@@ -9,13 +9,19 @@ export const signup = user => {
       Accept: "application/json",
       "Content-Type": "application/json"
     },
+    
     body: JSON.stringify(user)
+   
   })
     .then(response => {
       return response.json();
     })
     .catch(err => console.log(err));
+
+    
 };
+
+
 
 export const signin = user => {
   return fetch(`${API}/signin`, {
@@ -28,6 +34,7 @@ export const signin = user => {
   })
     .then(response => {
       return response.json();
+      console.log(user)
     })
     .catch(err => console.log(err));
 };
